@@ -1,0 +1,158 @@
+
+.page-header
+  +wrapper()
+  padding-top: 20px
+  display: flex
+  min-width: 1260px
+  flex-wrap: nowrap
+  margin-bottom: 30px
+  &-logo
+    //width: calc(16.666667% - 30px)
+    width: 16%
+    font-weight: 700
+    text-transform: uppercase
+    font-size: 39px
+    background: url("../img/dot.svg") no-repeat 95px 27px
+  &-nav
+    font-weight: 500
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin-left: 30px
+    white-space: nowrap
+  &-select
+    border: none
+    outline: none
+    margin-left: 30px
+
+.page-header-user
+  display: flex
+  justify-content: flex-end
+  white-space: nowrap
+  margin-left: auto
+  &-list
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 16px
+    &:last-child
+      margin-right: 0
+    &::before
+      content: " "
+      position: absolute
+      top: 13px
+      left: 0
+      width: 1px
+      height: 24px
+      background-color: rgba(0, 0, 0, 0.2)
+
+.page-header-user-list:first-child::before
+  display: none
+
+.btn-auth
+  display: flex
+  justify-content: center
+  align-items: center
+  font-weight: 400
+  &-link
+    color: #444444
+    text-decoration: none
+    padding: 0 25px 0 50px
+    background: url("../img/user.svg") no-repeat 20px 60%
+
+.address
+  font-weight: 700
+  display: flex
+  justify-content: center
+  align-items: center
+  text-decoration: none
+  color: #62ab00
+  font-size: 20px
+  padding-left: 25px
+
+.nav-list
+  font-size: 15px
+  text-transform: uppercase
+  margin-right: 50px
+  &:last-child
+    margin-right: 0
+
+.nav-link
+  color: #444
+  text-decoration: none
+.hit
+  color: #e14546
+
+.logo-title
+  margin-right: 30px
+  display: flex
+  text-decoration: none
+  color: #000
+  background: url("../img/MARKET.svg") no-repeat 95px 9px
+
+@media screen and (max-width: 1600px)
+  .page-header-logo
+    width: 20%
+
+  .menu-buy-item
+    margin-right: 40px
+    &:last-child
+      margin-right: 15px
+
+  .btn-auth-link
+    padding: 0 20px 0 40px
+    background-position: 18px 60%
+
+  .address
+    padding-left: 20px
+
+  .nav-list:nth-child(2)
+    display: none
+
+  .btn-catalog::before
+    left: 15px
+  .btn-catalog::after
+    right: 25px
+  .nav-list
+    margin-right: 25px
+
+@media screen and (max-width: 1440px)
+
+  .page-header-user-list
+    margin: 0 5px
+
+  .address
+    font-size: 18px
+
+  .-content-advertise-item-big .content-advertise-title
+    width: 100%
+
+  .slides-item-descr
+    margin-top: 15px
+    font-size: 20px
+  .slides-item-btn
+    margin-top: 20px
+  .sale-banner-title
+    width: 50%
+@media screen and (max-width: 1366px)
+  .page-header-user-list
+    margin: 0 10px
+
+  .page-header-logo
+    width: 20%
+
+  .menu-buy-item
+    margin-right: 25px
+
+  .address
+    font-size: 18px
+  .nav-list
+    font-size: 15px
+    margin-right: 40px
+
+  .nav-list:nth-child(1)
+    display: none
+
+  .nav-list:nth-child(5)
+    display: none

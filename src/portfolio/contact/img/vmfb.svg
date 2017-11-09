@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c8b678;
+        fill-rule: evenodd;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect x="0.125" width="18" height="18"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip-path)">
+    <path id="_copy" data-name=" copy" class="cls-1" d="M13.941,2.868h-2.9A1.051,1.051,0,0,0,10.318,4V6.089h3.623V9.067H10.318V18H6.857V9.067H3.8V6.089H6.857V4.317A4.311,4.311,0,0,1,11.043-.272h2.9v3.14Z" transform="translate(0.125)"/>
+  </g>
+</svg>

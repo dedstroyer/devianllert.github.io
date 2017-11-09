@@ -1,0 +1,249 @@
+.page-footer
+  margin-top: 60px
+  background-color: #f9f9f9
+  padding-bottom: 50px
+  display: inline-table
+  width: 100%
+  &-wrapper
+    +wrapper()
+    min-width: 1260px
+    display: flex
+    width: 100%
+.let-reg
+  display: flex
+  height: 130px
+  margin-bottom: 60px
+  align-items: center
+  justify-content: flex-start
+  position: relative
+  border-bottom: 1px solid #999
+  //&::before
+  //  content: " "
+  //  position: absolute
+  //  width: 200%
+  //  height: 1px
+  //  bottom: 0
+  //  left: -50%
+  //  background-color: #999
+
+.email-sale
+  display: flex
+  justify-content: center
+  align-items: center
+  &-logo
+    display: flex
+    justify-content: center
+    align-items: center
+
+.email-input
+  margin-left: 50px
+  position: relative
+  height: 50px
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
+  input
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    height: 100%
+    width: 550px
+    padding-left: 20px
+    outline: none
+    border: 1px solid rgba(#000, 0.1)
+  a
+    position: absolute
+    top: 50%
+    -webkit-transform: translateY(-50%)
+    -moz-transform: translateY(-50%)
+    -ms-transform: translateY(-50%)
+    -o-transform: translateY(-50%)
+    transform: translateY(-50%)
+    right: 0
+    text-decoration: none
+    height: 100%
+    display: flex
+    padding: 0 15px
+    align-items: center
+    background-color: $link_color
+    color: #fff
+    border-top-right-radius: 5px
+    border-bottom-right-radius: 5px
+.logo-descr
+  margin-left: 20px
+
+.big-logo
+  font-size: 21px
+  font-weight: 500
+
+.small-logo
+  font-size: 15px
+
+.socials
+  display: flex
+  align-items: center
+  margin-left: auto
+  li
+    margin-left: 50px
+    .social-link
+      display: inline-block
+      text-decoration: none
+      color: $text_color
+      position: relative
+      padding-left: 30px
+      .icon-soc
+        font-size: 15px
+        font-weight: 400
+        text-decoration: none
+        color: $text_color
+      .icon-vkontakte:after
+        content: '\f189'
+        position: absolute
+        left: 0
+        font-style: normal
+        font-family: "fontelloSoc"
+        font-weight: bold
+        font-size: 18px
+        width: 20px
+        height: 20px
+
+      .icon-facebook:after
+        content: '\f09a'
+        position: absolute
+        left: 0
+        font-style: normal
+        font-family: "fontelloSoc"
+        font-weight: bold
+        font-size: 18px
+        width: 25px
+        height: 20px
+
+      .icon-twitter:after
+        content: '\f099'
+        position: absolute
+        left: 0
+        font-style: normal
+        font-family: "fontelloSoc"
+        font-weight: bold
+        font-size: 18px
+        width: 25px
+        height: 20px
+
+.extra
+  display: flex
+
+.support
+  +col-5()
+  .logo-title
+    display: inline-block
+    padding-right: 70px
+.hot-lines
+  background: url("../img/headset.svg") no-repeat
+  margin-top: 50px
+  padding-left: 65px
+
+.hot-line-head
+  font-size: 15px
+  text-transform: uppercase
+  font-weight: 500
+
+.hot-line-telephone
+  display: inline-block
+  text-decoration: none
+  font-weight: 500
+  margin: 15px 0
+  font-size: 22px
+  color: $text_color
+
+.main-address
+  font-size: 15px
+
+.map
+  display: inline-block
+  text-decoration: none
+  color: $text_color
+  background: url("../img/Location.svg") no-repeat
+  margin-top: 20px
+  padding-left: 20px
+
+.sub-extra
+  +col-7()
+  display: flex
+
+.catalogs
+  margin-right: 100px
+  &-head
+    font-size: 15px
+    font-weight: 500
+    text-transform: uppercase
+    margin-bottom: 20px
+  &-item-list
+    margin-left: 150px
+    font-size: 15px
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    &:first-child
+      margin-left: 0
+  &-item
+    margin-bottom: 15px
+    a
+      text-decoration: none
+      color: $text_color
+
+.catalogs-list
+  display: flex
+
+.more
+  padding-left: 40px
+  position: relative
+  &::before
+    content: ""
+    position: absolute
+    width: 2px
+    height: 110%
+    top: -5%
+    left: 0
+    background-color: rgba(#000, 0.1)
+  &-head
+    font-size: 15px
+    font-weight: 500
+    text-transform: uppercase
+    margin-bottom: 20px
+  &-list
+    font-size: 15px
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+  &-item
+    margin-bottom: 15px
+    a
+      text-decoration: none
+      color: $text_color
+
+
+@media screen and (max-width: 1600px)
+  .catalogs
+    margin-right: 75px
+  .catalogs-item-list
+    margin-left: 95px
+@media screen and (max-width: 1366px)
+
+  .support
+    +col-4()
+
+  .socials li
+    width: 30px
+    height: 17px
+    position: relative
+    margin-left: 30px
+
+  .social-link
+    position: absolute!important
+
+  .icon-soc
+    display: none
+

@@ -1,0 +1,357 @@
+.page-sidebar
+  width: 16%
+  display: flex
+  flex-direction: column
+  font-weight: 400
+
+// CATALOG_CATEGORY
+
+.sidebar-category
+  display: flex
+  flex-direction: column
+  border: 2px solid rgba(#000, 0.1)
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+
+.show-all-category
+  text-decoration: none
+  color: $text_color
+  display: block
+  padding: 20px 15px
+  border-bottom: 1px solid rgba(#000, 0.1)
+  background: url("../../img/arrow_right.svg") no-repeat 95% center
+  &:hover
+    color: #0163D2
+.current-category
+  padding: 0 10px
+  &-title
+    display: block
+    padding: 15px 0px 15px 5px
+    text-decoration: none
+    color: $text_color
+    border-bottom: 1px solid rgba(#000, 0.1)
+    &:hover
+      color: #0163D2
+.current-category-count, .category-list-item-count
+  color: #999
+  font-weight: 300
+
+.category-list
+  display: block
+  &-item
+    padding: 15px 15px 15px 23px
+    border-bottom: 1px solid rgba(#000, 0.1)
+    &:last-child
+      border: none
+    &-link
+      text-decoration: none
+      color: $text_color
+      &:hover
+        color: #0163D2
+
+.can-active
+  position: relative
+  font-weight: 500
+
+.can-active::after
+  content: ''
+  font-weight: 500
+  position: absolute
+  top: 5px
+  left: -20px
+  width: 5px
+  background: url(../../img/arrow_right.svg) no-repeat
+  height: 9px
+  transform: rotate(90deg)
+
+.subcategory-list
+  white-space: nowrap
+  display: none
+  padding: 10px 15px 10px
+  &-item
+    padding: 10px 0
+
+// =================================  CATALOG_CATEGORY   ============================
+
+.btn-catalog
+  font-weight: 500
+  display: flex
+  box-sizing: border-box
+  justify-content: center
+  align-items: center
+  height: 50px
+  border: 2px solid rgba(#000, 0.1)
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  background-color: #fff
+  outline: none
+  margin-bottom: 30px
+  position: relative
+  &::before
+    content: "\e807"
+    font-family: "fontello"
+    display: block
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    left: 25px
+  &::after
+    content: "\f107"
+    font-family: "fontello"
+    display: block
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 35px
+
+.catalog-list
+  font-weight: 400
+  position: relative
+  display: flex
+  flex-direction: column
+  border: 2px solid rgba(#000, 0.1)
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  padding: 0 15px
+  &::after
+    content: " "
+    position: absolute
+    top: -30px
+    left: 50%
+    transform: translateX(-50%)
+    border: 15px solid transparent
+    border-bottom: 15px solid rgba(#000, 0.1)
+    z-index: 1
+  &::before
+    content: " "
+    position: absolute
+    top: -27px
+    left: 50%
+    transform: translateX(-50%)
+    border: 15px solid transparent
+    border-bottom: 15px solid #fff
+    z-index: 5
+  &-item
+    padding: 12px 15px
+    border-bottom: 1.5px solid rgba(#000, 0.1)
+    &:last-child
+      border-bottom: none
+.catalog-item-link
+  width: 100%
+  color: #444
+  text-decoration: none
+
+.-bold-link
+  font-weight: 500
+
+.catalog-arrow
+  position: relative
+  left: 10px
+  float: right
+  margin-top: 5px
+
+// FILTERS
+// PRICE FILTER
+.sidebar-filters
+  margin-top: 30px
+  &-title
+    font-size: 24px
+    padding-bottom: 15px
+    border-bottom: 1px solid rgba(#000, 0.1)
+
+.filter-price
+  margin-top: 30px
+  &-title
+    font-weight: 500
+    margin-bottom: 15px
+  input::-webkit-inner-spin-button, // Убирает стрелки с <input type="number">
+  input::-webkit-outer-spin-button  // Убирает стрелки с <input type="number">
+    -webkit-appearance: none
+    margin: 0
+  input[type="number"]
+    -moz-appearance: textfield  // (Для Firefox)Убирает стрелки с <input type="number">
+
+.io-input
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .io-range-from, .io-range-to
+    width: 40%
+    border: 1px solid rgba(#000, 0.1)
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    font-size: 24px
+    padding: 15px 5px
+
+.io-slider
+  margin-top: 20px
+///PRICE FILTER
+
+// BRAND FILTER
+.filter-brand
+  margin-top: 50px
+  &-title
+    font-weight: 500
+    margin-bottom: 30px
+
+.filter-brand-check-item
+  margin-bottom: 20px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  a
+    color: $text_color
+    text-decoration: none
+    border-bottom: 1px solid #000
+    position: relative
+    background-color: #fff
+    &:hover
+      color: $link_color
+      border-color: $link_color
+    &:after
+      content: ''
+      white-space: nowrap
+      position: absolute
+      top: 50%
+      -webkit-transform: translateY(-50%)
+      -moz-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      -o-transform: translateY(-50%)
+      transform: translateY(-50%)
+      width: 15px
+      height: 7px
+      background: url("../img/brand-arrow.svg") no-repeat
+      right: -20px
+      opacity: 0
+      visibility: hidden
+      -webkit-transition: all 0.5s ease
+      -moz-transition: all 0.5s ease
+      -ms-transition: all 0.5s ease
+      -o-transition: all 0.5s ease
+      transition: all 0.5s ease
+    &:hover:after
+      visibility: visible
+      opacity: 1
+      right: -30px
+
+.filter-brand-check-item label
+  display: inline-block
+  cursor: pointer
+  position: relative
+  padding-left: 35px
+  margin-right: 15px
+  &:hover
+    color: #0163D2
+
+.filter-brand-check-item label::before
+  content: ""
+  position: absolute
+  display: inline-block
+  width: 16px
+  height: 16px
+  margin-right: 10px
+  left: 0
+  bottom: 1px
+  background-color: #fff
+  border: 1px solid rgba(#000, 0.3)
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+
+.show-all-brand
+  display: block
+  text-decoration: none
+  font-size: 13px
+  color: #777
+
+///BRAND FILTER
+
+// COLOR FILTER
+.filter-color
+  margin-top: 50px
+  &-title
+    font-weight: 500
+    margin-bottom: 30px
+
+.filter-check[type=checkbox]
+  display: none
+
+.filter-check[type=checkbox]:checked + label:before
+  content: ""
+  color: #fff
+  background: url("../img/Y.svg") no-repeat 50%
+  background-color: #0163D2
+  text-align: center
+  line-height: 17px
+
+.filter-color-check-item
+  margin-bottom: 20px
+
+.filter-color-check-item label
+  display: inline-block
+  cursor: pointer
+  position: relative
+  padding-left: 35px
+  margin-right: 15px
+  &:hover
+    color: #0163D2
+
+.filter-color-check-item label::before
+  content: ""
+  position: absolute
+  display: inline-block
+  width: 16px
+  height: 16px
+  margin-right: 10px
+  left: 0
+  bottom: 1px
+  background-color: #fff
+  border: 1px solid rgba(#000, 0.3)
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+
+.show-all-color
+  display: block
+  text-decoration: none
+  font-size: 13px
+  color: #777
+
+///COLOR FILTER
+
+.show-all-goods
+  margin-top: 50px
+  text-align: center
+.goods-link
+  display: inline-block
+  text-decoration: none
+  color: #0163D2
+  padding: 10px 20px
+  background-color: #fff
+  border: 2px solid #0163D2
+  -webkit-border-radius: 30px
+  -moz-border-radius: 30px
+  border-radius: 30px
+  font-weight: 500
+  font-size: 15px
+  &:hover
+    background-color: #0163D2
+    color: #fff
+
+
+.filter-reset
+  display: flex
+  margin: 15px auto
+  background-color: transparent
+  border: none
+  font-size: 15px
+  color: $text_color
+  outline: none
+  cursor: pointer
+
+///FILTERS

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="11" viewBox="0 0 15 11">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #444;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="departments_icon" data-name="departments icon" class="cls-1" d="M136,111v-1h15v1H136Zm0,5v-1h15v1H136Zm0,5v-1h15v1H136Z" transform="translate(-136 -110)"/>
+</svg>

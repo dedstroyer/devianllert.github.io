@@ -1,0 +1,185 @@
+.page-sidebar
+  +col-2()
+
+.page-sidebar
+  font-size: 15px
+  &-catalog
+
+// CATALOG
+
+.btn-catalog
+  font-weight: 500
+  display: flex
+  box-sizing: border-box
+  justify-content: center
+  align-items: center
+  height: 50px
+  border: 2px solid rgba(#000, 0.1)
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  background-color: #fff
+  outline: none
+  margin-bottom: 30px
+  position: relative
+  a
+    text-decoration: none
+    color: in
+  &::before
+    content: "\e807"
+    font-family: "fontello"
+    display: block
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    left: 15px
+  &::after
+    content: "\f107"
+    font-family: "fontello"
+    display: block
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 23px
+
+.catalog-list
+  font-weight: 400
+  position: relative
+  display: flex
+  flex-direction: column
+  border: 2px solid rgba(#000, 0.1)
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  padding: 0 15px
+  max-height: 520px
+  &::after
+    content: " "
+    position: absolute
+    top: -30px
+    left: 50%
+    transform: translateX(-50%)
+    border: 15px solid transparent
+    border-bottom: 15px solid rgba(#000, 0.1)
+    z-index: 1
+  &::before
+    content: " "
+    position: absolute
+    top: -27px
+    left: 50%
+    transform: translateX(-50%)
+    border: 15px solid transparent
+    border-bottom: 15px solid #fff
+    z-index: 5
+  &-item
+    padding: 12px 15px
+    border-bottom: 1.5px solid rgba(#000, 0.1)
+    &:last-child
+      border-bottom: none
+.catalog-item-link
+  width: 100%
+  color: #444
+  text-decoration: none
+
+.-bold-link
+  font-weight: 500
+
+.catalog-arrow
+  position: relative
+  left: 10px
+  float: right
+  margin-top: 5px
+
+
+// ADVERTISE
+
+
+.page-sidebar-advert
+  margin-top: 30px
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  flex-direction: column
+  height: 700px
+  background-color: rgba(#000, 0.1)
+  border: 2px solid rgba(#000, 0.1)
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  text-align: center
+  padding: 50px 0
+
+.advert-title
+  font-size: 21px
+  &-bold
+    font-weight: bold
+.advert-title-price
+  margin-top: 25px
+  color: #0063d1
+.advert-sale
+  font-size: 36px
+
+.advert-buy
+  width: 100%
+  p
+    margin-top: 50px
+
+.advert-buy-btn
+  color: #fff
+  text-decoration: none
+  padding: 10px 45px
+  background-color: #0063d1
+  -webkit-border-radius: 30px
+  -moz-border-radius: 30px
+  border-radius: 30px
+
+
+// LATEST PRODUCTS
+
+.latest-products
+  display: flex
+  flex-direction: column
+  width: 100%
+  margin-top: 25px
+  &-title
+    font-weight: 500
+    font-size: 20px
+    padding-bottom: 15px
+    margin-bottom: 25px
+    border-bottom: 1px solid rgba(#000, 0.1)
+  &-list
+    width: 100%
+    display: flex
+    flex-direction: column
+  &-item
+    width: 100%
+    padding-bottom: 20px
+    margin-bottom: 20px
+    border-bottom: 1px solid rgba(#000, 0.1)
+    &:last-child
+      border-bottom: none
+    &-img
+      min-width: 100px
+      height: 93px
+      background-color: #444
+      margin-right: 10px
+    &-descr
+      font-size: 13px
+
+.products-price
+  font-size: 16px
+  font-weight: 500
+  margin-bottom: 10px
+
+.latest-products-link
+  display: flex
+  align-items: center
+  color: #444
+  text-decoration: none
+
+
+@media screen and (max-width: 1600px)
+
+  .page-sidebar
+    width: 20%

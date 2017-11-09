@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+@@include('../build/include/_head.html',{
+    "title": "FishMarket"
+})
+
+<body>
+
+@@include('../build/include/_page-header.html')
+
+<!-- wrapper (Обертка сайта: ограничена шириной 1600px )-->
+<div class="wrapper">
+
+    <div class="page-main">
+
+        @@include('../build/index/_page-sidebar.html')
+
+        <div class="page-main-content">
+
+            @@include('../build/index/_subheader.html')
+
+            @@include('../build/index/_sale-advertise.html')
+
+            @@include('../build/index/_secure-service.html')
+
+            @@include('../build/index/_content-advertise.html')
+
+            @@include('../build/index/_content-massive-sale.html')
+
+            @@include('../build/index/_content-brands-slider.html')
+
+            @@include('../build/index/_content-popular-goods.html')
+
+        </div><!-- /page-main-content -->
+
+    </div> <!-- /page-main -->
+
+</div> <!-- /wrapper -->
+
+@@include('../build/include/_page-footer.html')
+
+@@include('../build/include/_copyright.html')
+
+<script src="js/jquery/jquery-3.2.1.min.js"></script>
+<script src="js/owl.carousel/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

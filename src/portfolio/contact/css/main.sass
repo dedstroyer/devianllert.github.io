@@ -1,0 +1,1057 @@
+@import "smart-grid"
+@import "fonts/fonts.css"
++reset()
+
+$link_color: #c8b678
+
+body
+  font-size: 100%
+  font-family: "GothamPro"
+  font-weight: 300
+
+*
+  font-family: "GothamPro"
+
+.contact-wrapper
+  padding-top: 90px
+
+.wrapper
+  +wrapper()
+  flex: 1
+  height: 100%
+
+.page-header-wrapper
+  +wrapper()
+  display: flex
+  height: 100%
+
+.header-mnu-active
+  visibility: visible!important
+  opacity: 1!important
+  display: flex !important
+
+.sandwich-btn-active
+  background-color: transparent!important
+  &:after
+    top: 0!important
+    -webkit-transform: rotate(-45deg)
+    -moz-transform: rotate(-45deg)
+    -ms-transform: rotate(-45deg)
+    -o-transform: rotate(-45deg)
+    transform: rotate(-45deg)
+  &:before
+    top: 0!important
+    -webkit-transform: rotate(45deg)
+    -moz-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    -o-transform: rotate(45deg)
+    transform: rotate(45deg)
+
+//.page-header
+//  z-index: 1000
+//  height: 90px
+//  position: fixed
+//  top: 0
+//  background-color: #fff
+//  width: 100%
+//  .header-dropdown
+//    display: flex
+//    justify-content: flex-start
+//    align-items: center
+//    .sandwich-btn-wrap
+//      display: none
+//      cursor: pointer
+//      justify-content: center
+//      align-items: center
+//      height: 30px
+//      width: 30px
+//      .sandwich-btn
+//        border: none
+//        width: 20px
+//        height: 2px
+//        -webkit-transition: all 0.5s ease
+//        -moz-transition: all 0.5s ease
+//        -ms-transition: all 0.5s ease
+//        -o-transition: all 0.5s ease
+//        transition: all 0.5s ease
+//        position: relative
+//        background-color: #000
+//        outline: none
+//        &:after
+//          content: ''
+//          position: absolute
+//          width: 20px
+//          height: 2px
+//          -webkit-transition: all 0.5s ease
+//          -moz-transition: all 0.5s ease
+//          -ms-transition: all 0.5s ease
+//          -o-transition: all 0.5s ease
+//          transition: all 0.5s ease
+//          top: -6px
+//          background-color: #000
+//          left: 0
+//        &:before
+//          content: ''
+//          position: absolute
+//          width: 20px
+//          height: 2px
+//          -webkit-transition: all 0.5s ease
+//          -moz-transition: all 0.5s ease
+//          -ms-transition: all 0.5s ease
+//          -o-transition: all 0.5s ease
+//          transition: all 0.5s ease
+//          top: 6px
+//          background-color: #000
+//          left: 0
+//
+//  &-logo
+//    width: 25%
+//    display: flex
+//    justify-content: flex-start
+//    align-items: center
+//  .page-header-menu
+//    display: flex
+//    justify-content: flex-start
+//    align-items: center
+//    .home a
+//      background: url("../img/home.svg") no-repeat center
+//    .header-mnu-list
+//      margin-right: 10px
+//      line-height: normal!important
+//      position: relative
+//      .mnu-list-dropdown
+//        opacity: 0
+//        line-height: normal!important
+//        padding: 10px 0
+//        -webkit-border-top-right-radius: 5px
+//        -webkit-border-bottom-right-radius: 5px
+//        -webkit-border-bottom-left-radius: 5px
+//        -moz-border-top-right-radius: 5px
+//        -moz-border-bottom-right-radius: 5px
+//        -moz-border-bottom-left-radius: 5px
+//        border-top-right-radius: 5px
+//        border-bottom-right-radius: 5px
+//        border-bottom-left-radius: 5px
+//        -webkit-box-shadow: 0px 0px 10px 1px rgba(#000, 0.1)
+//        -moz-box-shadow: 0px 0px 10px 1px rgba(#000, 0.1)
+//        box-shadow: 0px 0px 10px 1px rgba(#000, 0.1)
+//        position: absolute
+//        visibility: hidden
+//        top: 150%
+//        display: flex
+//        flex-direction: column
+//        white-space: nowrap
+//        left: 0
+//        background-color: #f6f6f6
+//        li
+//          width: 100%
+//          a
+//            color: #5f5f5f
+//            display: flex
+//            line-height: 17px
+//            padding: 12px 20px
+//            &:hover
+//              color: #fff
+//              background-color: $link_color
+//      a
+//        font-size: 11px
+//        font-weight: 500
+//        text-transform: uppercase
+//        text-decoration: none
+//        color: #5f5f5f
+//        position: relative
+//        z-index: 100
+//        padding: 10px
+//      &:hover a
+//        color: $link_color
+
+.config-price-modal__wrap--is_active
+  visibility: visible!important
+  opacity: 1!important
+  overflow: hidden
+
+.config-price
+  margin-left: auto
+  font-weight: 400
+  letter-spacing: 0.5px
+  text-transform: uppercase
+  align-self: center
+  background-color: $link_color
+  border: none
+  font-size: 10px
+  color: #fff
+  cursor: pointer
+  padding: 12px 15px
+
+.config-price-modal__wrap
+  visibility: hidden
+  opacity: 0
+  top: 0
+  left: 0
+  position: fixed
+  height: 100%
+  width: 100%
+  z-index: 2000
+  -webkit-transition: opacity 0.5s ease
+  -moz-transition: opacity 0.5s ease
+  -ms-transition: opacity 0.5s ease
+  -o-transition: opacity 0.5s ease
+  transition: opacity 0.5s ease
+  background-color: rgba(#000, 0.3)
+  display: flex
+  justify-content: center
+  align-items: center
+  .close-modal
+    position: absolute
+    top: 5px
+    right: 5px
+    z-index: 4000
+    cursor: pointer
+    width: 36px
+    height: 36px
+    &:after
+      content: ''
+      position: absolute
+      width: 2px
+      top: 7px
+      transform: rotate(-45deg)
+      left: 17px
+      height: 22px
+      background-color: rgba(#000, 0.15)
+    &:before
+      content: ''
+      position: absolute
+      width: 2px
+      top: 7px
+      transform: rotate(45deg)
+      left: 17px
+      height: 22px
+      background-color: rgba(#000, 0.15)
+
+.config-price-modal__succes
+  max-width: 800px
+  height: 470px
+  display: flex
+  z-index: 3000
+  top: 5%
+  margin-bottom: 30vh
+  box-sizing: border-box
+  text-align: left
+  text-transform: none
+  font-size: 13px
+  position: absolute
+  background-color: #fff
+
+
+  .config-price-modal__succes-price-control
+    color: #000
+    height: 100%
+    display: flex
+    flex: 1
+    flex-direction: column
+    .price-control-head
+      padding: 40px 40px 0 40px
+      .price-control-title
+        font-size: 30px
+        margin-bottom: 15px
+        font-weight: 200
+      .price-control
+        font-weight: 400
+        font-size: 12px
+        line-height: 20px
+        a
+          color: $link_color
+          text-decoration: none
+        .price-control-time
+          font-weight: 500
+    .form-price-control-select
+      margin-top: 30px
+      flex: 1px
+      display: flex
+      flex-direction: column
+      .price-control-select-property
+        display: flex
+        margin-bottom: 20px
+        padding: 0 40px
+        .select-material, .select-side, .select-width
+          width: 25%
+          margin-right: 30px
+          .select-title
+            font-size: 10px
+            color: #999999
+            margin-bottom: 5px
+          .select-option
+            width: 100%
+            border: 1px solid rgba(#000, 0.1)
+            padding: 10px 10px
+    .form-select-user
+      width: 100%
+      background-color: #f9f9f9
+      &-wrap
+        padding: 40px
+        .form-select-user__inputs
+          display: flex
+          .input-user-name
+            position: relative
+            width: 50%
+            margin-right: 20px
+            input
+              width: 100%
+              border: 1px solid rgba(#000, 0.1)
+              padding: 10px
+              -webkit-box-sizing: border-box
+              -moz-box-sizing: border-box
+              box-sizing: border-box
+              height: 40px
+              outline: none
+              &::placeholder
+                font-size: 11px
+              &:focus:invalid
+                border-color: red
+              &:focus:valid
+                border-color: green
+              &:focus:valid + span
+                display: none
+              &:focus + span
+                display: block
+          .input-user-tel, .input-user-email
+            position: relative
+            width: 25%
+            margin-right: 20px
+            &:last-child
+              margin-right: 0
+            input
+              width: 100%
+              border: 1px solid rgba(#000, 0.1)
+              padding: 10px
+              -webkit-box-sizing: border-box
+              -moz-box-sizing: border-box
+              box-sizing: border-box
+              height: 40px
+              outline: none
+              &::placeholder
+                font-size: 11px
+              &:focus:invalid
+                border-color: red
+              &:focus:valid
+                border-color: green
+              &:focus:valid + span
+                display: none
+              &:focus + span
+                display: block
+        .input-title
+          font-size: 10px
+          color: #999999
+          margin-bottom: 5px
+        span
+          position: absolute
+          bottom: -7px
+          right: 0
+          font-size: 11px
+          background-color: #d73535
+          padding: 3px 10px
+          -webkit-border-radius: 2px
+          -moz-border-radius: 2px
+          border-radius: 2px
+          display: none
+          color: #fff
+      .form-price-control-btn
+        margin-top: 20px
+        border: none
+        background-color: $link_color
+        width: 100%
+        padding: 20px 0
+        color: #fff
+        text-transform: uppercase
+        font-weight: 200
+        font-size: 12px
+.this-dropdown:hover .mnu-list-dropdown
+  visibility: visible !important
+  opacity: 1 !important
+
+.this-dropdown:hover > a
+  background-color: #f6f6f6
+  -webkit-border-top-left-radius: 5px
+  -webkit-border-top-right-radius: 5px
+  -moz-border-top-left-radius: 5px
+  -moz-border-top-right-radius: 5px
+  border-top-left-radius: 5px
+  border-top-right-radius: 5px
+
+.page-sub-header
+  height: 165px
+  background: url("../img/sub-header-mark.png") no-repeat 50% 50%
+  -webkit-background-size: cover
+  background-size: cover
+  .sub-header
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.typo-title
+  font-weight: 200
+  font-size: 42px
+
+.breadcrumbs-nav
+  font-weight: 300
+  font-size: 9px
+  text-transform: uppercase
+  letter-spacing: 1px
+  padding: 8px 8px 8px 0
+  li
+    display: inline-block
+    &:first-child::before
+      display: none
+    a
+      text-decoration: none
+      color: #5f5f5f
+
+  li::before
+    content: "/\00a0"
+    padding: 0 5px
+    color: #5f5f5f
+
+.page-contact
+  .wrapper
+    display: flex
+    justify-content: space-between
+  .contact-text
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    font-size: 13px
+    line-height: 24px
+    width: 45%
+  .contact-map
+    width: 50%
+    max-height: 400px
+    & > yamaps
+      height: 100% !important
+  .contact-wrap
+    display: flex
+    width: 100%
+    justify-content: space-between
+  .contact-letter
+    padding: 70px 0
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 100%
+    .typo-title
+      font-size: 24px
+      color: #707473
+      display: block
+      margin-bottom: 30px
+    .contact-title
+      font-weight: 400
+      color: #707473
+  .contact-detail
+    width: 100%
+    display: flex
+    justify-content: space-between
+    .contact-descr
+      font-weight: 300
+      color: #707473
+      width: 65%
+    a
+      color: $link_color
+      text-decoration: none
+
+.contact-detail--padding
+  padding: 25px 0
+
+.to-print
+  align-self: baseline
+  font-size: 11px
+  font-family: "GothamPro"
+  margin-top: auto
+  line-height: normal
+  text-transform: uppercase
+  letter-spacing: 1px
+  font-weight: 400
+  color: #888
+  background-color: #f1f2f3
+  border: 2px solid rgba(#888, 0.2)
+  padding: 10px 20px 10px 40px
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    left: 10px
+    width: 20px
+    height: 20px
+    background: url("../img/print.png") no-repeat
+
+.how-to-get
+  background-color: #f6f6f6
+  padding-top: 50px
+  padding-bottom: 50px
+  .wrapper
+    flex-direction: column
+  .typo-title
+    font-size: 30px
+
+.how-to-steps
+  margin-top: 30px
+  display: flex
+  justify-content: space-between
+  .steps
+    display: flex
+    width: 45%
+    flex-direction: column
+    padding-left: 25px
+    margin-left: 25px
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 50%
+      height: 75%
+      width: 1px
+      background-color: $link_color
+      -webkit-transform: translateY(-50%)
+      -moz-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      -o-transform: translateY(-50%)
+      transform: translateY(-50%)
+    .step
+      margin-bottom: 30px
+      position: relative
+      &:last-child
+        margin-bottom: 0
+      &:hover::before
+        background-color: $link_color
+        color: #fff
+
+.step_1::before
+  content: '1'
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $link_color
+  font-family: "GothamPro"
+  position: absolute
+  width: 35px
+  height: 35px
+  top: 50%
+  transform: translateY(-50%)
+  left: -44px
+  border: 1px solid $link_color
+  background-color: #f6f6f6
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+
+.step_2::before
+  content: '2'
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $link_color
+  font-family: "GothamPro"
+  position: absolute
+  width: 35px
+  height: 35px
+  top: 50%
+  transform: translateY(-50%)
+  left: -44px
+  border: 1px solid $link_color
+  background-color: #f6f6f6
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+
+.step_3::before
+  content: '3'
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $link_color
+  font-family: "GothamPro"
+  position: absolute
+  width: 35px
+  height: 35px
+  top: 50%
+  transform: translateY(-50%)
+  left: -44px
+  border: 1px solid $link_color
+  background-color: #f6f6f6
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+
+.step_4::before
+  content: '4'
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $link_color
+  font-family: "GothamPro"
+  position: absolute
+  width: 35px
+  height: 35px
+  top: 50%
+  transform: translateY(-50%)
+  left: -44px
+  border: 1px solid $link_color
+  background-color: #f6f6f6
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+
+.step_5::before
+  content: '5'
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $link_color
+  font-family: "GothamPro"
+  position: absolute
+  width: 35px
+  height: 35px
+  top: 50%
+  transform: translateY(-50%)
+  left: -44px
+  border: 1px solid $link_color
+  background-color: #f6f6f6
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+
+.step_6::before
+  content: '6'
+  display: flex
+  justify-content: center
+  align-items: center
+  color: $link_color
+  font-family: "GothamPro"
+  position: absolute
+  width: 35px
+  height: 35px
+  top: 50%
+  transform: translateY(-50%)
+  left: -44px
+  border: 1px solid $link_color
+  background-color: #f6f6f6
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+
+.how-to-gallery
+  width: 100%
+  display: flex
+  margin-top: 30px
+  &__wrap
+    display: flex
+    height: 150px
+  &__slide
+    height: 150px
+    width: 100%
+    margin-right: 10px
+    &:last-child
+      margin-right: 0
+    img
+      width: 100%
+      height: 100%
+
+
+.active-how-to
+  position: fixed
+  left: 50%
+  top: 50%
+  -webkit-transform: translate(-50%,-50%)
+  -moz-transform: translate(-50%,-50%)
+  -ms-transform: translate(-50%,-50%)
+  -o-transform: translate(-50%,-50%)
+  transform: translate(-50%,-50%)
+  width: 90vw!important
+  height: 50vh!important
+  z-index: 100000000
+.forms-support
+  padding: 50px 0
+  .forms-support__wrap
+    +wrapper()
+  .typo-title
+    font-size: 24px
+  form
+    width: 100%
+    .inputs-details
+      display: flex
+      justify-content: space-between
+      align-items: center
+      margin-top: 30px
+      .input-name, .input-tel, .input-email
+        display: flex
+        flex-direction: column
+        position: relative
+        +col-4()
+        margin-right: 20px
+        &:last-child
+          margin-right: 0
+        label
+          color: #888
+          margin-bottom: 5px
+          font-size: 13px
+        input
+          -webkit-border-radius: 1px
+          -moz-border-radius: 1px
+          border-radius: 1px
+          border: 1px solid rgba(#000, 0.1)
+          height: 40px
+          width: 100%
+          padding: 0 15px
+          -webkit-box-sizing: border-box
+          -moz-box-sizing: border-box
+          box-sizing: border-box
+          outline: none
+        input:focus:invalid
+          border-color: #d73535
+        input:focus:valid
+          border-color: green
+        input:focus:invalid + span
+          display: block
+        span
+          position: absolute
+          bottom: -7px
+          right: 0
+          font-size: 11px
+          background-color: #d73535
+          padding: 3px 10px
+          -webkit-border-radius: 2px
+          -moz-border-radius: 2px
+          border-radius: 2px
+          display: none
+          color: #fff
+    .input-text
+      width: 100%
+      margin-top: 30px
+      position: relative
+      textarea
+        box-sizing: border-box
+        padding: 20px
+        width: 100%
+        border: 1px solid rgba(#000, 0.1)
+        -webkit-border-radius: 2px
+        -moz-border-radius: 2px
+        border-radius: 2px
+        outline: none
+        &:focus:valid
+          border-color: green
+        &:focus:invalid
+          border-color: #d73535
+        &:focus:invalid + span
+          display: block
+      span
+        position: absolute
+        bottom: -5px
+        right: 0
+        font-size: 11px
+        background-color: #d73535
+        padding: 3px 10px
+        -webkit-border-radius: 2px
+        -moz-border-radius: 2px
+        border-radius: 2px
+        display: none
+        color: #fff
+  .send-form
+    display: flex
+    flex-direction: column
+    margin-top: 30px
+    .agree-rules
+      display: flex
+      justify-content: flex-start
+      #agree[type=checkbox]
+        display: none
+
+      #agree[type=checkbox]:checked + label:before
+        content: "\2713"
+        color: #fff
+        border: 1px solid $link_color
+        background-color: $link_color
+        text-align: center
+        line-height: 15px
+
+    .agree-rules
+      margin-bottom: 20px
+
+    .agree-rules label
+      display: inline-block
+      cursor: pointer
+      position: relative
+      padding-left: 35px
+      margin-right: 15px
+      &:hover
+        color: $link_color
+
+    .agree-rules label::before
+      content: ""
+      position: absolute
+      display: inline-block
+      width: 16px
+      height: 16px
+      margin-right: 10px
+      left: 0
+      bottom: 1px
+      background-color: #fff
+      border: 1px solid rgba(#000, 0.3)
+      -webkit-border-radius: 4px
+      -moz-border-radius: 4px
+      border-radius: 4px
+
+    .send
+      background-color: $link_color
+      padding: 15px 25px
+      font-weight: 400
+      text-transform: uppercase
+      color: #fff
+      font-size: 14px
+      border: none
+      letter-spacing: 1px
+      align-self: flex-end
+
+.footer
+  padding: 50px 15px
+  background-color: #333
+  &-main
+    +wrapper()
+    padding-left: 0 !important
+    padding-right: 0 !important
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding-bottom: 30px
+    border-bottom: 1px solid #999
+    .follow-us .follow-us-title
+      display: flex
+      justify-content: center
+      align-items: center
+      color: #999
+      margin-right: 10px
+    .follow-us
+      display: flex
+      .follow-socials
+        display: flex
+        justify-content: space-between
+        align-items: center
+        .social-vk
+          border: 1px solid $link_color
+          -webkit-border-radius: 50%
+          -moz-border-radius: 50%
+          border-radius: 50%
+          display: flex
+          margin-right: 5px
+          width: 36px
+          height: 36px
+          background: url("../img/social-vk.svg") no-repeat center
+        .social-inst
+          border: 1px solid $link_color
+          -webkit-border-radius: 50%
+          -moz-border-radius: 50%
+          border-radius: 50%
+          display: flex
+          margin-right: 5px
+          width: 36px
+          height: 36px
+          background: url("../img/social-instagram.svg") no-repeat center
+        .social-fb
+          border: 1px solid $link_color
+          -webkit-border-radius: 50%
+          -moz-border-radius: 50%
+          border-radius: 50%
+          display: flex
+          width: 36px
+          height: 36px
+          background: url("../img/vmfb.svg") no-repeat center
+  &-mnu
+    width: 50%
+    display: flex
+    justify-content: space-between
+  .footer-mnu-item
+    font-size: 13px
+    a
+      text-decoration: none
+      color: #999
+
+.footer-copyright
+  margin-top: 30px
+  &__wrap
+    +wrapper()
+    padding-left: 0 !important
+    padding-right: 0 !important
+    display: flex
+    justify-content: flex-start
+    align-items: center
+  .footer-copyright-title
+    margin-left: 30px
+    font-size: 13px
+    color: #999
+  .footer-copyright-activica
+    font-size: 13px
+    color: #999
+    margin-left: auto
+    a
+      color: #999
+      text-decoration: none
+
+
+
+@media screen and (max-width: 1280px)
+  .config-price-modal__succes-price-control .form-select-user-wrap span
+    font-size: 9px
+
+@media screen and (max-width: 1024px)
+  .page-header-logo
+    width: auto
+  .config-price
+    margin-right: 20px
+  .header-dropdown
+    order: 3
+  .sandwich-btn-wrap
+    display: flex !important
+  .page-header .header-dropdown .page-header-menu
+    display: none
+    position: absolute
+    width: 100%
+    text-align: center
+    left: 0
+    flex-direction: column
+    top: 90px
+    background-color: #fff
+    .home
+      display: none!important
+    .this-dropdown
+      a
+        background-color: transparent
+    .header-mnu-list
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      margin: 13px 0
+      a
+        display: block!important
+    .mnu-list-dropdown
+      top: 0
+      left: 0
+      width: 100%
+      box-shadow: unset
+      text-align: center
+      position: static
+      opacity: 1
+      display: none
+      visibility: visible
+      li
+        margin: 0
+
+  .follow-us
+    width: 15%
+  .follow-socials
+    width: 100%
+  .follow-us-title
+    display: none !important
+  .footer-copyright-logo
+    display: none
+  .footer-copyright-title
+    margin-left: 0 !important
+
+@media screen and (max-width: 768px)
+  .how-to-gallery__wrap
+    flex-direction: column
+    height: auto
+    .how-to-gallery__slide
+      height: auto
+  .inputs-details
+    flex-direction: column
+    margin: 0
+    .input-name, .input-tel, .input-email
+      width: 100%!important
+      margin-top: 20px
+      margin-right: 0!important
+  .config-price
+    width: 20%
+    font-size: 10px
+  .contact-wrap
+    flex-direction: column
+    .contact-text, .contact-map
+      width: 100%
+    .contact-map
+      height: 320px
+      margin-top: 30px
+  .footer-mnu
+    width: 65%
+  .follow-us
+    width: 25%
+  .how-to-steps
+    flex-direction: column
+    padding-left: 25px
+    margin-left: 25px
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      -webkit-transform: translateY(-50%)
+      -moz-transform: translateY(-50%)
+      -ms-transform: translateY(-50%)
+      -o-transform: translateY(-50%)
+      transform: translateY(-50%)
+      width: 1px
+      height: 90%
+      background-color: $link_color
+    .steps
+      padding: 0
+      width: 100%
+      margin: 0 0 30px 0
+      &:last-child
+        margin-bottom: 0
+      &::before
+        display: none
+
+@media screen and (max-width: 568px)
+  .forms-support .send-form .agree-rules label::before
+    bottom: 50%
+    -webkit-transform: translateY(50%)
+    -moz-transform: translateY(50%)
+    -ms-transform: translateY(50%)
+    -o-transform: translateY(50%)
+    transform: translateY(50%)
+  .footer
+    padding-top: 35px!important
+    padding-bottom: 35px!important
+  .footer-copyright__wrap
+    flex-direction: column
+    text-align: center
+    .footer-copyright-activica
+      font-size: 16px
+      margin: 30px 0 0!important
+  .follow-us
+    width: 100%
+    .follow-socials
+      justify-content: space-around !important
+  .footer-mnu
+    display: none
+  .page-sub-header .typo-title
+    font-size: 32px
+  .forms-support form .inputs-details .input-name label,
+  .forms-support form .inputs-details .input-tel label,
+  .forms-support form .inputs-details .input-email label
+    font-size: 12px
+  .header-dropdown
+    margin-left: auto
+  .config-price
+    display: none
+  .config-price-modal__wrap
+    display: none
+
+
+
+@media screen and (min-width: 1025px)
+  .mnu-list-dropdown
+    height: auto!important
+    display: flex!important
+@media screen and (min-width: 1025px)
+  .page-header-menu
+    display: flex!important

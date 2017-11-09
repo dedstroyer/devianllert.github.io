@@ -1,0 +1,55 @@
+.sub-header-catalog-wrapper
+  border-bottom: 1px solid rgba(#000, 0.1)
+
+.catalog
+  +wrapper()
+  margin-bottom: 20px
+  .catalog-inner
+    width: 16%
+    margin-right: 30px
+    position: relative
+    .catalog-list
+      background-color: #fff
+      width: 100%
+      opacity: 0
+      visibility: hidden
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      position: absolute
+      transform: translateY(10%)
+      z-index: 1000
+      max-height: unset
+      -webkit-transition: all 0.5s ease
+      -moz-transition: all 0.5s ease
+      -ms-transition: all 0.5s ease
+      -o-transition: all 0.5s ease
+      transition: all 0.5s ease
+      
+    .btn-catalog
+      cursor: pointer
+      margin: 0
+      text-decoration: none
+      background-color: $link_color
+      color: #fff
+    &:hover .btn-catalog
+      background-color: #fff
+      color: #000
+    &:hover .catalog-list
+      opacity: 1
+      visibility: visible
+      transform: translateY(3%)
+      display: flex
+
+.catalog-search
+  +col-6()
+
+.catalog-sub-header
+  width: calc(84% - 30px)
+  display: flex
+
+@media screen and (max-width: 1600px)
+  .catalog-inner
+    width: 20% !important
+  .catalog-sub-header
+    width: calc(80% - 30px)!important

@@ -1,0 +1,84 @@
+.popular-category-list
+  display: flex
+  padding-top: 20px
+  padding-bottom: 20px
+  border-bottom: 1.5px solid rgba(#000, 0.1)
+  font-weight: 400
+  &-item-link
+    color: $link_color
+    margin-left: 10px
+    &:hover
+      text-decoration: none
+
+.popular-category-item-chosen
+  margin-top: 30px
+  display: flex
+  flex-direction: column
+  position: relative
+  .category-chosen-title
+    font-size: 24px
+    font-weight: 500
+    padding-bottom: 15px
+    border-bottom: 2px solid rgba(#000, 0.05)
+  .category-item-chosen-goods
+    margin-top: 35px
+    .owl-dots
+      margin-top: 30px
+    .owl-nav
+      position: absolute
+      top: -75px
+      right: 0
+      margin-top: 0!important
+    .owl-prev, .owl-next
+      background-color: transparent!important
+      margin: 0 !important
+    .owl-prev
+      &::after
+        content: "\f104"
+        font-family: "fontello"
+        top: 0
+        left: 0
+        font-size: 24px
+        color: #444
+    .owl-next
+      &::after
+        content: "\f105"
+        font-family: "fontello"
+        top: 0
+        right: 0
+        font-size: 24px
+        color: #444
+    .chosen-goods-item
+      display: flex
+      width: 100%
+      text-decoration: none
+      color: $text_color
+      img
+        width: 45%
+        background-color: #999
+        height: 140px
+      .goods-item-descr
+        width: 55%
+        padding-left: 20px
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+        display: flex
+        justify-content: space-around
+        flex-direction: column
+        .item-price
+          color: $link_color
+          font-weight: 500
+        .item-name
+          font-size: 14px
+          font-weight: 200
+        .ui-rating
+          display: flex
+          align-items: center
+          justify-content: space-between
+          span
+            color: #999
+        .ui.rating .icon
+          flex: unset
+
+

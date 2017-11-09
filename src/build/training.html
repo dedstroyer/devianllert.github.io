@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="back">
+    <a href="#" class="btn-back">
+        <div>
+            <svg width="16px" height="14px" viewBox="0 0 16 14">
+                <path d="M1,7 L15,7"></path>
+                <polyline points="7 1 1 7 7 13"></polyline>
+            </svg>
+        </div>
+        <span>Back</span>
+    </a>
+    <div class="menu-back">
+        <ul class="nav-history">
+            <li><a href="index.html">Main</a></li>
+            <li class="active"><a href="training.html">JavaScript training</a></li>
+            <li><a href="#">Basic functions</a></li>
+        </ul>
+        <ul class="nav-links">
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Support / Help</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="main">
+
+    @@include('../_inc/training/_header.html')
+
+
+    <div class="wrapper">
+
+        <div class="about-js">
+            <p class="js-title">
+
+                Vanilla JS <div class="js-quest">? <span class="js-hint">Vanilla JS означает, что используется нативный JavaScript, т.е. без всяких модификаций, фреймворков и т.д.</span></div>
+
+            </p>
+
+        </div>
+
+        <div class="trains">
+
+            <div class="train sum">
+
+                <p class="block-title">Сложение двух чисел <span class="hint">Подробнее</span></p>
+
+                <div class="block-level">
+
+                    <input class="first sum-one" type="number">
+                    +
+                    <input class="second sum-two" type="number">
+                    <button class="btn sum-btn">=</button>
+                    <span class="answer sum-answer"></span>
+
+                </div>
+
+                <div class="block-hint">
+                    Эту функцию легко сделать, для начала нужно взять значения из каждого input
+                    делается это с помощью document.querySelector(".").value. Далее не забываем
+                    сделать полученные данные числами с помощью parseInt() или просто добавлением
+                    плюса в начало переменной, складываем их. После выводим с помощью innerHTML или
+                    innerText.
+                </div>
+
+            </div>
+
+            <div class="train multi">
+
+                <p class="block-title">Умножение <span class="hint">Подробнее</span></p>
+
+                <div class="block-level">
+
+                    <input class="first multi-one" type="number">
+                    *
+                    <input class="second multi-two" type="number">
+                    <button class="btn multi-btn">=</button>
+                    <span class="answer multi-answer"></span>
+
+                </div>
+
+                <div class="block-hint">
+                    Делается по аналогии с предыдущей функцией
+                </div>
+
+            </div>
+
+            <div class="train divis">
+
+                <p class="block-title">Деление <span class="hint">Подробнее</span></p>
+
+                <div class="block-level">
+
+                    <input class="first divis-one" type="number">
+                    :
+                    <input class="second divis-two" type="number">
+                    <button class="btn divis-btn">=</button>
+                    <span class="answer divis-answer"></span>
+
+                </div>
+
+                <div class="block-hint">
+                    Делается по аналогии с предыдущей функцией
+                </div>
+
+            </div>
+
+            <div class="train pow">
+
+                <p class="block-title">Возведение в степень <span class="hint">Подробнее</span></p>
+
+                <div class="block-level">
+
+                    <input class="first pow-one" type="number">
+                    ^
+                    <input class="second pow-two" type="number">
+                    <button class="btn pow-btn">=</button>
+                    <span class="answer pow-answer"></span>
+
+                </div>
+
+                <div class="block-hint">
+                    Делается по аналогии с предыдущей функцией
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/training.js"></script>
+
+</body>
+</html>

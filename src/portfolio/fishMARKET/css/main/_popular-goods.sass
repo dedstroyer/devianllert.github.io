@@ -1,0 +1,93 @@
+.content-popular-goods
+  position: relative
+  margin-top: 70px
+
+.popular-goods-head
+  display: flex
+  justify-content: space-between
+  padding-bottom: 20px
+  border-bottom: 2px solid rgba(#000, 0.1)
+  &-title
+    font-size: 24px
+    font-weight: 400
+  &-list
+    display: flex
+    font-weight: 400
+    color: #888
+
+.popular-goods-list-item
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-left: 40px
+  cursor: pointer
+
+.active-goods
+  font-weight: 500
+  color: #444
+  &::after
+    content: " "
+    position: absolute
+    height: 2px
+    width: 50%
+    bottom: -22px
+    left: 50%
+    transform: translateX(-50%)
+    background-color: $link_color
+
+.popular-goods-slider
+  position: absolute
+  left: 0
+  width: 100%
+  visibility: hidden!important
+  opacity: 0!important
+  margin-top: 30px
+  -webkit-transition: opacity 1s ease
+  -moz-transition: opacity 1s ease
+  -ms-transition: opacity 1s ease
+  -o-transition: opacity 1s ease
+  transition: opacity 1s ease
+.active-slider
+  visibility: visible!important
+  opacity: 1!important
+
+.owl-stage
+  transition: 1s!important
+
+
+.popular-goods-slides
+  display: block
+  text-align: center
+  a
+    display: block
+    text-decoration: none
+    color: #444
+    font-weight: 400
+.popular-goods-img
+  height: 160px
+  background-color: #999
+
+.popular-goods-price
+  margin-top: 10px
+  font-size: 15px
+  color: $link_color
+  font-weight: 400
+
+.popular-goods-descr
+  margin-top: 10px
+  font-size: 13px
+
+.old_price
+  font-size: 14px
+  text-decoration: line-through
+  color: #999
+
+.popular-goods-slider .owl-dots
+  margin-top: 40px!important
+  margin-left: 50px
+
+.popular-goods-slider .owl-dots .active span
+  transition: width 0.15s ease
+  width: 30px!important
+  background: $link_color!important

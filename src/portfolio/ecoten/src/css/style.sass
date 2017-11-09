@@ -1,0 +1,154 @@
+@import "fonts/fonts.css"
+
+
+.main_slider_sp
+  position: relative
+
+.main-slider-item
+  outline: none
+
+.slide-wrapper
+  width: 100%
+  display: flex
+
+.sp-slide
+  display: flex
+
+.slide-video
+  width: 100%
+  .sp-layer
+    position: static
+    height: 100%
+    width: 100%
+    margin-bottom: 30px
+
+.slide-descr
+  width: 40%
+  background-color: rgba(#647c98, 0.1)
+  &--center
+    display: flex
+    justify-content: center
+    align-items: center
+    .sp-layer
+      position: static
+      width: 70%
+
+
+.slide-img
+  width: 60%
+  overflow: hidden
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.sp-thumbnail
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    
+.sp-selected-thumbnail
+  position: relative
+  .sp-thumbnail:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(#b4cfde, 0.3)
+
+.sp-next-arrow:after, .sp-next-arrow:before, .sp-previous-arrow:after, .sp-previous-arrow:before
+  width: 20%
+
+.sp-left-thumbnails.sp-has-pointer .sp-selected-thumbnail:after
+  display: none
+.sp-left-thumbnails.sp-has-pointer .sp-selected-thumbnail:before
+  display: none
+
+.sp-fade-arrows
+  opacity: 1 !important
+
+.sp-left-thumbnails.sp-has-pointer .sp-thumbnail
+  height: 100%
+
+.sp-vertical .sp-arrows
+  left: -180px
+  z-index: 100
+
+.main-slider--left
+  width: 30%
+  display: flex
+  flex-direction: column
+  .slick-track
+    transform: translate3d(0, 0, 0)!important
+  .slick-list
+    transform: translate3d(0, 0, 0)!important
+  .main-slider-item
+    display: flex
+    flex: 1
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+  .slick-list
+    height: auto!important
+.main-slider--right
+  width: 70%
+
+.slider-preview
+  position: absolute
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  display: none
+  opacity: 1
+  visibility: visible
+  transition: all 0.5s ease
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+@media screen and (max-width: 768px)
+  .sp-vertical .sp-arrows
+    left: -105px
+
+@media screen and (max-width: 540px)
+  .slider-preview
+    display: block
+  .sp-thumbnails
+    display: none
+  .sp-slides
+    display: flex
+    flex-direction: column
+  .sp-slide
+    max-height: 125px
+    overflow: hidden
+    position: relative
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    transition: all 0.5s ease
+    .sp-layer
+      padding: 0
+      width: 100%
+      transition: all 0.5s ease
+    &:hover .slider-preview
+      opacity: 0
+      visibility: hidden
+    &:hover
+      max-height: 600px
+    .slide-wrapper
+      flex-direction: column
+    .slide-descr
+      width: 100%
+    .slide-img
+      width: 100%
+    .slide-video-container
+      max-height: 500px
+
+

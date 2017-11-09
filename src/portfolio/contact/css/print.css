@@ -1,0 +1,35 @@
+@media print {
+    .contact-letter {
+        padding-top: 30px!important;
+    }
+    .config-price-modal__wrap {
+        display: none!important;
+    }
+
+    .contact-wrapper {
+        padding: 0!important;
+    }
+
+    .forms-support {
+        display: none !important;
+    }
+
+    .to-print {
+        display: none !important;
+    }
+
+    .how-to-gallery {
+        display: none !important;
+    }
+
+    .page-footer {
+        display: none !important;
+    }
+
+    .page-header {
+        display: none!important;
+    }
+    .page-sub-header {
+        display: none!important;
+    }
+}

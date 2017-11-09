@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('../build/include/_head.html',{
+    "title": "FishMarket > catalog"
+})
+
+<body>
+
+@@include('../build/include/_page-header.html')
+@@include('../build/catalog/_catalog-subheader.html')
+@@include('../build/include/_breadcrumbs.html')
+<div class="wrapper">
+
+    <div class="page-main">
+
+        @@include('../build/catalog/_catalog_page_sidebar.html')
+
+
+
+        <div class="page-main-content">
+
+            @@include('../build/catalog/_catalog-popular-category.html')
+            @@include('../build/catalog/_catalog-advert.html')
+            @@include('../build/catalog/_catalog-chosen-category-content.html')
+
+        </div>
+
+    </div>
+
+</div>
+
+@@include('../build/include/_page-footer.html')
+
+@@include('../build/include/_copyright.html')
+
+<script src="js/jquery/jquery-3.2.1.min.js"></script>
+<script src="js/noUiSlider/nouislider.min.js"></script>
+<script src="js/owl.carousel/owl.carousel.min.js"></script>
+<script src="js/rating/rating.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

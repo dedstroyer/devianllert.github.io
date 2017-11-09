@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Site</title>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Дополнения -->
+    <!-- Пользователький css -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600&amp;subset=cyrillic" rel="stylesheet">
+    <link href="http://vm-studio.ru/bitrix/templates/2/components/bitrix/catalog.section.list/index/style.css?1475432182143"
+          type="text/css" rel="stylesheet"/>
+    <link href="http://vm-studio.ru/bitrix/templates/2/libs/magnific-popup/magnific-popup.css?14559591906951"
+          type="text/css" data-template-style="true" rel="stylesheet"/>
+    <link href="http://vm-studio.ru/bitrix/templates/2/components/bitrix/menu/activica/style.css?14757721374496"
+          type="text/css" data-template-style="true" rel="stylesheet"/>
+    <link href="http://vm-studio.ru/bitrix/templates/2/components/bitrix/menu/activica-bottom/style.css?14754321824414"
+          type="text/css" data-template-style="true" rel="stylesheet"/>
+    <link href="http://vm-studio.ru/bitrix/templates/2/styles.css?150574106735903" type="text/css"
+          data-template-style="true" rel="stylesheet"/>
+    <link href="http://vm-studio.ru/bitrix/templates/2/template_styles.css?1505741067123220" type="text/css"
+          data-template-style="true" rel="stylesheet"/>
+    <script type="text/javascript"
+            src="http://vm-studio.ru/bitrix/templates/2/libs/jquery/jquery.min.js?147543218295992"></script>
+    <script type="text/javascript"
+            src="http://vm-studio.ru/bitrix/templates/2/libs/magnific-popup/jquery.magnific-popup.min.js?145595919020216"></script>
+    <script type="text/javascript" src="http://vm-studio.ru/bitrix/templates/2/js/script.js?1491218990126719"></script>
+    <script type="text/javascript" src="http://vm-studio.ru/bitrix/templates/2/js/activica.js?15057358075949"></script>
+    <script type="text/javascript" src="http://vm-studio.ru/bitrix/templates/2/js/common.js?14926998531240"></script>
+    <script type="text/javascript"
+            src="http://vm-studio.ru/bitrix/templates/2/components/bitrix/menu/activica/script.js?1475432182470"></script>
+    <script type="text/javascript"
+            src="http://vm-studio.ru/bitrix/templates/2/components/bitrix/menu/activica-bottom/script.js?1475432182470"></script>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/print.css">
+
+</head>
+<body>
+
+<div class="config-price-modal__wrap">
+
+    <div class="config-price-modal__succes">
+        <div class="close-modal"></div>
+        <div class="config-price-modal__succes-price-control">
+
+            <div class="price-control-head">
+                <p class="price-control-title">Расчет стоимости лестницы</p>
+
+                <p class="price-control">Среднее время расчёта — <span
+                        class="price-control-time">1 час</span>. Если у вас возникли какие-то вопросы,
+                    вы можете проконсультироваться по телефону
+                    <a href="tel:+79643806364">+7 (964) 380 63 64</a> или написать развёрнутое письмо на
+                    <a href="mailto:hello@vm-studio.ru">hello@vm-studio.ru</a>.
+                </p>
+            </div>
+            <form class="form-price-control-select">
+
+                <div class="price-control-select-property">
+
+                    <div class="select-material">
+                        <p class="select-title">Материал лестницы:</p>
+                        <select name="material" class="select-option">
+                            <option value="">Сосна</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="select-side">
+                        <p class="select-title">Поворот лестницы:</p>
+                        <select name="side" class="select-option">
+                            <option value="">Левый</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="select-width">
+                        <p class="select-title">Длина проёма:</p>
+                        <select name="width" class="select-option">
+                            <option value="">200</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="form-select-user">
+
+                    <div class="form-select-user-wrap">
+
+                        <div class="form-select-user__inputs">
+                            <div class="input-user-name">
+                                <p class="input-title">Ваще имя:</p>
+                                <input type="text" placeholder="Ваше имя" required class="">
+                                <span>Вы не указали имя</span>
+                            </div>
+                            <div class="input-user-tel">
+                                <p class="input-title">Номер телефона:</p>
+                                <input type="tel" placeholder="Ваш телефон" required class="">
+                                <span>Вы не указали номер</span>
+                            </div>
+                            <div class="input-user-email">
+                                <p class="input-title">Email:</p>
+                                <input type="email" required pattern="*@*" placeholder="yourmail@email.com" class="">
+                                <span>Вы не указали e-mail</span>
+                            </div>
+                        </div>
+
+                        <button class="form-price-control-btn" type="submit">Отправить заявку на расчет</button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="contact-wrapper">
+
+    <header class="page-header">
+        <div class="container">
+            <div class="page-header__inner">
+                <div class="page-header__logo">
+                    <img class="img-responsive" src="http://vm-studio.ru//bitrix/templates/2/img/logo.svg" alt="">
+                </div>
+                <div class="page-header__btn">
+                    <a class="page-header__phone" href="tel:+78129252993">+7 (812) <b>925-29-93</b></a>
+                    <button class="config-price" type="button" onClick="yaCounter38493170.reachGoal('kalkulator');"> Расчитать стоимость
+                    </button>
+                </div>
+                <input id="main-menu-state" type="checkbox"/>
+                <label class="main-menu-btn" for="main-menu-state">
+                    <span class="main-menu-btn-icon"></span> Переключить видимость главного меню
+                </label>
+
+                <nav class="page-header__menu" id="main-menu">
+                    <ul class="sm sm-mint">
+                        <li>
+            <span class="current">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16.2" height="14.5" viewBox="0 0 16.2 14.5"><path
+                        d="M16 7.5L8.8.3a1 1 0 0 0-1.4 0L.2 7.5c-.4.4-.3.7.3.7H2v5.6c0 .4 0 .7.8.7h3.4V9H10v5.5h3.6c.6 0 .6-.3.6-.7V8.2h1.5c.5 0 .7-.3.3-.7z"/></svg>
+            </span>
+                        </li>
+
+
+                        <li>
+                            <a href="/catalog/">Каталог</a>
+                            <ul>
+
+
+                                <li><a href="/catalog/derevyannye-lestnitsy/">Деревянные лестницы</a></li>
+
+
+                                <li><a href="/catalog/kovanye-lestnitsy/">Кованые лестницы</a></li>
+
+
+                                <li><a href="/catalog/komplektuyushchie-dlya-lestnits/">Комплектующие для лестниц</a>
+                                </li>
+
+
+                                <li><a href="/catalog/derevyannye-vintovye-lestnitsy/">Деревянные винтовые лестницы</a>
+                                </li>
+
+
+                                <li><a href="/catalog/lestnitsy-na-vtoroy-etazh/">Лестницы на второй этаж</a></li>
+
+
+                                <li><a href="/catalog/lestnitsy-na-metallokarkase/">Лестницы на металлокаркасе</a></li>
+
+
+                                <li><a href="/catalog/povorotnye-lestnitsy/">Поворотные лестницы</a></li>
+
+
+                            </ul>
+                        </li>
+
+
+                        <li><a href="/works/">Наши работы</a></li>
+
+
+                        <li>
+                            <a href="/uslugi/">Услуги</a>
+                            <ul>
+
+
+                                <li><a href="/uslugi/otdelka/">Отделка</a></li>
+
+
+                                <li><a href="/uslugi/montazh/">Монтаж</a></li>
+
+
+                                <li><a href="/uslugi/zamer/">Замер</a></li>
+
+
+                            </ul>
+                        </li>
+
+
+                        <li><a href="/contacts/">Контакты</a></li>
+
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-sub-header">
+
+        <div class="wrapper sub-header">
+
+            <ul class="breadcrumbs-nav">
+                <li><a href="#">Главная</a></li>
+                <li>Контакты</li>
+            </ul>
+
+            <h1 class="typo-title">Свяжитесь с нами</h1>
+
+        </div>
+
+    </div>
+    <div class="page-contact">
+
+        <div class="wrapper">
+
+            <div class="contact-letter">
+                <div class="contact-wrap">
+                    <div class="contact-text" itemscope itemtype="http://schema.org/Organization">
+                        <span class="typo-title" itemprop="name">Студия лестниц Владислава Музылёва</span>
+                        <div class="contact-detail">
+                            <div class="contact-title">Email:</div>
+                            <div class="contact-descr"><a href="mailto:hello@vm-studio.ru"><span itemprop="email">hello@vm-studio.ru</span></a>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-title">Телефон:</div>
+                            <div class="contact-descr"><a href="tel:+78129252993"><span itemprop="telephone">+7 (812) 925-29-93</span></a>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-title">Режим работы:</div>
+                            <div class="contact-descr">с 8.00 до 23.00 (GMT+4:00)</div>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-title">Адрес:</div>
+                            <div class="contact-descr" itemprop="address" itemscope
+                                 itemtype="http://schema.org/PostalAddress"><span itemprop="postalCode">196240</span>,
+                                <span itemprop="addressLocality">г. Санкт-Петербург</span>,
+                                <span itemprop="streetAddress">ул. Предпортовая, д. 6</span>, заезд с улицы Кубинская
+                                или с ул. Предпортовая,
+                                до КАД 100 метров, въезд на территорию на автомобиле без проблем.
+                            </div>
+                        </div>
+                        <div class="contact-detail contact-detail--padding">
+                            <div class="contact-title">Реквизиты:</div>
+                            <div class="contact-descr">ООО "СТУДИЯ ЛЕСТНИЦ", ИНН: 7810469202, ОГРН: 1167847282349</div>
+                        </div>
+                        <button class="to-print">Версия для печати</button>
+                    </div>
+                    <div class="contact-map">
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A14f9fea14442ccd0ae53d8a9b360d1231aec96b8f3e17d966373f57aeaf689f9&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="how-to-get">
+            <div class="wrapper">
+                <h1 class="typo-title">Как добраться до студии:</h1>
+
+                <div class="how-to-steps">
+
+                    <ul class="steps">
+                        <li class="step step_1">Чтобы посетить студию, нужно ехать по ул. Предпортовая в сторону КАД до
+                            моста, перед ним повернуть в “карман”.
+                        </li>
+                        <li class="step step_2">Затем - ближайший поворот направо к большой проходной на два шлагбаума.
+                            На въезде охранник Вас запишет и выдаст пропуск.
+                        </li>
+                        <li class="step step_3">Далее нужно ехать по главной дороге (она находится немного левее и
+                            прямо) между 4-ым и 6-ым корпусами.
+                        </li>
+                    </ul>
+                    <ul class="steps">
+                        <li class="step step_4">Держитесь этой дороги до тех пор, пока не доедете до 11-ого корпуса,
+                            перед ним нужно будет свернуть налево.
+                        </li>
+                        <li class="step step_5">После поворота Вы переедете железнодорожное полотно и увидите перед
+                            собой забор. Здесь можно припарковать машину.
+                        </li>
+                        <li class="step step_6">Перед выездом с территории не забудьте проштамповать свой пропуск на
+                            проходной. Спасибо за визит!
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="how-to-gallery">
+                    <ul class="how-to-gallery__wrap">
+                        <li class="how-to-gallery__slide">
+                            <a rel="gallery" class="gallery-fancybox" href="img/gallery_1.JPG">
+                                <img src="img/gallery_1.JPG" alt="gallery">
+                            </a>
+                        </li>
+                        <li class="how-to-gallery__slide">
+                            <a rel="gallery" class="gallery-fancybox" href="img/gallery_3.JPG">
+                                <img src="img/gallery_3.JPG" alt="gallery">
+                            </a>
+                        </li>
+                        <li class="how-to-gallery__slide">
+                            <a rel="gallery" class="gallery-fancybox" href="img/gallery_6.JPG">
+                                <img src="img/gallery_6.JPG" alt="gallery">
+                            </a>
+                        </li>
+                        <li class="how-to-gallery__slide">
+                            <a rel="gallery" class="gallery-fancybox" href="img/gallery_8.JPG">
+                                <img src="img/gallery_8.JPG" alt="gallery">
+                            </a>
+                        </li>
+                        <li class="how-to-gallery__slide">
+                            <a rel="gallery" class="gallery-fancybox" href="img/gallery_9.JPG">
+                                <img src="img/gallery_9.JPG" alt="gallery">
+                            </a>
+                        </li>
+                        <li class="how-to-gallery__slide">
+                            <a rel="gallery" class="gallery-fancybox" href="img/gallery_11.JPG">
+                                <img src="img/gallery_11.JPG" alt="gallery">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="forms-support">
+            <div class="forms-support__wrap">
+                <p class="typo-title">Напишите нам:</p>
+                <form action="#">
+                    <div class="inputs-details">
+                        <div class="input-name"><label for="input-name__enter">Ваше имя:</label><input
+                                placeholder="Ваше имя" id="input-name__enter" required type="text"><span>Вы не указали имя</span>
+                        </div>
+                        <div class="input-email"><label for="input-email__enter">E-mail:</label><input
+                                placeholder="Ваш e-mail" id="input-email__enter" required pattern="*@+"
+                                type="email"><span>Вы не указали e-mail</span></div>
+                        <div class="input-tel"><label for="input-tel__enter">Номер телефона:</label><input
+                                placeholder="+7 (812) 800 80 80" id="input-tel__enter" required type="tel"><span>Вы не указали телефон</span>
+                        </div>
+                    </div>
+                    <div class="input-text"><textarea placeholder="Ваше сообщение" name="message" cols="30" rows="5"
+                                                      required></textarea><span>Вы ничего не написали</span></div>
+
+                    <div class="send-form">
+
+                        <div class="agree-rules">
+                            <input id="agree" type="checkbox" required>
+                            <label for="agree">Я согласен с <a href="#">условиями</a> обработки персональных данных</label>
+                        </div>
+                        <button class="send">Отправить</button>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="page-footer__row">
+
+                    <ul class="page-footer__menu">
+
+
+                        <li><a href="/catalog/"> Каталог</a></li>
+
+
+                        <li><a href="/articles/"> Статьи</a></li>
+
+
+                        <li><a href="/works/"> Наши работы</a></li>
+
+
+                        <li><a href="/contacts/"> Контакты</a></li>
+
+
+                    </ul>
+                    <div class="social">
+                        <span class="social__text">Следите за нами в соц. сетях:</span>
+                        <a href="https://vk.com/vm.studio" target="_blank" class="social__item  social__item--vk">VK</a>
+                        <a href="https://www.instagram.com/vm.studio.ru/" target="_blank"
+                           class="social__item  social__item--instagram">Instagram</a>
+                        <a href="https://www.facebook.com/vm.studio.ru/" target="_blank"
+                           class="social__item  social__item--facebook">Facebook</a>
+                    </div>
+                </div>  <!-- /.page-footer__row -->
+                <div class="page-footer__row">
+                    <div class="page-footer__logo">
+                        <img class="img-responsive" src="http://vm-studio.ru//bitrix/templates/2/img/logo--footer.svg"
+                             alt="">
+                    </div>
+                    <div class="developer">
+                        <span>Разработка сайта - </span>
+                        <a href="http://activica.ru" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="42" viewBox="0 0 38 42">
+                                <path d="M36 9L21 .4c-1-.7-3-.7-4 0L2 9c-1 .6-2 2.2-2 3.5v17c0 1.2 1 3 2 3.5l15 8.5c1 .6 3 .6 4 0L36 33c1-.6 2-2.3 2-3.6v-17c0-1.2-1-2.8-2-3.5zM29.2 29H24c-.6 0-1.5-.5-2-1.2l-.5-1v-.2l-2-3.2c-.2-.4-.6-.4-.8 0L17 26.8h-.2v.2l-.6 1c-.4.7-1.3 1.2-2 1.2H9c-.5 0-.7-.3-.4-.7l10-17.4c.4-.3.7-.3 1 0l10 17.5c.3.4 0 .7-.3.7z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="97.6" height="23.6" viewBox="0 0 97.6 23.6">
+                                <path d="M12.5 11.4c0-4.3-2.2-6-6-6S.6 7.3.7 11.2h2.8c0-2.3 1-3 2.7-3C9 8 9.7 9.5 9.7 11.5V13a33.4 33.4 0 0 0-4.3.4C1.8 14-.3 16 0 19.2c.2 2 1.2 4.2 5.3 4.2A5 5 0 0 0 9.7 21l.3 2.3h2.5v-12zm-2.8 4c0 3-1 5.3-4 5.3-1.4 0-2.7-.5-2.8-1.8-.3-2 .7-2.8 2.7-3.2a19.5 19.5 0 0 1 4-.3zm16.5 2c0 3-1.3 3.4-3.7 3.4s-3.7-.8-3.7-4v-5c0-3 1.3-3.7 3.7-3.7 2.3 0 3.6.7 3.7 3.4H29c-.3-4.5-2.6-6-6.5-6-4 0-6.6 1.8-6.6 6.5v5c0 4.6 2 6.6 6.5 6.6s6.3-1.7 6.4-6.3H26zm6 1c0 3.3 1.2 5.4 6 5v-2.8c-2.4.3-3.3-.5-3.3-2.3V8.5h3V5.8h-3V2.3l-2.8.4v15.7zm12 5V5.7h-3v17.5h3zM40.8 1.6c0 2.3 3.4 2 3.4 0 0-2.3-3.5-2.2-3.5 0zm8.8 4h-3L52 23.3h3l5-17.6h-3l-1.7 5.8a64.5 64.5 0 0 0-2 7.8c-.3-2.2-1-5-1.7-7.7zm15.8 17.6V5.8h-2.8v17.5h2.8zm-3-21.6c0 2.3 3.4 2 3.4 0 0-2.3-3.5-2.2-3.5 0zm16.8 15.6c0 3-1.3 3.5-3.7 3.5s-3.7-.7-3.7-4v-5c0-3 1.3-3.7 3.7-3.7 2.3 0 3.6.7 3.7 3.4H82c0-4.5-2.4-6-6.3-6-4 0-6.6 1.8-6.6 6.5v5c0 4.6 2.2 6.6 6.7 6.6S82 22 82 17.3h-2.6zm18.2-6c0-4-2.3-5.8-6-5.8-3.8 0-6 1.7-5.7 5.6h2.6c0-2.3 1.2-3 2.8-3 2.6 0 3.3 1.4 3.3 3.4V13a33.4 33.4 0 0 0-4.2.4C87 14 84.8 16 85 19.2c.3 2 1.3 4.2 5.3 4.2a5 5 0 0 0 4.5-2.5l.2 2.3h2.6v-12zm-2.8 4.2c0 3-1 5.2-4.2 5.2-1.3 0-2.5-.5-2.6-1.8-.2-2 .8-2.8 2.7-3.2a19.5 19.5 0 0 1 4-.3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="page-footer__copyright">© 2017 ООО “Студия лестниц Владислава Музылева”. Все права
+                        защищены.
+                    </div>
+                </div>  <!-- /.page-footer__row -->
+            </div>
+        </footer>
+
+    </div>
+</div>
+
+<!-- JS-скрипты -->
+
+<!-- Пользовательские скрипты -->
+<script src="js/main.js"></script>
+<!-- Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+<!-- Google Analytics counter --><!-- /Google Analytics counter -->
+</body>
+</html>

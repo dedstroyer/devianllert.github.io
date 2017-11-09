@@ -1,0 +1,54 @@
+// BREADCRUMBS
+
+.catalog-bread
+  +wrapper()
+  margin-top: 25px
+  margin-bottom: 45px
+
+.nav-breadcrumbs
+  display: flex
+  align-items: center
+
+.catalog-bread-menu
+  background-color: rgba(#000, 0.05)
+  -webkit-border-radius: 5px
+  -moz-border-radius: 5px
+  border-radius: 5px
+  padding: 10px 25px 10px 10px
+  span::after
+    content: "\f107"
+    font-family: "fontello"
+    display: block
+    top: 12px
+    right: 10px
+    position: absolute
+
+
+.catalog-bread-list
+  display: none
+  position: absolute
+  top: 100%
+  left: 0
+
+.breadcrumbs-list
+  margin-right: 40px
+  font-size: 15px
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  &:hover .catalog-bread-list
+    display: flex
+    flex-direction: column
+  &-link
+    text-decoration: none
+    color: $text_color
+.bread-arrow
+  position: relative
+  background: url(../../img/bread_arrow.svg) no-repeat
+  right: 25px
+  width: 4px
+  height: 10px
+  &:last-child
+    display: none
+// ======================================================================================
