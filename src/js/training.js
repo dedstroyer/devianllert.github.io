@@ -1,6 +1,22 @@
 'use strict';
 
 window.onload = function () {
+    var header_title = document.querySelector(".header-title");
+
+    setTimeout(function () {
+        header_title.classList.add('animated', 'fadeInUp');
+        document.querySelector('.back').classList.add('animated', 'fadeInUp');
+        document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
+        document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
+    }, 2000);
+
+    setTimeout(function () {
+        document.body.style.overflow = 'visible';
+        document.querySelector('#preloader').style.opacity = '0';
+    }, 2000);
+    setTimeout(function () {
+        document.querySelector('#preloader').style.display = 'none';
+    }, 2500);
 
     // Функция суммы
     var sumButton = document.querySelector(".sum-btn");
@@ -64,6 +80,10 @@ window.onload = function () {
             alert('Введите числа в оба столбца');
         } else {
             answer.innerHTML = first / second;
+        }
+
+        if(second == 0) {
+            alert('На ноль делить нелья!')
         }
 
     };
