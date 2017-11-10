@@ -17,21 +17,29 @@ window.onload = function() {
 // FOR TRAINING PAGE
 
 window.onload = function () {
-    
-    // setTimeout(function () {
+
+    if (!!document.querySelector('#preloader')) {
+        setTimeout(function () {
+            document.body.style.overflow = 'visible';
+            document.querySelector('#preloader').style.opacity = '0';
+            document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
+            document.querySelector('.back').classList.add('animated', 'fadeInUp');
+            document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
+            document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
+        }, 2000);
+        setTimeout(function () {
+            document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
+            document.querySelector('.back').classList.add('animated', 'fadeInUp');
+            document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
+            document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
+            document.querySelector('#preloader').style.display = 'none';
+        }, 2500);
+    } else {
         document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
         document.querySelector('.back').classList.add('animated', 'fadeInUp');
         document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
         document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
-    // }, 2000);
-
-    setTimeout(function () {
-        document.body.style.overflow = 'visible';
-        document.querySelector('#preloader').style.opacity = '0';
-    }, 2000);
-    setTimeout(function () {
-        document.querySelector('#preloader').style.display = 'none';
-    }, 2500);
+    }
 
     // Функция суммы
     var sumButton = document.querySelector(".sum-btn");
