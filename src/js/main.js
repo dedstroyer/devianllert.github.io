@@ -17,14 +17,13 @@ window.onload = function() {
 // FOR TRAINING PAGE
 
 window.onload = function () {
-    var header_title = document.querySelector(".header-title");
-
-    setTimeout(function () {
-        header_title.classList.add('animated', 'fadeInUp');
+    
+    // setTimeout(function () {
+        document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
         document.querySelector('.back').classList.add('animated', 'fadeInUp');
         document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
         document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
-    }, 2000);
+    // }, 2000);
 
     setTimeout(function () {
         document.body.style.overflow = 'visible';
@@ -94,9 +93,6 @@ window.onload = function () {
 
         if (isNaN(first) || isNaN(second)) {
             alert('Введите числа в оба столбца');
-        } else if(second == 0) {
-            alert('На ноль делить нелья!');
-            return false;
         } else {
             answer.innerHTML = first / second;
         }
