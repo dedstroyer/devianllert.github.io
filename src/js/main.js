@@ -33,6 +33,7 @@ window.onload = function () {
             document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
             document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
             document.querySelector('#preloader').style.display = 'none';
+            console.log('Прелоадер сработал')
         }, 2500);
     } else {
         document.querySelector(".header-title").classList.add('animated', 'fadeInUp');

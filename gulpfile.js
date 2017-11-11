@@ -50,7 +50,6 @@ gulp.task('sass', function () { // Создаем таск Sass
     return gulp.src('src/css/**/*.sass') // Берем источник
         .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true})) // Создаем префиксы
-        .pipe(gulp.dest('src/css')) // Выгружаем результата в папку src/css
         .pipe(qcmq())
         .pipe(gulp.dest('src/css'))
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
@@ -60,7 +59,6 @@ gulp.task('scss', function () { // Создаем таск Sass
     return gulp.src('src/css/**/*.scss') // Берем источник
         .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true})) // Создаем префиксы
-        .pipe(gulp.dest('src/css')) // Выгружаем результата в папку src/css
         .pipe(qcmq())
         .pipe(gulp.dest('src/css'))
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
@@ -69,7 +67,6 @@ gulp.task('scss', function () { // Создаем таск Sass
 gulp.task('qcmq', function () {
     return gulp.src('src/css/**/*.css')
         .pipe(qcmq())
-        .pipe(gulp.dest('src/css'));
 });
 
 gulp.task('browser-sync', function () { // Создаем таск browser-sync
@@ -83,13 +80,7 @@ gulp.task('browser-sync', function () { // Создаем таск browser-sync
 
 gulp.task('scripts', function () {
     return gulp.src([ // Берем все необходимые библиотеки
-        "src/js/libs/jquery-3.2.1.min.js",
-        "src/js/libs/owl.carousel.min.js",
-        "src/js/libs/chosen.jquery.min.js",
-        "src/js/libs/select2.min.js",
-        "src/js/libs/jquery.form.min.js",
-        "src/js/libs/jquery.maskedinput.min.js",
-        "src/js/libs/jquery-ui.min.js",
+
     ])
         .pipe(concat('vendors.min.js')) // Собираем их в кучу в новом файле vendors.min.js
         .pipe(uglify()) // Сжимаем JS файл
@@ -107,7 +98,7 @@ gulp.task('watch', ['browser-sync', 'css-libs', 'includer', 'scripts'], function
     gulp.watch('src/css/**/*.sass', ['sass']); // Наблюдение за sass файлами в папке sass
     gulp.watch('src/css/**/*.scss', ['scss']); // Наблюдение за sass файлами в папке sass
     gulp.watch('src/**/*.html', ['includer']); // Наблюдение за HTML файлами в корне проекта
-    gulp.watch('src/js/**/*.js', browserSync.reload);   // Наблюдение за JS файлами в папке js
+    gulp.watch('src/js/**/*.js', browserSync.reload({stream: true}));   // Наблюдение за JS файлами в папке js
 });
 
 gulp.task('clean', function () {
