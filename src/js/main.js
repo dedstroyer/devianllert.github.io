@@ -28,12 +28,8 @@ window.onload = function () {
             document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
         }, 2000);
         setTimeout(function () {
-            document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
-            document.querySelector('.back').classList.add('animated', 'fadeInUp');
-            document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
-            document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
             document.querySelector('#preloader').style.display = 'none';
-            console.log('Прелоадер сработал')
+            console.log('Прелоадер сработал');
         }, 2500);
     } else {
         document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
@@ -41,23 +37,6 @@ window.onload = function () {
         document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
         document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
     }
-
-    // Функция суммы
-    var sumButton = document.querySelector(".sum-btn");
-
-    sumButton.onclick = function () {
-
-        var first = parseInt(document.querySelector(".sum-one").value);
-        var second = parseInt(document.querySelector(".sum-two").value);
-        var answer = document.querySelector(".sum-answer");
-
-        if (isNaN(first) || isNaN(second)) {
-            alert('Введите числа в оба столбца');
-        } else {
-            answer.innerHTML = first + second;
-        }
-
-    };
 
     // Вывод подсказок
     var hint = document.querySelectorAll(".hint");
@@ -73,14 +52,29 @@ window.onload = function () {
         };
     }
 
+    // Функция суммы
+
+    document.querySelector(".sum .btn").onclick = function () {
+
+        var first = +(document.querySelector(".sum .first").value);
+        var second = +(document.querySelector(".sum .second").value);
+        var answer = document.querySelector(".sum .answer");
+
+        if (isNaN(first) || isNaN(second)) {
+            alert('Введите числа в оба столбца');
+        } else {
+            answer.innerHTML = first + second;
+        }
+
+    };
+
     // Фукция умножеия
-    var multi = document.querySelector(".multi-btn");
 
-    multi.onclick = function () {
+    document.querySelector(".multi .btn").onclick = function () {
 
-        var first = parseInt(document.querySelector(".multi-one").value);
-        var second = parseInt(document.querySelector(".multi-two").value);
-        var answer = document.querySelector(".multi-answer");
+        var first = +(document.querySelector(".multi .first").value);
+        var second = +(document.querySelector(".multi .second").value);
+        var answer = document.querySelector(".multi .answer");
 
         if (isNaN(first) || isNaN(second)) {
             alert('Введите числа в оба столбца');
@@ -92,29 +86,28 @@ window.onload = function () {
     };
 
     // Функция деления
-    var divis = document.querySelector(".divis-btn");
 
-    divis.onclick = function () {
+    document.querySelector(".divis .btn").onclick = function () {
 
-        var first = parseInt(document.querySelector(".divis-one").value);
-        var second = parseInt(document.querySelector(".divis-two").value);
-        var answer = document.querySelector(".divis-answer");
+        var first = +(document.querySelector(".divis .first").value);
+        var second = +(document.querySelector(".divis .second").value);
+        var answer = document.querySelector(".divis .answer");
 
         if (isNaN(first) || isNaN(second)) {
             alert('Введите числа в оба столбца');
         } else {
-            answer.innerHTML = first / second;
+            answer.innerHTML = (first / second);
         }
 
     };
 
-    var pow = document.querySelector(".pow-btn");
+    // Функция возведения в степень
 
-    pow.onclick = function () {
+    document.querySelector(".pow .btn").onclick = function () {
 
-        var first = parseInt(document.querySelector(".pow-one").value);
-        var second = parseInt(document.querySelector(".pow-two").value);
-        var answer = document.querySelector(".pow-answer");
+        var first = +(document.querySelector(".pow .first").value);
+        var second = +(document.querySelector(".pow .second").value);
+        var answer = document.querySelector(".pow .answer");
         var result = first;
 
         if (isNaN(first) || isNaN(second)) {
@@ -133,6 +126,6 @@ window.onload = function () {
         }
 
 
-    }
+    };
 
 };

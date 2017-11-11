@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url(fonts/fonts.css);
 
 body,
 div,
@@ -115,7 +115,7 @@ html {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   background-color: #fff;
   line-height: 1.5;
@@ -228,11 +228,6 @@ body {
 .header-title {
   text-align: center;
   font-size: 1.5rem;
-}
-
-body {
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
 }
 
 .about-js {
@@ -438,6 +433,18 @@ body {
 
 #preloader {
   position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -453,11 +460,8 @@ body {
 #loader {
   display: block;
   position: relative;
-  left: 50%;
-  top: 50%;
   width: 150px;
   height: 150px;
-  margin: -75px 0 0 -75px;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 3px solid transparent;
@@ -792,11 +796,21 @@ body {
     padding-left: 15px;
     padding-right: 15px;
   }
+
+  .train {
+    width: -webkit-calc(50% - 30px);
+    width: calc(50% - 30px);
+  }
 }
 
 @media screen and (max-width: 560px) {
   .wrapper {
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .train {
+    width: -webkit-calc(100% - 30px);
+    width: calc(100% - 30px);
   }
 }
