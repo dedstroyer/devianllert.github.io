@@ -5,7 +5,7 @@
 
 window.onload = function() {
 
-    var header_title = document.querySelector(".header-title");
+    let header_title = document.querySelector(".header-title");
 
     header_title.classList.add('animated', 'fadeInUp');
     document.querySelector('.back').classList.add('animated', 'fadeInUp');
@@ -41,13 +41,13 @@ window.onload = function () {
     }
 
     // Вывод подсказок
-    var hint = document.querySelectorAll(".hint");
+    let hint = document.querySelectorAll(".hint");
 
 
-    for (var h = 0; h < hint.length; h++) {
+    for (let h = 0; h < hint.length; h++) {
 
         hint[h].onclick = function () {
-            var step = this.closest(".block-title").nextElementSibling.nextElementSibling;
+            let step = this.closest(".block-title").nextElementSibling.nextElementSibling;
 
             step.classList.toggle("active-hint");
 
@@ -58,9 +58,9 @@ window.onload = function () {
 
     document.querySelector(".sum .btn").onclick = function () {
 
-        var a = +(document.querySelector(".sum .first").value);
-        var b = +(document.querySelector(".sum .second").value);
-        var answer = document.querySelector(".sum .answer");
+        let a = +(document.querySelector(".sum .first").value);
+        let b = +(document.querySelector(".sum .second").value);
+        let answer = document.querySelector(".sum .answer");
 
         if (isNaN(a) || isNaN(b)) {
             alert('Введите числа в оба столбца');
@@ -74,9 +74,9 @@ window.onload = function () {
 
     document.querySelector(".multi .btn").onclick = function () {
 
-        var a = +(document.querySelector(".multi .first").value);
-        var b = +(document.querySelector(".multi .second").value);
-        var answer = document.querySelector(".multi .answer");
+        let a = +(document.querySelector(".multi .first").value);
+        let b = +(document.querySelector(".multi .second").value);
+        let answer = document.querySelector(".multi .answer");
 
         if (isNaN(a) || isNaN(b)) {
             alert('Введите числа в оба столбца');
@@ -91,9 +91,9 @@ window.onload = function () {
 
     document.querySelector(".divis .btn").onclick = function () {
 
-        var a = +(document.querySelector(".divis .first").value);
-        var b = +(document.querySelector(".divis .second").value);
-        var answer = document.querySelector(".divis .answer");
+        let a = +(document.querySelector(".divis .first").value);
+        let b = +(document.querySelector(".divis .second").value);
+        let answer = document.querySelector(".divis .answer");
 
         if (isNaN(a) || isNaN(b)) {
             alert('Введите числа в оба столбца');
@@ -107,16 +107,16 @@ window.onload = function () {
 
     document.querySelector(".pow .btn").onclick = function () {
 
-        var a = +(document.querySelector(".pow .first").value);
-        var b = +(document.querySelector(".pow .second").value);
-        var answer = document.querySelector(".pow .answer");
-        var result = a;
+        let a = +(document.querySelector(".pow .first").value);
+        let b = +(document.querySelector(".pow .second").value);
+        let answer = document.querySelector(".pow .answer");
+        let result = a;
 
         if (isNaN(a) || isNaN(b)) {
             alert('Введите числа в оба столбца');
         } else {
             if (b > 0) {
-                for (var h = b; h > 1; h--) {
+                for (let h = b; h > 1; h--) {
                     result *= a;
                 }
             } else {
@@ -133,7 +133,7 @@ window.onload = function () {
     // Дескриминант
 
     document.querySelector(".discriminant .btn").onclick = function () {
-        var a = +(document.querySelector(".discriminant .first").value),
+        let a = +(document.querySelector(".discriminant .first").value),
             b = +(document.querySelector(".discriminant .second").value),
             c = +(document.querySelector(".discriminant .third").value),
             answer = document.querySelector(".discriminant .answer");
@@ -144,13 +144,13 @@ window.onload = function () {
     //Числа Фибоначчи
 
     document.querySelector(".fibonacci .btn").onclick = function () {
-        var a = +(document.querySelector(".fibonacci .first").value),
+        let a = +(document.querySelector(".fibonacci .first").value),
             answer = document.querySelector(".fibonacci .answer");
 
-        var k = 1, j = 1;
+        let k = 1, j = 1;
 
-        for (var i = 3; i <= a; i++){
-            var result = k + j;
+        for (let i = 3; i <= a; i++){
+            let result = k + j;
             k = j;
             j = result;
 
@@ -160,12 +160,12 @@ window.onload = function () {
     };
 
     document.querySelector(".factorial .btn").onclick = function () {
-        var a = +(document.querySelector(".factorial .first").value),
+        let a = +(document.querySelector(".factorial .first").value),
             answer = document.querySelector(".factorial .answer");
 
-        var result = a;
+        let result = a;
 
-        for (var i = 1; i < a; i++){
+        for (let i = 1; i < a; i++){
 
             result *= (a - i);
         }
@@ -174,12 +174,12 @@ window.onload = function () {
     };
 
     document.querySelector(".sum-to .btn").onclick = function () {
-        var a = +(document.querySelector(".sum-to .first").value),
+        let a = +(document.querySelector(".sum-to .first").value),
             answer = document.querySelector(".sum-to .answer");
 
-        var result = a;
+        let result = a;
 
-        for (var i = 1; i < a; i++){
+        for (let i = 1; i < a; i++){
 
             result += (a - i);
         }
