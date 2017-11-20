@@ -391,20 +391,18 @@ body {
 }
 
 .first,
-.second {
+.second,
+.third {
   width: 60px;
   padding: 5px;
   border: 2px solid rgba(0, 0, 0, 0.15);
   outline: none;
 }
 
-.first {
-  margin-right: 5px;
-}
-
-.second {
-  margin-left: 5px;
-  margin-right: 5px;
+.first,
+.second,
+.third {
+  margin: 0 5px;
 }
 
 .answer {
@@ -429,6 +427,7 @@ body {
 
 body {
   overflow: hidden;
+  margin-right: 17px;
 }
 
 #preloader {
@@ -468,6 +467,7 @@ body {
   border-top-color: #9370DB;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+  margin-right: 17px;
 }
 
 #loader:before {
