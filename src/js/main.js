@@ -1,21 +1,27 @@
 'use strict';
 
+/*
+let позволяет устанавливать видимость только в том блоке кода, в котором
+она создана
+*/
 
 // FOR MAIN PAGE
 
 window.onload = function() {
 
+    // При загрузке страницы добавляем классы анимации
+
     document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
     document.querySelector('.back').classList.add('animated', 'fadeInUp');
     document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
-    document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
 
 };
 
 // FOR TRAINING PAGE
 
 window.onload = function () {
-
+    // Если на странице есть блок прелоадера, то выполняем действия ниже и
+    // добавляем классы анимации только после слайдера
     if (!!document.querySelector('#preloader')) {
         setTimeout(function () {
             document.body.style.overflow = 'visible';
@@ -25,18 +31,16 @@ window.onload = function () {
             document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
             document.querySelector('.back').classList.add('animated', 'fadeInUp');
             document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
-            document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
         }, 2000);
         setTimeout(function () {
             document.querySelector('#preloader').style.display = 'none';
             console.log('Прелоадер сработал');
         }, 2500);
-    } else {
+    } else { // Если блока нет, то сразу же добавляем классы анимации
         document.body.style.overflow = 'visible';
         document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
         document.querySelector('.back').classList.add('animated', 'fadeInUp');
         document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
-        document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
     }
 
     // Вывод подсказок
@@ -46,7 +50,8 @@ window.onload = function () {
     for (let h = 0; h < hint.length; h++) {
 
         hint[h].onclick = function () {
-            let step = this.closest(".block-title").nextElementSibling.nextElementSibling;
+
+            let step = this.closest(".train").querySelector(".block-hint");
 
             step.classList.toggle("active-hint");
 
@@ -62,11 +67,11 @@ window.onload = function () {
         let answer = document.querySelector(".sum .answer");
         let result;
 
-        if (isNaN(a) || isNaN(b)) {
+        if (isNaN(a) || isNaN(b)) { // Проверка введения чисел
             alert('Введите числа в оба столбца');
         } else {
             result = a + b;
-            answer.innerHTML = +result.toFixed(2);
+            answer.innerHTML = +result.toFixed(2); // Округляем числа до 2 цифр после запятой
 
         }
 
@@ -107,7 +112,7 @@ window.onload = function () {
         } else {
             result = a / b;
 
-            answer.innerHTML = +result.toFixed(2);
+            answer.innerHTML = +result.toFixed(5);
 
         }
 
@@ -122,16 +127,16 @@ window.onload = function () {
         let answer = document.querySelector(".pow .answer");
         let result = a;
 
-        if (isNaN(a) || isNaN(b)) {
+        if (isNaN(a) || isNaN(b)) { // Проверка
             alert('Введите числа в оба столбца');
         } else {
-            if (b > 0) {
+            if (b > 0) { // Если степень положительная, то
                 for (let h = b; h > 1; h--) {
                     result *= a;
                 }
-            } else {
+            } else { // Если отрицательная то считаем уже по-другому
               for (let h = b; h < 1; h++) {
-                  result *= ((1/a));
+                  result *= ((1/a)); // Счет может быть не точным
               }
 
             }
