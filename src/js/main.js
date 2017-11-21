@@ -5,9 +5,7 @@
 
 window.onload = function() {
 
-    let header_title = document.querySelector(".header-title");
-
-    header_title.classList.add('animated', 'fadeInUp');
+    document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
     document.querySelector('.back').classList.add('animated', 'fadeInUp');
     document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
     document.querySelector('.mnu-list').classList.add('animated', 'fadeInRight');
@@ -34,6 +32,7 @@ window.onload = function () {
             console.log('Прелоадер сработал');
         }, 2500);
     } else {
+        document.body.style.overflow = 'visible';
         document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
         document.querySelector('.back').classList.add('animated', 'fadeInUp');
         document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
@@ -61,11 +60,14 @@ window.onload = function () {
         let a = +(document.querySelector(".sum .first").value);
         let b = +(document.querySelector(".sum .second").value);
         let answer = document.querySelector(".sum .answer");
+        let result;
 
         if (isNaN(a) || isNaN(b)) {
             alert('Введите числа в оба столбца');
         } else {
-            answer.innerHTML = a + b;
+            result = a + b;
+            answer.innerHTML = +result.toFixed(2);
+
         }
 
     };
@@ -77,11 +79,15 @@ window.onload = function () {
         let a = +(document.querySelector(".multi .first").value);
         let b = +(document.querySelector(".multi .second").value);
         let answer = document.querySelector(".multi .answer");
+        let result;
 
         if (isNaN(a) || isNaN(b)) {
             alert('Введите числа в оба столбца');
         } else {
-            answer.innerHTML = a * b;
+
+          result = a * b;
+          answer.innerHTML = +result.toFixed(2);
+
         }
 
 
@@ -94,11 +100,15 @@ window.onload = function () {
         let a = +(document.querySelector(".divis .first").value);
         let b = +(document.querySelector(".divis .second").value);
         let answer = document.querySelector(".divis .answer");
+        let result;
 
         if (isNaN(a) || isNaN(b)) {
             alert('Введите числа в оба столбца');
         } else {
-            answer.innerHTML = (a / b);
+            result = a / b;
+
+            answer.innerHTML = +result.toFixed(2);
+
         }
 
     };
@@ -120,11 +130,12 @@ window.onload = function () {
                     result *= a;
                 }
             } else {
-
-                result = -((1/a) / b);
+              for (let h = b; h < 1; h++) {
+                  result *= ((1/a));
+              }
 
             }
-            answer.innerHTML = result;
+            answer.innerHTML = +result.toFixed(5);
         }
 
 
@@ -141,7 +152,7 @@ window.onload = function () {
         answer.innerHTML = (b*b) - 4*a*c;
     };
 
-    //Числа Фибоначчи
+    // Числа Фибоначчи
 
     document.querySelector(".fibonacci .btn").onclick = function () {
         let a = +(document.querySelector(".fibonacci .first").value),
@@ -159,6 +170,8 @@ window.onload = function () {
         answer.innerHTML = j;
     };
 
+    // Факториал числа
+
     document.querySelector(".factorial .btn").onclick = function () {
         let a = +(document.querySelector(".factorial .first").value),
             answer = document.querySelector(".factorial .answer");
@@ -172,6 +185,8 @@ window.onload = function () {
 
         answer.innerHTML = result;
     };
+
+    //Счет чисел до ...
 
     document.querySelector(".sum-to .btn").onclick = function () {
         let a = +(document.querySelector(".sum-to .first").value),

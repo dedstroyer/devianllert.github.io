@@ -21,15 +21,15 @@
     border: 1px solid rgba(#000, 0.5)
     color: rgba(#000, 0.5)
     position: relative
-    cursor: help
+    cursor: default
     &:hover .js-hint
       opacity: 1
       visibility: visible
 
 .js-hint
   border: 1px solid rgba(#000, 0.15)
-  bottom: 15px
-  left: 15px
+  bottom: 0
+  left: 30px
   color: #000
   width: 300px
   background-color: #fff
@@ -39,6 +39,30 @@
   opacity: 0
   transition: all 0.5s ease
   visibility: hidden
+  &::after
+    content: ''
+    position: absolute
+    left: -19px
+    bottom: 0
+    border-left: 10px solid transparent
+    border-top: 10px solid transparent
+    border-bottom: 10px solid transparent
+    border-right: 10px solid #fff
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
+  &::before
+    content: ''
+    position: absolute
+    left: -20px
+    bottom: 0
+    border-left: 10px solid transparent
+    border-top: 10px solid transparent
+    border-bottom: 10px solid transparent
+    border-right: 10px solid rgba(#000, 0.2)
+    display: -webkit-flex
+    display: -ms-flex
+    display: flex
 
 .trains
   +row-flex()
