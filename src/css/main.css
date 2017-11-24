@@ -480,7 +480,7 @@ body {
   z-index: 9999;
   opacity: 1;
   overflow: hidden;
-  background-color: #222;
+  background-color: #fff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
