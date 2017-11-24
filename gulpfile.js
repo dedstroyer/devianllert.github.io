@@ -117,7 +117,7 @@ gulp.task('img', function () {
 });
 
 gulp.task('includer', function () {
-    gulp.src('src/build/*.html')
+    gulp.src('src/blocks/*.html')
         .pipe(includer({
             prefix: '@@',
             basepath: '@file'
