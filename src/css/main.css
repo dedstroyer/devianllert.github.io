@@ -228,6 +228,34 @@ body {
   font-size: 1.5rem;
 }
 
+.github-logo {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 40px;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.github-logo img {
+  width: 100%;
+}
+
+.github-logo:hover {
+  opacity: 1;
+}
+
 .about-js {
   margin-top: 30px;
   font-size: 36px;

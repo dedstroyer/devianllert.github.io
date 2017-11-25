@@ -236,5 +236,92 @@ window.onload = function () {
     truncate('lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem', 20);
 
 
-    // Работа с обьектами
+    // Работа с обьектами и массивами
+
+    let person = {
+      name: 'Руслан Поволоцкий',
+      age: '18',
+      profession: 'Front-end developer',
+      size: {
+          top: '30px',
+          left: '30px'
+      }
+    }
+
+    let personw = {}; // Пустой
+
+    console.log('Я ' + person.name +  ' мне ' + person.age + ' лет и моя профессия ' + person.profession);
+
+    for(let key in person) {
+      console.log('Значение - ' + key + ' содержит ' + person[key])
+    }
+
+    function emptyObject(objectName) {
+      let counter = 0;
+
+      for (let key in objectName) {
+        counter++;
+      }
+
+      if(counter == 0) {
+        console.log('Объект пуст!')
+      } else {
+        console.log(counter + ' свойств')
+      }
+    }
+
+    // personw.name = 'gight'; можно указать пустому обьекту свойство
+
+    emptyObject(person);
+    emptyObject(personw);
+
+    // Обьект с зарплатами
+
+    let salary = {
+      'jinx': '9000',
+      'vayne': '12000',
+      'tristana': '8500'
+    }
+
+    // Считаем сумму зарплат работников
+
+    function allSalary(objectName) {
+      let sum = 0;
+
+      for (let key in objectName) {
+        sum += +objectName[key];
+      }
+
+      console.log(sum);
+    }
+
+    allSalary(salary);
+
+    // ВЫчисляем макс зарплату
+
+    function maxSalary(objectName) {
+      let max = 0,
+          maxName = '',
+          counter = 0;
+
+      for (let key in objectName) {
+        counter++;
+
+        if(max < +objectName[key]) {
+          max = objectName[key];
+          maxName = key;
+        }
+      }
+
+      if(counter == 0) {
+        console.log('Нет сотрудников!');
+      } else {
+        console.log(maxName + ' - является сотрудником с макс. зарплатой');
+      }
+    }
+
+    maxSalary(salary);
+
+
+
 };
