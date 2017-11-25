@@ -49,7 +49,6 @@ window.onload = function () {
     }
 
     // Функция суммы
-
     document.querySelector(".sum .btn").onclick = function () {
 
         let a = +(document.querySelector(".sum .first").value),
@@ -69,7 +68,6 @@ window.onload = function () {
     };
 
     // Фукция умножеия
-
     document.querySelector(".multi .btn").onclick = function () {
 
         let a = +(document.querySelector(".multi .first").value),
@@ -90,7 +88,6 @@ window.onload = function () {
     };
 
     // Функция деления
-
     document.querySelector(".divis .btn").onclick = function () {
 
         let a = +(document.querySelector(".divis .first").value),
@@ -110,7 +107,6 @@ window.onload = function () {
     };
 
     // Функция возведения в степень
-
     document.querySelector(".pow .btn").onclick = function () {
 
         let a = +(document.querySelector(".pow .first").value),
@@ -138,7 +134,6 @@ window.onload = function () {
     };
 
     // Дескриминант
-
     document.querySelector(".discriminant .btn").onclick = function () {
         let a = +(document.querySelector(".discriminant .first").value),
             b = +(document.querySelector(".discriminant .second").value),
@@ -149,7 +144,6 @@ window.onload = function () {
     };
 
     // Числа Фибоначчи
-
     document.querySelector(".fibonacci .btn").onclick = function () {
         let a = +(document.querySelector(".fibonacci .first").value),
             answer = document.querySelector(".fibonacci .answer"),
@@ -167,7 +161,6 @@ window.onload = function () {
     };
 
     // Факториал числа
-
     document.querySelector(".factorial .btn").onclick = function () {
         let a = +(document.querySelector(".factorial .first").value),
             answer = document.querySelector(".factorial .answer"),
@@ -182,7 +175,6 @@ window.onload = function () {
     };
 
     //Счет чисел до ...
-
     document.querySelector(".sum-to .btn").onclick = function () {
         let a = +(document.querySelector(".sum-to .first").value),
             answer = document.querySelector(".sum-to .answer"),
@@ -197,7 +189,6 @@ window.onload = function () {
     }
 
     // Работа со строками
-
     function upperCaseChar(str) {
       // str.charAt(0).toUpperCase() Возвращает первый символ в строке
       // str.slice(1) Возвращает все символы после первого
@@ -210,7 +201,6 @@ window.onload = function () {
     upperCaseChar("devianllert");
 
     // Проверка на спам
-
     function checkSpam(str) {
       let newStr = str.toLowerCase();
       if (~newStr.indexOf('viagra') || ~newStr.indexOf('xxx')) {
@@ -222,7 +212,6 @@ window.onload = function () {
     checkSpam('xxqxxqwexxxx');
 
     // Усечение строки
-
     function truncate(str, maxlength) {
 
       console.log('Длина строки ' + str.length + ' символов, стоит ограничение в ' + maxlength + ' символов');
@@ -276,7 +265,6 @@ window.onload = function () {
     emptyObject(personw);
 
     // Обьект с зарплатами
-
     let salary = {
       'jinx': '9000',
       'vayne': '12000',
@@ -284,7 +272,6 @@ window.onload = function () {
     }
 
     // Считаем сумму зарплат работников
-
     function allSalary(objectName) {
       let sum = 0;
 
@@ -298,7 +285,6 @@ window.onload = function () {
     allSalary(salary);
 
     // Вычисляем макс зарплату
-
     function maxSalary(objectName) {
       let max = 0,
           maxName = '',
@@ -342,16 +328,80 @@ window.onload = function () {
         fruitsLength = fruits.length; // 4
 
     // Массив с рандомными значениями до 10
-    function randomMassive(length) {
-      let massive = [];
-
-      for (let i = 0; i < length; i++) {
+    function randomMassive() {
+      function compareNum(a, b) {
+        return a - b;
+      }
+      let massive = [], // создаем пустой массив
+          randomLength = Math.floor(Math.random() * 10 + 2);
+      for (let i = 0; i < randomLength; i++) {
           let randomNum = Math.floor(Math.random() * 10);
-          massive.push(randomNum);
+          massive.push(randomNum); // Генерируем новый массив
       }
 
-      console.log(massive);
-    }
+      massive.sort(compareNum);
 
-    randomMassive(3);
+      console.log('Рандомный отсортированный массив ' + massive + ' ... его длина ' + randomLength);
+    }
+    randomMassive();
+
+    // Генератор паролей
+    function generateRandomPassword(length) {
+      let alph = ['a','b','c','d','e','f','g',
+                  'h','i','j','k','l','m','n',
+                  'o','p','q','r','s','t','u',
+                  'v','w','x','y','z'],
+          password = '';
+
+      for (let i = 0; i < length; i++) {
+        let randomChar = Math.floor(Math.random() * alph.length);
+
+        password += alph[randomChar];
+      }
+
+      console.log('Ваш новый пароль - ' + password);
+    }
+    generateRandomPassword(5);
+
+    // Сортировка методом sort()
+    function sortArray(length) {
+      // Создаем доп функцию, которая позволит методу sort()
+      // сортировать массивы не как строки, а как числа
+      function compareNum(a, b) {
+        return a - b;
+      }
+      let array = [];
+
+      for(let i = 0; i < length; i++) {
+        let random = Math.floor(Math.random() * 10);
+        array.push(random); // Генерируем новый массив
+      }
+
+      console.log('Новый рандомный массив - ' + array);
+
+      array.sort(compareNum); // Сортируем, используя предыдущую функцию
+
+      console.log('Отсортированный массив методом sort() - ' + array);
+    }
+    sortArray(5);
+
+    // Concat на es6
+    function concatArray(length) {
+      let array = [],
+          arrayTwo = [];
+
+      for(let i = 0; i < length; i++) {
+        let random = Math.floor(Math.random() * 10);
+        let randomTwo = Math.floor(Math.random() * 10);
+        array.push(random); // Генерируем первый массив
+        arrayTwo.push(randomTwo); // Генерируем второй массив
+      }
+
+      console.log(array, arrayTwo);
+
+      let newConcatArray = [...array, ...arrayTwo]; // Обьединяем их с помощью spread operator (ES6)
+
+      console.log(newConcatArray);
+    }
+    concatArray(5);
 };
