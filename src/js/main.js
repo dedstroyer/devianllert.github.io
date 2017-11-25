@@ -228,7 +228,7 @@ window.onload = function () {
       console.log('Длина строки ' + str.length + ' символов, стоит ограничение в ' + maxlength + ' символов');
 
       if (str.length > maxlength) {
-        console.log(str.slice(0, (maxlength - 3)) + '...')
+        console.log(str.slice(0, (maxlength - 3)) + '...') // Возвращает строку от 0 символа, до (maxlength -3)
       }
 
     }
@@ -297,7 +297,7 @@ window.onload = function () {
 
     allSalary(salary);
 
-    // ВЫчисляем макс зарплату
+    // Вычисляем макс зарплату
 
     function maxSalary(objectName) {
       let max = 0,
@@ -322,6 +322,36 @@ window.onload = function () {
 
     maxSalary(salary);
 
+    // Код с codewars
+    // function solution(number){
+    //   let step = 0;
+    //
+    //   for(let i = 0; i < number; i++) {
+    //
+    //     if ((i % 3) == 0 || (i % 5) == 0){
+    //       step += i;
+    //       )
+    //     }
+    //
+    //   }
+    // }
 
+    // Массивы
 
+    let fruits = ['Яблоко', 'Груша', 'Арбуз', 'Апельсин'],
+        fruitsLength = fruits.length; // 4
+
+    // Массив с рандомными значениями до 10
+    function randomMassive(length) {
+      let massive = [];
+
+      for (let i = 0; i < length; i++) {
+          let randomNum = Math.floor(Math.random() * 10);
+          massive.push(randomNum);
+      }
+
+      console.log(massive);
+    }
+
+    randomMassive(3);
 };
