@@ -332,8 +332,10 @@ window.onload = function () {
       function compareNum(a, b) {
         return a - b;
       }
+
       let massive = [], // создаем пустой массив
           randomLength = Math.floor(Math.random() * 10 + 2);
+
       for (let i = 0; i < randomLength; i++) {
           let randomNum = Math.floor(Math.random() * 10);
           massive.push(randomNum); // Генерируем новый массив
@@ -365,6 +367,7 @@ window.onload = function () {
 
     // Сортировка методом sort()
     function sortArray(length) {
+
       // Создаем доп функцию, которая позволит методу sort()
       // сортировать массивы не как строки, а как числа
       function compareNum(a, b) {
@@ -374,6 +377,7 @@ window.onload = function () {
 
       for(let i = 0; i < length; i++) {
         let random = Math.floor(Math.random() * 10);
+
         array.push(random); // Генерируем новый массив
       }
 
@@ -391,8 +395,9 @@ window.onload = function () {
           arrayTwo = [];
 
       for(let i = 0; i < length; i++) {
-        let random = Math.floor(Math.random() * 10);
-        let randomTwo = Math.floor(Math.random() * 10);
+        let random = Math.floor(Math.random() * 10),
+            randomTwo = Math.floor(Math.random() * 10);
+
         array.push(random); // Генерируем первый массив
         arrayTwo.push(randomTwo); // Генерируем второй массив
       }
