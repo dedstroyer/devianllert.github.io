@@ -71,40 +71,22 @@
 
       <div class="my-portfolio">
 
-        <p class="title">Мои работы</p>
+        <div class="wrapper">
 
-        <ul class="works-list">
-          <li class="works-item">
-            <a href="#">
-              <img src="" alt="work">
-              Рыболовный магазин
-            </a>
-          </li>
-          <li class="works-item">
-            <a href="#">
-              <img src="" alt="work">
-              Рыболовный магазин
-            </a>
-          </li>
-          <li class="works-item">
-            <a href="#">
-              <img src="" alt="work">
-              Рыболовный магазин
-            </a>
-          </li>
-          <li class="works-item">
-            <a href="#">
-              <img src="" alt="work">
-              Рыболовный магазин
-            </a>
-          </li>
-          <li class="works-item">
-            <a href="#">
-              <img src="" alt="work">
-              Рыболовный магазин
-            </a>
-          </li>
-        </ul>
+          <p class="portfolio-title">Мои работы</p>
+
+          <ul class="portfolio-works-list">
+            <li class="portfolio-works-item">
+              <a v-bind:href="url">
+                <img src="img/portfolio.jpg" alt="work">
+                <div class="portfolio-descr">
+                  {{workTitle}}
+                </div>
+              </a>
+            </li>
+          </ul>
+
+        </div>
 
 
       </div>
@@ -113,8 +95,9 @@
 
 </div>
 
-
+<script src="js/vue.js"></script>
 <script src="js/main.js"></script>
+<script src="js/main.vue.js"></script>
 
 
 <!-- Made by Ruslan Povolockii (devianllert) -->

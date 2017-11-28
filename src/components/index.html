@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>devianllert</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate/animate.css">
+</head>
+<body>
+
+@@include('common/_breadcrumbs.html', {
+    "link": "../",
+    "mainlink":"class='active'",
+    "jslink":"",
+    "bflink":"",
+    "portlink":""
+})
+
+<div class="main">
+
+    @@include('index/_header.html')
+
+    <div class="page-main">
+
+      <div class="my-portfolio">
+
+        <div class="wrapper">
+
+          <p class="portfolio-title">Мои работы</p>
+
+          <ul class="portfolio-works-list">
+            <li class="portfolio-works-item">
+              <a v-bind:href="url">
+                <img src="img/portfolio.jpg" alt="work">
+                <div class="portfolio-descr">
+                  {{workTitle}}
+                </div>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+</div>
+
+<script src="js/vue.js"></script>
+<script src="js/main.js"></script>
+<script src="js/main.vue.js"></script>
+
+
+<!-- Made by Ruslan Povolockii (devianllert) -->
+</body>
+</html>
