@@ -19,7 +19,7 @@ function hidePreolader() {
 	setTimeout(function () {
 		document.querySelector('#preloader').style.display = 'none';
 		console.log('Прелоадер сработал');
-	}, 500)
+	}, 500);
 }
 
 window.onload = function () {
@@ -194,7 +194,7 @@ window.onload = function () {
 		}
 
 		answer.innerHTML = result;
-	}
+	};
 
 	// Работа со строками
 	function upperCaseChar(str) {
@@ -210,15 +210,15 @@ window.onload = function () {
 	function reverseString(string) {
 		// Разбиваем строку на символы в массиве - переворачиваем массив - превращаем в строку
 		console.log(string.split("").reverse().join(""));
-	};
+	}
 	reverseString('Devianllert');
 	// Проверка на спам
 	function checkSpam(str) {
 		let newStr = str.toLowerCase();
 		if (~newStr.indexOf('viagra') || ~newStr.indexOf('xxx')) {
-			console.log('Это спам!')
+			console.log('Это спам!');
 		} else {
-			console.log('Это не спам!')
+			console.log('Это не спам!');
 		}
 	}
 	checkSpam('xxqxxqwexxxx');
@@ -229,7 +229,7 @@ window.onload = function () {
 		console.log('Длина строки ' + str.length + ' символов, стоит ограничение в ' + maxlength + ' символов');
 
 		if (str.length > maxlength) {
-			console.log(str.slice(0, (maxlength - 3)) + '...') // Возвращает строку от 0 символа, до (maxlength -3)
+			console.log(str.slice(0, (maxlength - 3)) + '...'); // Возвращает строку от 0 символа, до (maxlength -3)
 		}
 
 	}
@@ -246,14 +246,14 @@ window.onload = function () {
 			top: '30px',
 			left: '30px'
 		}
-	}
+	};
 
 	let personw = {}; // Пустой
 
 	console.log('Я ' + person.name + ' мне ' + person.age + ' лет и моя профессия ' + person.profession);
 
 	for (let key in person) {
-		console.log('Значение - ' + key + ' содержит ' + person[key])
+		console.log('Значение - ' + key + ' содержит ' + person[key]);
 	}
 
 	function emptyObject(objectName) {
@@ -264,9 +264,9 @@ window.onload = function () {
 		}
 
 		if (counter == 0) {
-			console.log('Объект пуст!')
+			console.log('Объект пуст!');
 		} else {
-			console.log(counter + ' свойств')
+			console.log(counter + ' свойств');
 		}
 	}
 	// personw.name = 'gight'; можно указать пустому обьекту свойство
@@ -278,7 +278,7 @@ window.onload = function () {
 		'jinx': '9000',
 		'vayne': '12000',
 		'tristana': '8500'
-	}
+	};
 
 	// Считаем сумму зарплат работников
 	function allSalary(objectName) {
@@ -731,20 +731,49 @@ window.onload = function () {
 	getLastDayOfMonth(2012, 1);
 
 	// Сколько секунл прошло с начала сегодняшнего дня
-
 	function getSecondsToday() {
 		let nowTime = new Date();
 		let firstTime = new Date().setHours(0, 0, 0, 0);
-		console.log(Math.floor((nowTime - firstTime)/1000) + ' секунд прошло с начала дня');
+		console.log(Math.round((nowTime - firstTime)/1000/60/60) + ' часов прошло с начала дня');
 	}
 	getSecondsToday();
 
+	// сколько секунд осталось до конца днгя
 	function getSecondsToTomorrow() {
 		let nowTime = new Date();
 		let firstTime = new Date().setHours(0, 0, 0, 0);
-		let allSecondDay = 24 * 60 * 60;
-		console.log(allSecondDay - (Math.floor((nowTime - firstTime)/1000)) + ' секунд осталось до конца дня');
+		let allSecondDay = 24;
+		console.log(Math.round((allSecondDay - ((nowTime - firstTime)/1000/60/60))) + ' часов осталось до конца дня');
 	}
 	getSecondsToTomorrow();
+
+	// Форматирование времени (по типу постов в вк)
+	function formatDate(date) {
+		let diff = new Date() - date, // Разница в миллисекундах
+			sec = Math.floor(diff/1000),
+			min = Math.floor(sec/60),
+			hour = Math.floor(min/60),
+			day = Math.floor(hour/24),
+			textField;
+
+		if (sec <= 60) {
+			textField = 'только что';
+		}
 	
+		if (sec > 60) {
+			textField = `${min} мин. назад`;
+		}
+
+		if (min > 60) {
+			textField = `${hour} ч. назад`
+		}
+
+		if (hour > 24) {
+			textField = `${day} д. назад`
+		}
+
+		console.log(textField);
+
+	}
+	formatDate((new Date() - (16 * 24 * 60 * 60 * 1000)));
 };
