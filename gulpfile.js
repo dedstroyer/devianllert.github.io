@@ -48,18 +48,26 @@ gulp.task('smartgrid', function () {
 
 gulp.task('sass', function () { // Создаем таск Sass
     return gulp.src('src/css/**/*.sass') // Берем источник
-        .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
+        .pipe(sass().on('error', function(error) {
+            console.log(error);
+        })) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true})) // Создаем префиксы
-        .pipe(qcmq())
+        .pipe(qcmq().on('error', function(error) {
+            console.log(error);
+        }))
         .pipe(gulp.dest('src/css'))
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
 
 gulp.task('scss', function () { // Создаем таск Sass
     return gulp.src('src/css/**/*.scss') // Берем источник
-        .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
+        .pipe(sass().on('error', function(error) {
+            console.log(error);
+        })) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {cascade: true})) // Создаем префиксы
-        .pipe(qcmq())
+        .pipe(qcmq().on('error', function(error) {
+            console.log(error);
+        }))
         .pipe(gulp.dest('src/css'))
         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 });
@@ -80,10 +88,16 @@ gulp.task('browser-sync', function () { // Создаем таск browser-sync
 
 gulp.task('scripts', function () {
     return gulp.src([ // Берем все необходимые библиотеки
-
+        // 'src/js/preloader.js',
+        // 'src/js/string.js',
+        // 'src/js/array.js',
+        // 'src/js/Date.js'
+        // 'src/js/main.js'
     ])
-        .pipe(concat('vendors.min.js')) // Собираем их в кучу в новом файле vendors.min.js
-        .pipe(uglify()) // Сжимаем JS файл
+        .pipe(concat('main.min.js')) // Собираем их в кучу в новом файле vendors.min.js
+        .pipe(uglify().on('error', function(error) {
+            console.log(error);
+        })) // Сжимаем JS файл
         .pipe(gulp.dest('src/js')); // Выгружаем в папку src/js
 });
 
@@ -117,10 +131,12 @@ gulp.task('img', function () {
 });
 
 gulp.task('includer', function () {
-    gulp.src('src/blocks/*.html')
+    gulp.src('src/components/*.html')
         .pipe(includer({
             prefix: '@@',
             basepath: '@file'
+        }).on('error', function(error) {
+            console.log(error);
         }))
         .pipe(gulp.dest('src/'))
         .pipe(browserSync.reload({stream: true}));

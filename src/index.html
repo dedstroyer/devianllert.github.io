@@ -1,105 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>devianllert</title>
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/animate/animate.css">
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#000000">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <title>devianllert</title>
 </head>
 <body>
 
-<div class="back">
-    <a href="../" class="btn-back">
-        <div>
-            <svg width="16px" height="14px" viewBox="0 0 16 14">
-                <path d="M1,7 L15,7"></path>
-                <polyline points="7 1 1 7 7 13"></polyline>
-            </svg>
-        </div>
-        <span>Назад</span>
-    </a>
-    <div class="menu-back">
-        <ul class="nav-history">
-            <li class='active'><a href="index.html">Главная</a></li>
-            <li ><a href="training.html">Тренировки с JS</a></li>
-            <li ><a href="#">Базовые элементы и функции</a></li>
-            <li ><a href="portfolio.html">Мое портфолио</a></li>
-        </ul>
-        <!-- <ul class="nav-links">
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Support / Help</a></li>
-        </ul> -->
-    </div>
-</div>
+  <!-- Preloader -->
+  <div id="preloader">
+      <div id="loader"></div>
+  </div>
+  <!-- /Preloader -->
 
-
-<div class="main">
-
-    <div class="page-header">
-
-    <div class="header-mnu">
-
-        <div class="wrapper">
-
-            <a href="#" class="header-logo">devian<span>ll</span>ert</a>
-
-            <a href="https://github.com/devianllert" class="github-logo">
-              <img src="img/github.svg" alt="github">
-            </a>
-
-        </div>
-
-    </div>
-
-    <div class="header-main">
-
-        <div class="wrapper">
-
-            <p class="header-title">...</p>
-
-        </div>
-
-    </div>
-
-</div>
-
+  <!-- wrapper -->
+  <div class="app">
 
     <div class="page-main">
 
-      <div class="my-portfolio">
-
+      <div class="sidebar-left">
         <div class="wrapper">
-
-          <p class="portfolio-title">Мои работы</p>
-
-          <ul class="portfolio-works-list">
-            <li class="portfolio-works-item">
-              <a v-bind:href="url">
-                <img src="img/portfolio.jpg" alt="work">
-                <div class="portfolio-descr">
-                  {{workTitle}}
-                </div>
-              </a>
-            </li>
-          </ul>
-
+          <div class="header-logo">devianllert</div>
+          <a href="https://github.com/devianllert/devianllert.github.io" class="github-link">
+            <!-- <img src="img/github.svg" alt="github"> -->
+          </a>
         </div>
-
-
       </div>
 
+      <div class="sidebar-right">
+        
+      </div>
+
+
     </div>
+    <div class="page-about"></div>
+    <div class="page-portfolio"></div>
+    <div class="page-training"></div>
 
-</div>
-
+  </div>
+  <!-- /wrapper -->
+<!-- Page made by Ruslan Povolockii (devianllert) -->
 <script src="js/vue.js"></script>
-<script src="js/main.js"></script>
-<script src="js/main.vue.js"></script>
-
-
-<!-- Made by Ruslan Povolockii (devianllert) -->
+<script src='js/main.js'></script>
+<script src='js/main.vue.js'></script>
 </body>
 </html>

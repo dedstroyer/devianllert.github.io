@@ -13,9 +13,9 @@ function hidePreolader() {
 	document.body.style.marginRight = '0';
 	document.querySelector('#preloader').style.opacity = '0';
 	document.querySelector('#loader').style.marginRight = '0';
-	document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
-	document.querySelector('.back').classList.add('animated', 'fadeInUp');
-	document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
+	// document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
+	// document.querySelector('.back').classList.add('animated', 'fadeInUp');
+	// document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
 	setTimeout(function () {
 		document.querySelector('#preloader').style.display = 'none';
 		console.log('Прелоадер сработал');
@@ -29,9 +29,9 @@ window.onload = function () {
 		setTimeout(hidePreolader(), 2000);
 	} else { // Если блока нет, то сразу же добавляем классы анимации
 		document.body.style.overflow = 'visible';
-		document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
-		document.querySelector('.back').classList.add('animated', 'fadeInUp');
-		document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
+		// document.querySelector(".header-title").classList.add('animated', 'fadeInUp');
+		// document.querySelector('.back').classList.add('animated', 'fadeInUp');
+		// document.querySelector('.header-logo').classList.add('animated', 'fadeInLeft');
 	}
 
 	// Вывод подсказок
@@ -48,153 +48,153 @@ window.onload = function () {
 		};
 	}
 
-	// Функция суммы
-	let sum = document.querySelector(".sum .btn");
-	sum.onclick = function () {
+	// // Функция суммы
+	// let sum = document.querySelector(".sum .btn");
+	// sum.onclick = function () {
 
-		let a = +(document.querySelector(".sum .first").value),
-			b = +(document.querySelector(".sum .second").value),
-			answer = document.querySelector(".sum .answer"),
-			result;
+	// 	let a = +(document.querySelector(".sum .first").value),
+	// 		b = +(document.querySelector(".sum .second").value),
+	// 		answer = document.querySelector(".sum .answer"),
+	// 		result;
 
-		if (isNaN(a) || isNaN(b)) { // Проверка введения чисел
-			alert('Введите числа в оба столбца');
-		} else {
+	// 	if (isNaN(a) || isNaN(b)) { // Проверка введения чисел
+	// 		alert('Введите числа в оба столбца');
+	// 	} else {
 
-			result = a + b;
-			answer.innerHTML = +result.toFixed(2); // Для дробных - округляем числа до 2 цифр после запятой
+	// 		result = a + b;
+	// 		answer.innerHTML = +result.toFixed(2); // Для дробных - округляем числа до 2 цифр после запятой
 
-		}
+	// 	}
 
-	};
+	// };
 
-	// Фукция умножеия
-	let multi = document.querySelector(".multi .btn");
-	multi.onclick = function () {
+	// // Фукция умножеия
+	// let multi = document.querySelector(".multi .btn");
+	// multi.onclick = function () {
 
-		let a = +(document.querySelector(".multi .first").value),
-			b = +(document.querySelector(".multi .second").value),
-			answer = document.querySelector(".multi .answer"),
-			result;
+	// 	let a = +(docusment.querySelector(".multi .first").value),
+	// 		b = +(document.querySelector(".multi .second").value),
+	// 		answer = document.querySelector(".multi .answer"),
+	// 		result;
 
-		if (isNaN(a) || isNaN(b)) {
-			alert('Введите числа в оба столбца');
-		} else {
+	// 	if (isNaN(a) || isNaN(b)) {
+	// 		alert('Введите числа в оба столбца');
+	// 	} else {
 
-			result = a * b;
-			answer.innerHTML = +result.toFixed(2);
+	// 		result = a * b;
+	// 		answer.innerHTML = +result.toFixed(2);
 
-		}
-
-
-	};
-
-	// Функция деления
-	let divis = document.querySelector(".divis .btn");
-	divis.onclick = function () {
-
-		let a = +(document.querySelector(".divis .first").value),
-			b = +(document.querySelector(".divis .second").value),
-			answer = document.querySelector(".divis .answer"),
-			result;
-
-		if (isNaN(a) || isNaN(b)) {
-			alert('Введите числа в оба столбца');
-		} else {
-			result = a / b;
-
-			answer.innerHTML = +result.toFixed(5);
-
-		}
-
-	};
-
-	// Функция возведения в степень
-	let pow = document.querySelector(".pow .btn");
-	pow.onclick = function () {
-
-		let a = +(document.querySelector(".pow .first").value),
-			b = +(document.querySelector(".pow .second").value),
-			answer = document.querySelector(".pow .answer"),
-			result = a;
-
-		if (isNaN(a) || isNaN(b)) { // Проверка
-			alert('Введите числа в оба столбца');
-		} else {
-			if (b > 0) { // Если степень положительная, то
-				for (let h = b; h > 1; h--) {
-					result *= a;
-				}
-			} else { // Если отрицательная то считаем уже по-другому
-				for (let h = b; h < 1; h++) {
-					result *= ((1 / a)); // Счет может быть не точным
-				}
-
-			}
-			answer.innerHTML = +result.toFixed(5);
-		}
+	// 	}
 
 
-	};
+	// };
 
-	// Дескриминант
-	let discriminant = document.querySelector(".discriminant .btn");
-	discriminant.onclick = function () {
-		let a = +(document.querySelector(".discriminant .first").value),
-			b = +(document.querySelector(".discriminant .second").value),
-			c = +(document.querySelector(".discriminant .third").value),
-			answer = document.querySelector(".discriminant .answer");
+	// // Функция деления
+	// let divis = document.querySelector(".divis .btn");
+	// divis.onclick = function () {
 
-		answer.innerHTML = (b * b) - 4 * a * c;
-	};
+	// 	let a = +(document.querySelector(".divis .first").value),
+	// 		b = +(document.querySelector(".divis .second").value),
+	// 		answer = document.querySelector(".divis .answer"),
+	// 		result;
 
-	// Числа Фибоначчи
-	let fibonacci = document.querySelector(".fibonacci .btn");
-	fibonacci.onclick = function () {
-		let a = +(document.querySelector(".fibonacci .first").value),
-			answer = document.querySelector(".fibonacci .answer"),
-			k = 1,
-			j = 1;
+	// 	if (isNaN(a) || isNaN(b)) {
+	// 		alert('Введите числа в оба столбца');
+	// 	} else {
+	// 		result = a / b;
 
-		for (let i = 3; i <= a; i++) {
-			let result = k + j;
-			k = j;
-			j = result;
+	// 		answer.innerHTML = +result.toFixed(5);
 
-		}
+	// 	}
 
-		answer.innerHTML = j;
-	};
+	// };
 
-	// Факториал числа
-	let factorial = document.querySelector(".factorial .btn");
-	factorial.onclick = function () {
-		let a = +(document.querySelector(".factorial .first").value),
-			answer = document.querySelector(".factorial .answer"),
-			result = a;
+	// // Функция возведения в степень
+	// let pow = document.querySelector(".pow .btn");
+	// pow.onclick = function () {
 
-		for (let i = 1; i < a; i++) {
+	// 	let a = +(document.querySelector(".pow .first").value),
+	// 		b = +(document.querySelector(".pow .second").value),
+	// 		answer = document.querySelector(".pow .answer"),
+	// 		result = a;
 
-			result *= (a - i);
-		}
+	// 	if (isNaN(a) || isNaN(b)) { // Проверка
+	// 		alert('Введите числа в оба столбца');
+	// 	} else {
+	// 		if (b > 0) { // Если степень положительная, то
+	// 			for (let h = b; h > 1; h--) {
+	// 				result *= a;
+	// 			}
+	// 		} else { // Если отрицательная то считаем уже по-другому
+	// 			for (let h = b; h < 1; h++) {
+	// 				result *= ((1 / a)); // Счет может быть не точным
+	// 			}
 
-		answer.innerHTML = result;
-	};
+	// 		}
+	// 		answer.innerHTML = +result.toFixed(5);
+	// 	}
 
-	//Счет чисел до ...
-	let sumTo = document.querySelector(".sum-to .btn");
-	sumTo.onclick = function () {
-		let a = +(document.querySelector(".sum-to .first").value),
-			answer = document.querySelector(".sum-to .answer"),
-			result = a;
 
-		for (let i = 1; i < a; i++) {
+	// };
 
-			result += (a - i);
-		}
+	// // Дескриминант
+	// let discriminant = document.querySelector(".discriminant .btn");
+	// discriminant.onclick = function () {
+	// 	let a = +(document.querySelector(".discriminant .first").value),
+	// 		b = +(document.querySelector(".discriminant .second").value),
+	// 		c = +(document.querySelector(".discriminant .third").value),
+	// 		answer = document.querySelector(".discriminant .answer");
 
-		answer.innerHTML = result;
-	};
+	// 	answer.innerHTML = (b * b) - 4 * a * c;
+	// };
+
+	// // Числа Фибоначчи
+	// let fibonacci = document.querySelector(".fibonacci .btn");
+	// fibonacci.onclick = function () {
+	// 	let a = +(document.querySelector(".fibonacci .first").value),
+	// 		answer = document.querySelector(".fibonacci .answer"),
+	// 		k = 1,
+	// 		j = 1;
+
+	// 	for (let i = 3; i <= a; i++) {
+	// 		let result = k + j;
+	// 		k = j;
+	// 		j = result;
+
+	// 	}
+
+	// 	answer.innerHTML = j;
+	// };
+
+	// // Факториал числа
+	// let factorial = document.querySelector(".factorial .btn");
+	// factorial.onclick = function () {
+	// 	let a = +(document.querySelector(".factorial .first").value),
+	// 		answer = document.querySelector(".factorial .answer"),
+	// 		result = a;
+
+	// 	for (let i = 1; i < a; i++) {
+
+	// 		result *= (a - i);
+	// 	}
+
+	// 	answer.innerHTML = result;
+	// };
+
+	// //Счет чисел до ...
+	// let sumTo = document.querySelector(".sum-to .btn");
+	// sumTo.onclick = function () {
+	// 	let a = +(document.querySelector(".sum-to .first").value),
+	// 		answer = document.querySelector(".sum-to .answer"),
+	// 		result = a;
+
+	// 	for (let i = 1; i < a; i++) {
+
+	// 		result += (a - i);
+	// 	}
+
+	// 	answer.innerHTML = result;
+	// };
 
 	// Работа со строками
 	function upperCaseChar(str) {
@@ -581,7 +581,6 @@ window.onload = function () {
 	console.log(arrMapLength);
 
 	// Массив частичных сумм
-
 	let arrSum = [1, 2, 3, 4, 5];
 
 	function getArrSum(array) {
@@ -678,7 +677,6 @@ window.onload = function () {
 	likeUndefined();
 
 	// Работа со временем в js == new Date(year, month, date, hours, minutes, seconds, ms)
-
 	function nowDate() {
 		let date = new Date();
 		let options = {
@@ -693,7 +691,8 @@ window.onload = function () {
 		};
 		console.log(date.toLocaleString('ru', options));
 	};
-	nowDate();
+	nowDate();	
+
 	// Обычный вывод даты
 	function lastDate() {
 		console.log(new Date(2012, 1, 20, 3, 12, 0))
@@ -776,4 +775,6 @@ window.onload = function () {
 
 	}
 	formatDate((new Date() - (16 * 24 * 60 * 60 * 1000)));
+
+	
 };
