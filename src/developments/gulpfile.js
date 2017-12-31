@@ -1,5 +1,6 @@
-'use sctrict';
-const gulp = require('gulp'), // Подключаем Gulp
+'use strict';
+
+let gulp = require('gulp'), // Подключаем Gulp
     sass = require('gulp-sass'), //Подключаем Sass пакет,
     browserSync = require('browser-sync'), // Подключаем Browser Sync
     concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
@@ -56,10 +57,6 @@ gulp.task('smartgrid', function () {
 gulp.task('sass', function () { // Создаем таск Sass
     return gulp.src('src/css/**/*.sass') // Берем источник
         .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
-        .on('error', function(error){
-            console.log(error.message);
-            this.end();
-        })
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
             cascade: true
         })) // Создаем префиксы
@@ -97,7 +94,7 @@ gulp.task('browser-sync', function () { // Создаем таск browser-sync
         server: { // Определяем параметры сервера
             baseDir: 'src' // Директория для сервера - src
         },
-        notify: true // Отключаем уведомления
+        notify: false // Отключаем уведомления
     });
 });
 

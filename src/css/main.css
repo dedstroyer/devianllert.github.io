@@ -159,7 +159,7 @@ body {
   z-index: 9999;
   opacity: 1;
   overflow: hidden;
-  background-color: #222;
+  background-color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -172,9 +172,10 @@ body {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #ff9933;
+  border-top-color: #9370DB;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+  margin-right: 17px;
 }
 
 #loader:before {
@@ -187,7 +188,7 @@ body {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #ffff00;
+  border-top-color: #BA55D3;
   -webkit-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
@@ -202,7 +203,7 @@ body {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #ffcc00;
+  border-top-color: #FF00FF;
   -webkit-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
 }
@@ -233,27 +234,6 @@ body {
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
-
-.page-main {
-  position: static;
-  height: 100vh;
-  width: 100%;
-  background-color: #e2e2e2;
-}
-
-.header {
-  height: 60px;
-}
-
-.header .wrapper {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
 }
 
 .back {
@@ -503,6 +483,149 @@ body {
   text-decoration: none;
   background: #9098A9;
   color: white;
+}
+
+.app {
+  height: 100vh;
+}
+
+.header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 2px solid rgba(160, 160, 160, 0.3);
+}
+
+.header-logo {
+  height: 100%;
+}
+
+.header-logo a {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  color: #000000;
+  font-size: 24px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 30px;
+  border-right: 1px solid rgba(160, 160, 160, 0.3);
+}
+
+.header-logo a span {
+  color: darkred;
+}
+
+.header-menu {
+  margin-left: 30px;
+}
+
+.header-menu-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-menu-item {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.header-menu-item:first-child {
+  margin-left: 0;
+}
+
+.header-menu-item:last-child {
+  margin-right: 0;
+}
+
+.header-menu-item a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.header-menu-item a.is-active {
+  border-bottom: 3px solid rgba(160, 160, 160, 0.3);
+}
+
+.animate-frame {
+  position: static;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: -webkit-calc(100% - 62px);
+  height: calc(100% - 62px);
+  width: 100%;
+  background-color: #e2e2e2;
+}
+
+.slide-page {
+  width: -webkit-calc(100% - 30px);
+  width: calc(100% - 30px);
+  height: -webkit-calc(100% - 30px);
+  height: calc(100% - 30px);
+  background-color: #fff;
+  border: 1px solid rgba(160, 160, 160, 0.3);
+  opacity: 0;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.slide-page.on {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+.page-title {
+  margin-top: 30px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  text-align: center;
+}
+
+.page-logo {
+  font-size: 48px;
+}
+
+.page-descr {
+  font-size: 20px;
+  color: #888888;
 }
 
 @media screen and (max-width: 1600px) {

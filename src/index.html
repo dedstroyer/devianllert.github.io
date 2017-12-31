@@ -1,50 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="theme-color" content="#000000">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/main.css">
-  <title>devianllert</title>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Devianllert - front-end developer">
+    <!-- for apple -->
+    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- To run web application in full-screen -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Status Bar Style (see Supported Meta Tags below for available values) -->
+    <!-- /for apple -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <title>devianllert</title>
 </head>
+
 <body>
 
-  <!-- Preloader -->
-  <div id="preloader">
-      <div id="loader"></div>
-  </div>
-  <!-- /Preloader -->
+<!-- Preloader -->
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+<!-- /Preloader -->
 
-  <!-- wrapper -->
-  <div class="app">
+<!-- wrapper -->
+<div class="app">
 
-    <div class="page-main">
+    <div class="header">
 
-      <div class="sidebar-left">
-        <div class="wrapper">
-          <div class="header-logo">devianllert</div>
-          <a href="https://github.com/devianllert/devianllert.github.io" class="github-link">
-            <!-- <img src="img/github.svg" alt="github"> -->
-          </a>
+        <div class="header-logo">
+            <a href="#">devian<span>ll</span>ert</a>
         </div>
-      </div>
 
-      <div class="sidebar-right">
-        
-      </div>
-
+        <div class="header-menu">
+            <ul class="header-menu-list">
+                <li class="header-menu-item">
+                    <a href="#" class="is-active">Главная</a>
+                </li>
+                <li class="header-menu-item">
+                    <a href="#">Обо мне</a>
+                </li>
+                <li class="header-menu-item">
+                    <a href="#">Образование</a>
+                </li>
+                <li class="header-menu-item">
+                    <a href="#">Мои работы</a>
+                </li>
+                <li class="header-menu-item">
+                    <a href="#">Контакты</a>
+                </li>
+            </ul>
+        </div>
 
     </div>
-    <div class="page-about"></div>
-    <div class="page-portfolio"></div>
-    <div class="page-training"></div>
 
-  </div>
-  <!-- /wrapper -->
+    <div class="animate-frame">
+
+        <div class="slide-page on page-main">
+            <div class="page-title">
+                <div class="page-logo">Devianllert</div>
+                <div class="page-descr">front-end developer</div>
+            </div>
+        </div>
+
+        <div class="slide-page"></div>
+
+        <div class="slide-page"></div>
+
+        <div class="slide-page"></div>
+
+    </div>
+
+
+    <!-- <div class="footer">
+        <div class="socials">
+            <ul class="socials-list">
+              <li class="socials-item">
+                  <a href="https://github.com/devianllert/devianllert.github.io" class="social-link">
+                    <img src="img/github.svg" alt="github">
+                  </a>
+              </li>
+              <li class="socials-item">
+                  <a href="https://ru.linkedin.com/" class="social-link">
+                    <img src="img/linkedin.svg" alt="linkedin">
+                  </a>
+              </li>
+              <li class="socials-item">
+                  <a href="https://vk.com/devianllert" class="social-link">
+                    <img src="img/vk.svg" alt="vk">
+                  </a>
+              </li>
+              <li class="socials-item">
+                  <a href="https://github.com/devianllert/devianllert.github.io" class="social-link">
+                    <img src="img/email.svg" alt="email">
+                  </a>
+              </li>
+            </ul>
+          </div>
+    </div> -->
+
+</div>
+<!-- /wrapper -->
+
+
 <!-- Page made by Ruslan Povolockii (devianllert) -->
+<noscript>
+    You need to enable JavaScript to run this app.
+</noscript>
 <script src="js/vue.js"></script>
-<script src='js/main.js'></script>
+<script src='js/training.js'></script>
 <script src='js/main.vue.js'></script>
+<script src='js/timer.js'></script>
 </body>
+
 </html>
