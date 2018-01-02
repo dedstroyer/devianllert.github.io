@@ -111,9 +111,9 @@ img {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   background-color: #fff;
-  overflow-x: hidden;
 }
 
 .preloader {
@@ -153,8 +153,8 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   background-color: darkviolet;
   -webkit-animation: spin 2s ease 0.2s infinite alternate;
   animation: spin 2s ease 0.2s infinite alternate;
@@ -165,7 +165,7 @@ body {
 }
 
 .logo {
-  font-size: 90px;
+  font-size: 85px;
   color: #fff;
   opacity: 0;
   -webkit-animation: fade-in_logo 2s ease 0.2s infinite alternate;
@@ -233,29 +233,29 @@ body {
   }
 
   20% {
-    -webkit-border-radius: 50px 0 0 0;
-    border-radius: 50px 0 0 0;
+    -webkit-border-radius: 40px 0 0 0;
+    border-radius: 40px 0 0 0;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
   }
 
   40% {
-    -webkit-border-radius: 50px 50px 0 0;
-    border-radius: 50px 50px 0 0;
+    -webkit-border-radius: 40px 40px 0 0;
+    border-radius: 40px 40px 0 0;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
   60% {
-    -webkit-border-radius: 50px 50px 50px 0;
-    border-radius: 50px 50px 50px 0;
+    -webkit-border-radius: 40px 40px 40px 0;
+    border-radius: 40px 40px 40px 0;
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
   }
 
   100% {
-    -webkit-border-radius: 50px 50px 50px 5px;
-    border-radius: 50px 50px 50px 5px;
+    -webkit-border-radius: 40px 40px 40px 5px;
+    border-radius: 40px 40px 40px 5px;
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
   }
@@ -270,29 +270,29 @@ body {
   }
 
   20% {
-    -webkit-border-radius: 50px 0 0 0;
-    border-radius: 50px 0 0 0;
+    -webkit-border-radius: 40px 0 0 0;
+    border-radius: 40px 0 0 0;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
   }
 
   40% {
-    -webkit-border-radius: 50px 50px 0 0;
-    border-radius: 50px 50px 0 0;
+    -webkit-border-radius: 40px 40px 0 0;
+    border-radius: 40px 40px 0 0;
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
 
   60% {
-    -webkit-border-radius: 50px 50px 50px 0;
-    border-radius: 50px 50px 50px 0;
+    -webkit-border-radius: 40px 40px 40px 0;
+    border-radius: 40px 40px 40px 0;
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
   }
 
   100% {
-    -webkit-border-radius: 50px 50px 50px 5px;
-    border-radius: 50px 50px 50px 5px;
+    -webkit-border-radius: 40px 40px 40px 5px;
+    border-radius: 40px 40px 40px 5px;
     -webkit-transform: rotate(270deg);
     transform: rotate(270deg);
   }
@@ -384,6 +384,49 @@ body {
   padding: 15px;
 }
 
+.atomic-text {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.atomic-text_view {
+  display: block;
+  font-size: 32px;
+  margin-top: 30px;
+}
+
+.atomic-text_input {
+  border: none;
+  border-bottom: 1px solid rgba(160, 160, 160, 0.5);
+  outline: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 18px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.atomic-text_input:focus {
+  border-bottom-color: #000;
+}
+
 .menu {
   position: absolute;
   top: 0;
@@ -391,8 +434,8 @@ body {
   width: 35vw;
   height: 100vh;
   background-color: rgba(38, 41, 58, 0.95);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: left 1s ease;
+  transition: left 1s ease;
 }
 
 .menu.menu-active {
@@ -475,47 +518,10 @@ body {
   background-color: transparent;
 }
 
-.atomic-text {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.atomic-text_view {
-  display: block;
-  font-size: 32px;
-  margin-top: 30px;
-}
-
-.atomic-text_input {
-  border: none;
-  border-bottom: 1px solid rgba(160, 160, 160, 0.5);
-  outline: none;
-  margin-top: auto;
-  margin-bottom: auto;
-  font-size: 18px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
-
-.atomic-text_input:focus {
-  border-bottom-color: #000;
+.clock {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
 }
 
 @media screen and (max-width: 768px) {

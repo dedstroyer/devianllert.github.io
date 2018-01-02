@@ -1,17 +1,6 @@
 'use strict';
 
 
-// Preloader
-function preloader() {
-  const loader = document.querySelector('.preloader');
-  setTimeout(function () {
-    loader.style.opacity = 0;
-    setTimeout(function () {
-      loader.remove();
-    }, 500) // после изменения прозрачности, через 0.5 секунд удялаем прелоадер со страницы
-  }, 2200)
-}
-
 // AtomicText
 function atomicText() {
   let maxlength = 20;
@@ -22,38 +11,34 @@ function atomicText() {
         atomicTextView = document.querySelector('.atomic-text_view'); // поле вывода
   let censur;
 
-  atomicTextInput.addEventListener('input', function () { // когда в поле вносится любое значение (включая 'вставить')
+  atomicTextInput.addEventListener('input', function () { // когда в поле вносится любое значение(включая функцию контекстного меню 'вставить')
     atomicTextView.textContent = atomicTextInput.value; // Вставляем значение из поля ввода в поле вывода
 
     censur = atomicTextInput.value.toLowerCase();
 
-    if (~censur.indexOf('fuck') || ~censur.indexOf('shit')) { // Цензура матов
+    if (~censur.indexOf('fuck') || ~censur.indexOf('shit')) { // Цензура матов (Проба)
       atomicTextView.textContent = '';
       atomicTextInput.value = '';
     }
 
-    if (atomicTextInput.value.length > maxlength) {
-      atomicTextView.textContent = truncate(atomicTextInput.value)
+    if (atomicTextInput.value.length > maxlength) { // Если количество симолов больше, чем допустимое значение
+      atomicTextView.textContent = truncate(atomicTextInput.value) // вставляем в текстовое поле текст, полученный с помощью функции
     }
   });
 }
 
+const menu = document.querySelector('.menu');
+const menuButton = document.querySelector('.show-menu');
 
 function toggleMenu() {
-
-  const menu = document.querySelector('.menu');
-  const menuButton = document.querySelector('.show-menu');
-
-  menuButton.addEventListener('click', function () {
     menu.classList.toggle('menu-active');
     this.classList.toggle('menu-active');
+
     if (this.classList.contains('menu-active')){
       menuButton.innerHTML = 'close'
     } else {
       menuButton.innerHTML = 'menu'
     }
-  });
-
 }
 
 function animateSlide() {
@@ -62,8 +47,7 @@ function animateSlide() {
 
 window.onload = function () { // Функции выполняющиеся после загрузки страницы
 
-  preloader();
   atomicText();
-  toggleMenu();
+  menuButton.addEventListener('click', toggleMenu);
 
 };
