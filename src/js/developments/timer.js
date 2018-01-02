@@ -38,6 +38,21 @@
 
       setInterval(function () {
         clock.update();
+        if (clock.second < 10) {
+          clock.second = '0' + clock.second;
+        }
+        if (clock.minute < 10) {
+          clock.minute = '0' + clock.minute;
+        }
+        if (clock.hour < 10) {
+          clock.hour = '0' + clock.hour;
+        }
+        if (clock.day < 10) {
+          clock.day = '0' + clock.day;
+        }
+        if (clock.month < 10) {
+          clock.month = '0' + clock.month;
+        }
         date.textContent = `${clock.day}.${clock.month}.${clock.year}`;
         time.textContent = `${clock.hour}:${clock.minute}:${clock.second}`;
       }, 1000);
