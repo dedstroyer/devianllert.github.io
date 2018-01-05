@@ -3,16 +3,17 @@ $menuWidth: 35vw
 .menu
   position: absolute
   top: 0
-  left: -$menuWidth
+  left: 0
+  transform: translate(-$menuWidth,0)
   width: $menuWidth
   height: 100vh
   background-color: rgba($accent, 0.95)
-  transition: left 1s ease
+  transition: all 1s ease
   &.menu-active
     -webkit-box-shadow: 0px 0px 40px 0px rgba(#000, 0.5)
     -moz-box-shadow: 0px 0px 40px 0px rgba(#000, 0.5)
     box-shadow: 0px 0px 40px 0px rgba(#000, 0.5)
-    left: 0
+    transform: translate(0,0)
 .menu-title
   display: flex
   justify-content: center
@@ -57,4 +58,4 @@ $menuWidth: 35vw
   $menuWidth: 100vw
   .menu
     width: $menuWidth
-    left: -$menuWidth
+    transform: translate(-$menuWidth,0)

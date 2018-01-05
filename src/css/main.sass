@@ -1,5 +1,6 @@
 @import "smart-grid"
-
+@import "fonts/fonts.css"
+@import "components/colors"
 
 +reset()
 
@@ -7,8 +8,14 @@ body
   font-family: 'Montserrat', sans-serif
   font-size: 16px
   background-color: #fff
-  line-height: 1.5
   overflow-x: hidden!important
+
+.app
+  width: 100vw
+  height: 100vh
+  display: flex
+  flex-direction: column
+  background: $accentWhite
 
 .wrapper
   +wrapper()
@@ -16,6 +23,6 @@ body
   flex-direction: column
 
 
-@import "fonts/fonts.css"
-@import "components/colors"
+
 @import "components/preloader"
+@import "developments/timer"
