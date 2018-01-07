@@ -335,10 +335,6 @@ body {
   -ms-flex-align: center;
   align-items: center;
   width: 60%;
-  height: 350px;
-  overflow: hidden;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
   -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
 }
@@ -356,11 +352,10 @@ body {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 32px;
   color: #fff;
   width: 100%;
-  height: 50px;
-  background-color: darkviolet;
+  height: 80px;
 }
 
 .app-view {
@@ -382,6 +377,14 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 15px;
+}
+
+.app-atomic-text {
+  display: none;
+}
+
+.app-atomic-text .app-title {
+  background-color: darkviolet;
 }
 
 .atomic-text {
@@ -409,22 +412,19 @@ body {
 .atomic-text_view {
   display: block;
   font-size: 32px;
-  margin-top: 30px;
 }
 
 .atomic-text_input {
-  border: none;
-  border-bottom: 1px solid rgba(160, 160, 160, 0.5);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 35px;
+  width: 100%;
+  border: 1px solid rgba(160, 160, 160, 0.5);
   outline: none;
-  margin-top: auto;
-  margin-bottom: auto;
   font-size: 18px;
+  padding-left: 10px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-}
-
-.atomic-text_input:focus {
-  border-bottom-color: #000;
 }
 
 .menu {
@@ -439,6 +439,7 @@ body {
   background-color: rgba(38, 41, 58, 0.95);
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+  z-index: 99;
 }
 
 .menu.menu-active {
@@ -552,6 +553,83 @@ body {
 
 .clock:hover {
   opacity: 0;
+}
+
+.app-todo-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.app-todo-list .app-title {
+  background-color: yellow;
+  color: #000;
+  font-size: 32px;
+}
+
+.todo-list {
+  width: 100%;
+  height: 100%;
+}
+
+.todo-list_input {
+  border: 1px solid rgba(160, 160, 160, 0.3);
+  outline: none;
+  width: 85%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  padding-left: 10px;
+  font-size: 20px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background: #fff;
+}
+
+.todo-list_action {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 35px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.todo-list_add-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+  background: none;
+  font-size: 18px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  outline: none;
+  height: 100%;
+  width: -webkit-calc(15% - 15px);
+  width: calc(15% - 15px);
+  margin-left: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.todo-list_add-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.todo-list_add-item:active {
+  background: rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 768px) {

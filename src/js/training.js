@@ -136,22 +136,7 @@ window.onload = function () {
 
   maxSalary(salary);
 
-  // Код с codewars
-  // function solution(number){
-  //   let step = 0;
-  //
-  //   for(let i = 0; i < number; i++) {
-  //
-  //     if ((i % 3) == 0 || (i % 5) == 0){
-  //       step += i;
-  //       )
-  //     }
-  //
-  //   }
-  // }
-
   // Массивы
-
   let fruits = ['Яблоко', 'Груша', 'Арбуз', 'Апельсин'],
       fruitsLength = fruits.length; // 4
 
@@ -243,7 +228,7 @@ window.onload = function () {
     }
 
     for (let i = 0; i < classes.length; i++) {
-      if (classes[i] == cls) {
+      if (classes[i] === cls) {
         console.log('Такой класс уже есть в наборе классов =>');
         console.log(obj.className);
         return false;
