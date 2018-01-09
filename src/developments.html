@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#000000">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Devianllert - front-end developer">
     <!-- for apple -->
@@ -48,16 +48,14 @@
         </div>
 
         <div class="animation-slide app-todo-list">
-            <div class="app-title">To-do list</div>
+            <div class="app-title">TODO.JS</div>
             <div class="app-view">
                 <div class="todo-list">
-                    <ul class="todo-list_view">
-                        <li class="todo-list_item"></li>
-                    </ul>
-                    <div class="todo-list_action">
+                    <ul class="todo-list_view"></ul>
+                    <form class="todo-list_action">
                         <input class="todo-list_input" type="text">
-                        <button type="button" class="todo-list_add-item">Добавить</button>
-                    </div>
+                        <button type="submit" class="todo-list_add-item">Добавить</button>
+                    </form>
 
                 </div>
             </div>
@@ -71,6 +69,7 @@
 
 <script src="js/developments/preloader.js"></script>
 <script src="js/developments/timer.js"></script>
+<script src="js/developments/todo-list.js"></script>
 <script src="js/developments/main.js"></script>
 
 </body>

@@ -1,6 +1,5 @@
 'use strict';
 
-
 // AtomicText
 function atomicText() {
   let maxlength = 20;

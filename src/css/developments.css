@@ -299,8 +299,8 @@ body {
 }
 
 .animation-place {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   background-color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -566,6 +566,7 @@ body {
   background-color: yellow;
   color: #000;
   font-size: 32px;
+  font-weight: bold;
 }
 
 .todo-list {
@@ -573,10 +574,90 @@ body {
   height: 100%;
 }
 
+.todo-list_view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.todo-list_item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 2px solid #eff5f5;
+}
+
+.todo-list_item:last-child {
+  border: none;
+}
+
+.todo-list_edit {
+  margin-left: auto;
+}
+
+.todo-list_edit-btn,
+.todo-list_delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  outline: none;
+  margin: 0 5px;
+}
+
+.todo-list_edit-btn:hover,
+.todo-list_delete-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.todo-list_edit-btn:active,
+.todo-list_delete-btn:active {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.todo-list_checkbox-title {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.todo-list_label {
+  margin-left: 5px;
+}
+
+.todo-list_edit-input {
+  display: none;
+}
+
 .todo-list_input {
   border: 1px solid rgba(160, 160, 160, 0.3);
   outline: none;
   width: 85%;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 100%;
@@ -622,6 +703,7 @@ body {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .todo-list_add-item:hover {
@@ -632,12 +714,35 @@ body {
   background: rgba(0, 0, 0, 0.3);
 }
 
+@media screen and (max-width: 1366px) {
+  .todo-list {
+    background-attachment: fixed;
+  }
+
+  .todo-list_input {
+    width: 80%;
+  }
+
+  .todo-list_add-item {
+    width: -webkit-calc(20% - 15px);
+    width: calc(20% - 15px);
+  }
+}
+
 @media screen and (max-width: 768px) {
+  .animation-slide {
+    width: 80%;
+  }
+
   .menu {
     width: 100vw;
     -webkit-transform: translate(-100vw, 0);
     -ms-transform: translate(-100vw, 0);
     transform: translate(-100vw, 0);
+  }
+
+  .todo-list_add-item {
+    font-size: 16px;
   }
 }
 
@@ -649,5 +754,40 @@ body {
 
   .atomic-text_view {
     font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .todo-list_input {
+    width: 75%;
+  }
+
+  .todo-list_add-item {
+    width: -webkit-calc(25% - 15px);
+    width: calc(25% - 15px);
+  }
+
+  .todo-list_add-item {
+    font-size: 14px;
+  }
+
+  .todo-list_input {
+    width: 70%;
+  }
+
+  .todo-list_add-item {
+    width: -webkit-calc(30% - 15px);
+    width: calc(30% - 15px);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .todo-list_input {
+    width: 65%;
+  }
+
+  .todo-list_add-item {
+    width: -webkit-calc(35% - 15px);
+    width: calc(35% - 15px);
   }
 }
