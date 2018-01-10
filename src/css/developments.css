@@ -668,6 +668,10 @@ body {
   background: #fff;
 }
 
+.todo-list_input:focus {
+  border-color: yellow;
+}
+
 .todo-list_action {
   display: -webkit-box;
   display: -webkit-flex;

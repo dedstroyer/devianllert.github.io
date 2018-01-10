@@ -1,5 +1,7 @@
 'use strict';
 
+// ===== imperative style code =====
+
 const todoView = document.querySelector('.todo-list_view');
 const todoInput = document.querySelector('.todo-list_input');
 const todoButton = document.querySelector('.todo-list_add-item');
@@ -8,7 +10,7 @@ function createTodoItem(title) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.className = 'todo-list_checkbox';
-    // checkbox.id = todoItem.children + 1 + '';
+    // checkbox.id = todoItem.children + 1 + ''; // now label not work!!
 
     const label = document.createElement('label');
     label.textContent = title;
@@ -24,11 +26,11 @@ function createTodoItem(title) {
     editInput.className = 'todo-list_edit-input';
 
     const editButton = document.createElement('button');
-    editButton.textContent = 'Изменить';
+    editButton.textContent = 'Ред.';
     editButton.className = 'todo-list_edit-btn';
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Удалить';
+    deleteButton.textContent = 'x';
     deleteButton.className = 'todo-list_delete-btn';
 
     const editTodo = document.createElement('div');
@@ -47,7 +49,7 @@ function createTodoItem(title) {
 }
 
 function addTodo(event) {
-    event.preventDefault();
+    event.preventDefault(); // for button.type = 'submit'
 
     if (todoInput.value === '') {
         return alert('Введите название задачи!');

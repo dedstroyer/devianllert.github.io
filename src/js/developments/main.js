@@ -50,3 +50,26 @@ window.onload = function () { // Функции выполняющиеся по�
   menuButton.addEventListener('click', toggleMenu);
 
 };
+
+
+// Выполнение функции один раз.
+function once(fn, context) { 
+  var result;
+
+  return function() { 
+      if(fn) {
+          result = fn.apply(context || this, arguments);
+          fn = null;
+      }
+
+      return result;
+  };
+}
+
+// Пример использования
+var canOnlyFireOnce = once(function() {
+  console.log('Запущено!');
+});
+
+canOnlyFireOnce(); // "Запущено!"
+canOnlyFireOnce(); // Не запущено
