@@ -317,10 +317,7 @@ body {
 }
 
 .animation-slide {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -337,6 +334,13 @@ body {
   width: 60%;
   -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.1);
+}
+
+.animation-slide.on {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .app-title {
@@ -379,10 +383,6 @@ body {
   padding: 15px;
 }
 
-.app-atomic-text {
-  display: none;
-}
-
 .app-atomic-text .app-title {
   background-color: darkviolet;
 }
@@ -411,6 +411,7 @@ body {
 
 .atomic-text_view {
   display: block;
+  word-break: break-all;
   font-size: 32px;
 }
 
@@ -419,6 +420,7 @@ body {
   box-sizing: border-box;
   height: 35px;
   width: 100%;
+  margin-top: 15px;
   border: 1px solid rgba(160, 160, 160, 0.5);
   outline: none;
   font-size: 18px;
@@ -553,13 +555,6 @@ body {
 
 .clock:hover {
   opacity: 0;
-}
-
-.app-todo-list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .app-todo-list .app-title {

@@ -1,6 +1,4 @@
 .app-atomic-text
-  //display: flex
-  display: none
   .app-title
     background-color: darkviolet
 .atomic-text
@@ -13,7 +11,10 @@
 
 .atomic-text_view
   display: block
+  word-break: break-all
   font-size: 32px
+  &.empty
+    // дописать!
 
 .atomic-text_input
   -webkit-box-sizing: border-box
@@ -21,6 +22,7 @@
   box-sizing: border-box
   height: 35px
   width: 100%
+  margin-top: 15px
   border: 1px solid rgba(160, 160, 160, 0.5)
   outline: none
   font-size: 18px
