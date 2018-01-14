@@ -7,36 +7,40 @@ const todoInput = document.querySelector('.todo-list_input');
 const todoButton = document.querySelector('.todo-list_add-item');
 const todoItems = document.querySelectorAll('.todo-list_item');
 
-function createElement(tag, props, ...children) { // ...children оператор оставшихся параметров
-    const element = document.createElement(tag);
-    Object.keys(props).forEach(key => element[key] = props[key]);
-    
-}
-
 function createTodoItem(title) {
-    const checkbox = createElement('input', {type: 'checkbox', className: 'todo-list_checkbox'});
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'todo-list_checkbox';
     // checkbox.id = todoItem.children + 1 + ''; // now label not work!!
 
-    const label = createElement('label', {className: 'todo-list_label'});
+    const label = document.createElement('label');
     label.textContent = title;
+    label.className = 'todo-list_label';
 
-    const checkboxTitle = createElement('div', {className: 'todo-list_checkbox-title'});
+    const checkboxTitle = document.createElement('div');
+    checkboxTitle.className = 'todo-list_checkbox-title';
     checkboxTitle.appendChild(checkbox);
     checkboxTitle.appendChild(label);
 
-    const editInput = createElement('input', {type: 'text', className: 'todo-list_edit-input'});
+    const editInput = document.createElement('input');
+    editInput.type = 'text';
+    editInput.className = 'todo-list_edit-input';
 
-    const editButton = createElement('button', {className: 'todo-list_edit-btn'});
+    const editButton = document.createElement('button');
     editButton.textContent = 'Ред.';
+    editButton.className = 'todo-list_edit-btn';
 
-    const deleteButton = createElement('button', {className: 'todo-list_delete-btn'});
+    const deleteButton = document.createElement('button');
     deleteButton.textContent = 'x';
+    deleteButton.className = 'todo-list_delete-btn';
 
-    const editTodo = createElement('div', {className:'todo-list_edit'});
+    const editTodo = document.createElement('div');
+    editTodo.className = 'todo-list_edit';
     editTodo.appendChild(editButton);
     editTodo.appendChild(deleteButton);
 
-    const todoItem = createElement('li', {className: 'todo-list_item'});
+    const todoItem = document.createElement('li');
+    todoItem.className = 'todo-list_item';
     todoItem.appendChild(checkboxTitle);
     todoItem.appendChild(editInput);
     todoItem.appendChild(editTodo);
