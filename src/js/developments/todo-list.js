@@ -1,120 +1,135 @@
-'use strict';
+const init = (document => {
 
-// ===== imperative style code =====
+    'use strict';
 
-const todoView = document.querySelector('.todo-list_view');
-const todoInput = document.querySelector('.todo-list_input');
-const todoButton = document.querySelector('.todo-list_add-item');
-const todoItems = document.querySelectorAll('.todo-list_item');
+    // ===== imperative style code =====
 
-function createTodoItem(title) {
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.className = 'todo-list_checkbox';
-    // checkbox.id = todoItem.children + 1 + ''; // now label not work!!
+    const todoView = document.querySelector('.todo-list_view');
+    const todoInput = document.querySelector('.todo-list_input');
+    const todoButton = document.querySelector('.todo-list_add-item');
+    const todoItems = document.querySelectorAll('.todo-list_item');
 
-    const label = document.createElement('label');
-    label.textContent = title;
-    label.className = 'todo-list_label';
+    function createElement(tag, props, ...children) { // ...children оператор оставшихся параметров
+        const element = document.createElement(tag);
 
-    const checkboxTitle = document.createElement('div');
-    checkboxTitle.className = 'todo-list_checkbox-title';
-    checkboxTitle.appendChild(checkbox);
-    checkboxTitle.appendChild(label);
+        Object.keys(props).forEach(key => element[key] = props[key]); // !! Разобрать все методы в этой строке
 
-    const editInput = document.createElement('input');
-    editInput.type = 'text';
-    editInput.className = 'todo-list_edit-input';
+        children.forEach(child => {
+            if (typeof child === 'string') {
+                child = document.createTextNode(child);
+            }
+            element.appendChild(child);
+        })
 
-    const editButton = document.createElement('button');
-    editButton.textContent = 'Ред.';
-    editButton.className = 'todo-list_edit-btn';
-
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'x';
-    deleteButton.className = 'todo-list_delete-btn';
-
-    const editTodo = document.createElement('div');
-    editTodo.className = 'todo-list_edit';
-    editTodo.appendChild(editButton);
-    editTodo.appendChild(deleteButton);
-
-    const todoItem = document.createElement('li');
-    todoItem.className = 'todo-list_item';
-    todoItem.appendChild(checkboxTitle);
-    todoItem.appendChild(editInput);
-    todoItem.appendChild(editTodo);
-
-    bindEvents(todoItem);
-
-    return todoItem;
-
-}
-
-function bindEvents(todoItem) {
-    const checkbox = todoItem.querySelector('.todo-list_checkbox');
-    const editButton = todoItem.querySelector('.todo-list_edit-btn');
-    const deleteButton = todoItem.querySelector('.todo-list_delete-btn');
-
-    checkbox.addEventListener('change', toggleTodo);
-    editButton.addEventListener('click', editTodo);
-    deleteButton.addEventListener('click', deleteTodo);
-}
-
-function addTodo(event) {
-    event.preventDefault(); // for button.type = 'submit'
-
-    if (todoInput.value === '') {
-        return alert('Введите название задачи!');
+        return element;
     }
 
-    const listItem = createTodoItem(todoInput.value);
+    function createTodoItem(title) {
+        const checkbox = createElement('input', {
+            type: 'checkbox',
+            className: 'todo-list_checkbox'
+        });
+        // checkbox.id = todoItem.children + 1 + ''; // now label not work!!
 
-    todoView.appendChild(listItem);
+        const label = createElement('label', {
+            className: 'todo-list_label'
+        }, title);
 
-    todoInput.value = '';
+        const checkboxTitle = createElement('div', {
+            className: 'todo-list_checkbox-title'
+        }, checkbox, label);
 
-}
+        const editInput = createElement('input', {
+            type: 'text',
+            className: 'todo-list_edit-input'
+        });
 
-function toggleTodo() {
-    const todoItem = this.parentNode.parentNode;
-    todoItem.classList.toggle('completed');
-}
+        const editButton = createElement('button', {
+            className: 'todo-list_edit-btn'
+        }, 'Ред.');
 
-function editTodo() {
-    const todoItem = this.parentNode.parentNode;
-    const title = todoItem.querySelector('.todo-list_label');
-    const editInput = todoItem.querySelector('.todo-list_edit-input');
-    const isEditing =  todoItem.classList.contains('editing');
+        const deleteButton = createElement('button', {
+            className: 'todo-list_delete-btn'
+        }, 'x');
 
-    if (isEditing) {
-        if(editInput.value == '') {
-            alert('Поле не может быть пустым!');
-            return false;
+        const editTodo = createElement('div', {
+            className: 'todo-list_edit'
+        }, editButton, deleteButton);
+
+        const todoItem = createElement('li', {
+            className: 'todo-list_item'
+        }, checkboxTitle, editInput, editTodo);
+
+        bindEvents(todoItem);
+
+        return todoItem;
+
+    }
+
+    function bindEvents(todoItem) {
+        const checkbox = todoItem.querySelector('.todo-list_checkbox');
+        const editButton = todoItem.querySelector('.todo-list_edit-btn');
+        const deleteButton = todoItem.querySelector('.todo-list_delete-btn');
+
+        checkbox.addEventListener('change', toggleTodo);
+        editButton.addEventListener('click', editTodo);
+        deleteButton.addEventListener('click', deleteTodo);
+    }
+
+    function addTodo(event) {
+        event.preventDefault(); // for button.type = 'submit'
+
+        if (todoInput.value === '') {
+            return alert('Введите название задачи!');
         }
-        title.textContent = editInput.value;
-        this.textContent = 'Изменить'
-    } else {
-        editInput.value = title.textContent;
-        this.textContent = 'Сохранить';
+
+        const listItem = createTodoItem(todoInput.value);
+
+        todoView.appendChild(listItem);
+
+        todoInput.value = '';
+
     }
 
-    todoItem.classList.toggle('editing');
-}
+    function toggleTodo() {
+        const todoItem = this.parentNode.parentNode;
+        todoItem.classList.toggle('completed');
+    }
 
-function deleteTodo() { 
-    const todoItem = this.parentNode.parentNode;
-    todoItem.remove();
-}
+    function editTodo() {
+        const todoItem = this.parentNode.parentNode;
+        const title = todoItem.querySelector('.todo-list_label');
+        const editInput = todoItem.querySelector('.todo-list_edit-input');
+        const isEditing = todoItem.classList.contains('editing');
 
-function init() {
-    todoButton.addEventListener('click', addTodo);
-    todoItems.forEach(item => bindEvents(item));
-}
+        if (isEditing) {
+            if (editInput.value == '') {
+                alert('Поле не может быть пустым!');
+                return false;
+            }
+            title.textContent = editInput.value;
+            this.textContent = 'Ред.'
+        } else {
+            editInput.value = title.textContent;
+            this.textContent = 'Сохранить';
+        }
 
+        todoItem.classList.toggle('editing');
+    }
 
+    function deleteTodo() {
+        const todoItem = this.parentNode.parentNode;
+        todoItem.remove();
+    }
 
-document.addEventListener('DOMContentLoaded', init);
+    function init() {
+        todoButton.addEventListener('click', addTodo);
+        todoItems.forEach(item => bindEvents(item));
+    }
 
+    return init;
 
+})(document);
+
+init()
 
