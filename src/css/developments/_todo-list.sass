@@ -21,16 +21,51 @@
   border-bottom: 2px solid rgba(#eff5f5, 1)
   &:last-child
     border: none
+  &.completed
+    color: lightgray
+    .todo-list_label
+      text-decoration: line-through
+    .todo-list_edit-btn, .todo-list_delete-btn
+      color: lightgray
+  &:hover .todo-list_edit
+    visibility: visible
+    opacity: 1
+  &.editing
+    .todo-list_edit-input
+      width: 50%
+      margin-left: 5px
+      display: block
+      border: 1px solid rgba(160, 160, 160, 0.3)
+      outline: none
+      border-radius: 0
+      box-shadow: none // for ios/macOS safari
+      -webkit-appearance: none // for ios/macOS
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      height: 100%
+      padding-left: 10px
+      font-size: 20px
+      transition: all 0.5s ease
+      background: #fff
+      &:focus
+        border-color: yellow
+    .todo-list_label
+      display: none
+
 
 .todo-list_edit
+  visibility: hidden
+  opacity: 0
   margin-left: auto
+  transition: all 0.25s ease
 
 .todo-list_edit-btn, .todo-list_delete-btn
   background: none
   border: none
   cursor: pointer
   padding: 10px 15px
-  transition: all 0.5s ease
+  transition: all 0.25s ease
   outline: none
   margin: 0 5px
   &:hover
@@ -44,6 +79,7 @@
 
 .todo-list_label
   margin-left: 5px
+  transition: all 0.25s ease
 
 .todo-list_edit-input
   display: none

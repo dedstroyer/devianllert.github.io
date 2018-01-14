@@ -599,8 +599,59 @@ body {
   border: none;
 }
 
+.todo-list_item.completed {
+  color: lightgray;
+}
+
+.todo-list_item.completed .todo-list_label {
+  text-decoration: line-through;
+}
+
+.todo-list_item.completed .todo-list_edit-btn,
+.todo-list_item.completed .todo-list_delete-btn {
+  color: lightgray;
+}
+
+.todo-list_item:hover .todo-list_edit {
+  visibility: visible;
+  opacity: 1;
+}
+
+.todo-list_item.editing .todo-list_edit-input {
+  width: 50%;
+  margin-left: 5px;
+  display: block;
+  border: 1px solid rgba(160, 160, 160, 0.3);
+  outline: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  padding-left: 10px;
+  font-size: 20px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  background: #fff;
+}
+
+.todo-list_item.editing .todo-list_edit-input:focus {
+  border-color: yellow;
+}
+
+.todo-list_item.editing .todo-list_label {
+  display: none;
+}
+
 .todo-list_edit {
+  visibility: hidden;
+  opacity: 0;
   margin-left: auto;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .todo-list_edit-btn,
@@ -609,8 +660,8 @@ body {
   border: none;
   cursor: pointer;
   padding: 10px 15px;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
   outline: none;
   margin: 0 5px;
 }
@@ -638,6 +689,8 @@ body {
 
 .todo-list_label {
   margin-left: 5px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .todo-list_edit-input {

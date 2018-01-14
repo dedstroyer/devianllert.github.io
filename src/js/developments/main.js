@@ -12,12 +12,6 @@ function atomic() {
     return str.slice(0, (maxlength)) + '...';
 	}
 	
-	if(atomicTextInput.value.trim() !== '') {
-		atomicTextView.classList.remove('empty');
-	} else {
-		atomicTextView.classList.add('empty');
-	}
-	
 	atomicTextView.textContent = atomicTextInput.value;
 	
 }

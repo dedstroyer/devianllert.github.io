@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="theme-color" content="#000000">
@@ -7,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Devianllert - front-end developer">
     <!-- for apple -->
-    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- To run web application in full-screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- To run web application in full-screen -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <!-- Status Bar Style (see Supported Meta Tags below for available values) -->
     <!-- /for apple -->
@@ -15,62 +17,66 @@
     <title>Developments</title>
     <link rel="stylesheet" href="css/developments.css">
 </head>
+
 <body>
 
-<div class="preloader">
-    <div class="loader">
-        <span class="logo">D</span>
-    </div>
-</div>
-
-<div class="app">
-
-    <div class="menu">
-        <div class="show-menu">menu</div>
-        <div class="menu-title">Project's</div>
-        <ul class="menu-list">
-            <li class="menu-item">Hotreload input</li>
-            <li class="menu-item">Generate password</li>
-            <li class="menu-item">Chat</li>
-        </ul>
+    <div class="preloader">
+        <div class="loader">
+            <span class="logo">D</span>
+        </div>
     </div>
 
-    <div class="animation-place">
+    <div class="app">
 
-        <div class="animation-slide app-atomic-text on">
-            <div class="app-title">Atomic</div>
-            <div class="app-view">
-                <div class="atomic-text">
-                    <span class="atomic-text_view"></span>
-                    <input class="atomic-text_input" type="text">
+        <div class="animation-place">
+
+            <div class="animation-slide app-atomic-text">
+                <div class="app-title">Atomic</div>
+                <div class="app-view">
+                    <div class="atomic-text">
+                        <span class="atomic-text_view"></span>
+                        <input class="atomic-text_input" type="text">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="animation-slide app-todo-list">
-            <div class="app-title">TODO.JS</div>
-            <div class="app-view">
-                <div class="todo-list">
-                    <ul class="todo-list_view"></ul>
-                    <form class="todo-list_action">
-                        <input class="todo-list_input" type="text">
-                        <button type="submit" class="todo-list_add-item">Добавить</button>
-                    </form>
+            <div class="animation-slide app-todo-list on">
+                <div class="app-title">TODO.JS</div>
+                <div class="app-view">
+                    <div class="todo-list">
+                        <ul class="todo-list_view">
+                            <li class="todo-list_item">
+                                <div class="todo-list_checkbox-title">
+                                    <input type="checkbox" class="todo-list_checkbox">
+                                    <label class="todo-list_label">Learn JavaScript</label>
+                                </div>
+                                <input type="text" class="todo-list_edit-input">
+                                <div class="todo-list_edit">
+                                    <button class="todo-list_edit-btn">Ред.</button>
+                                    <button class="todo-list_delete-btn">x</button>
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="todo-list_action">
+                            <input class="todo-list_input" type="text">
+                            <button type="submit" class="todo-list_add-item">Добавить</button>
+                        </form>
 
+                    </div>
                 </div>
             </div>
+
         </div>
+
+
 
     </div>
 
-
-
-</div>
-
-<script src="js/developments/preloader.js"></script>
-<script src="js/developments/timer.js"></script>
-<script src="js/developments/todo-list.js"></script>
-<script src="js/developments/main.js"></script>
+    <script src="js/developments/preloader.js"></script>
+    <script src="js/developments/timer.js"></script>
+    <script src="js/developments/todo-list.js"></script>
+    <script src="js/developments/main.js"></script>
 
 </body>
+
 </html>
