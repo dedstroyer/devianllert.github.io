@@ -695,6 +695,8 @@ body {
   margin-left: 5px;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
+  max-width: 100%;
+  word-break: break-word;
 }
 
 .todo-list_edit-input {

@@ -85,6 +85,15 @@ const init = (document => {
 
         const listItem = createTodoItem(todoInput.value);
 
+        const title = document.querySelectorAll('.todo-list_label');
+
+        for (let i = 0; i < title.length; i++) {
+            if (todoInput.value == title[i].textContent) {
+                alert ('Такая задача уже есть!');
+                return false;
+            }
+        }
+
         todoView.appendChild(listItem);
 
         todoInput.value = '';
