@@ -14,6 +14,45 @@
   flex-direction: column
   margin-bottom: 15px
 
+.todo-list_checkbox:not(checked)
+  position: absolute
+  opacity: 0
+
+.todo-list_checkbox:not(checked) + .todo-list_label 
+  position: relative
+  padding: 0 0 0 30px
+
+.todo-list_checkbox:not(checked) + .todo-list_label:before 
+  content: ''
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  left: 0
+  width: 21px
+  height: 21px
+  border-radius: 50%
+  background: transparent
+
+.todo-list_checkbox:not(checked) + .todo-list_label:after
+  content: ''
+  position: absolute
+  top: 50%
+  left: 4px
+  transform: translateY(-50%)
+  border-radius: 50%
+  width: 15px
+  height: 15px
+  transition: all .2s
+  background: #F25F5C
+
+.todo-list_checkbox:checked + .todo-list_label:after
+  top: 50%
+  transform: translateY(-50%)
+  left: -1px
+  background: #70c1b3
+  width: 25px
+  height: 25px
+
 .todo-list_item
   display: flex
   align-items: center
@@ -65,7 +104,7 @@
   background: none
   border: none
   cursor: pointer
-  padding: 10px 15px
+  padding: 10px
   transition: all 0.25s ease
   outline: none
   margin: 0 5px
@@ -79,10 +118,11 @@
   align-items: center
 
 .todo-list_label
-  margin-left: 5px
+  user-select: none
   transition: all 0.25s ease
   max-width: 100%
   word-break: break-word
+  cursor: pointer
 
 .todo-list_edit-input
   display: none

@@ -15,7 +15,7 @@
     <!-- /for apple -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>Developments</title>
-    <link rel="stylesheet" href="css/developments.css">
+    <link rel="stylesheet" href="css/developments.min.css">
 </head>
 
 <body>
@@ -27,6 +27,16 @@
     </div>
 
     <div class="app">
+
+        <div class="apps">
+            <div class="apps-menu">
+                <div class="menu_to-right">right</div>
+                <div class="menu_to-left">left</div>
+            </div>
+
+            <ul class="apps-count_list"></ul>
+
+        </div>
 
         <div class="animation-place">
 
@@ -48,7 +58,9 @@
                             <li class="todo-list_item">
                                 <div class="todo-list_checkbox-title">
                                     <input type="checkbox" class="todo-list_checkbox">
-                                    <label class="todo-list_label">Learn JavaScript</label>
+                                    <label class="todo-list_label">
+                                        <span class="todo-list_label-title">Learn JavaScript</span>
+                                    </label>
                                 </div>
                                 <input type="text" class="todo-list_edit-input">
                                 <div class="todo-list_edit">
@@ -72,10 +84,12 @@
 
     </div>
 
-    <script src="js/developments/preloader.js"></script>
+    <script src="./js/app.min.js"></script>
+
+    <!-- <script src="js/developments/preloader.js"></script>
     <script src="js/developments/timer.js"></script>
     <script src="js/developments/todo-list.js"></script>
-    <script src="js/developments/main.js"></script>
+    <script src="js/developments/main.js"></script> -->
 
 </body>
 

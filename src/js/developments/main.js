@@ -1,30 +1,43 @@
 'use strict';
 
-// AtomicText
-
-const atomicTextInput = document.querySelector('.atomic-text_input'), // поле ввода
-			atomicTextView = document.querySelector('.atomic-text_view'); // поле вывода
-			
-function atomic() {
-  
-  function truncate(str) {
-    let maxlength = 20;
-    return str.slice(0, (maxlength)) + '...';
-	}
-	
-	atomicTextView.textContent = atomicTextInput.value;
-	
-}
+const animatePlace = document.querySelector('.animation-place');
 
 function animateSlide() {
   // Анимация для проектов...
+
+  console.log(animatePlace.children);
+
 }
 
-window.onload = function () { // Функции выполняющиеся после загрузки страницы
+function menuSlide() {
 
-  atomicTextInput.addEventListener('input', atomic);
+  const menuItem = document.createElement('li');
+  menuItem.className = 'apps-count_list-item';
 
-};
+
+
+}
+
+function animate() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Выполнение функции один раз.
