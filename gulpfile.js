@@ -86,7 +86,7 @@ gulp.task('scripts', function () {
     return gulp.src([ // Берем все необходимые файлы
             'src/js/developments/main.js',
             'src/js/developments/preloader.js',
-            // 'src/js/developments/timer.js',
+            'src/js/developments/timer.js',
             'src/js/developments/atomic.js',
             'src/js/developments/todo-list.js'
         ])

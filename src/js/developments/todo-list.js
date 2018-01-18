@@ -33,6 +33,8 @@ const todo = (document => {
         });
         // checkbox.id = todoItem.children + 1 + ''; // now label not work!!
 
+        
+
         const labelText = createElement('span', {
             className: 'todo-list_label-title'
         }, title)
@@ -53,11 +55,11 @@ const todo = (document => {
 
         const editButton = createElement('button', {
             className: 'todo-list_edit-btn'
-        }, 'Ред.');
+        });
 
         const deleteButton = createElement('button', {
             className: 'todo-list_delete-btn'
-        }, 'x');
+        });
 
         const editTodo = createElement('div', {
             className: 'todo-list_edit'
@@ -129,10 +131,8 @@ const todo = (document => {
                 return false;
             }
             title.textContent = editInput.value;
-            this.textContent = 'Ред.'
         } else {
             editInput.value = title.textContent;
-            this.textContent = 'Сохранить';
         }
 
         todoItem.classList.toggle('editing');

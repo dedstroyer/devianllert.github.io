@@ -65,7 +65,8 @@
     .todo-list_label
       text-decoration: line-through
     .todo-list_edit-btn, .todo-list_delete-btn
-      color: lightgray
+      opacity: 0.5
+    .todo-list_edit
   &:hover .todo-list_edit
     visibility: visible
     opacity: 1
@@ -89,7 +90,7 @@
       background: #fff
       &:focus
         border-color: yellow
-    .todo-list_label
+    .todo-list_label-title
       display: none
 
 
@@ -100,18 +101,19 @@
   transition: all 0.25s ease
   display: flex
 
+.todo-list_edit-btn
+  background: url('../img/change.svg') no-repeat center
+
+.todo-list_delete-btn
+  background: url('../img/remove.svg') no-repeat center
+
 .todo-list_edit-btn, .todo-list_delete-btn
-  background: none
   border: none
   cursor: pointer
   padding: 10px
-  transition: all 0.25s ease
+  transition: 0.25s ease
   outline: none
-  margin: 0 5px
-  &:hover
-    background: rgba(#000, 0.1)
-  &:active
-    background: rgba(#000, 0.3)
+  margin: 5px 10px
 
 .todo-list_checkbox-title
   display: flex
