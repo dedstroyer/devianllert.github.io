@@ -1,5 +1,6 @@
 @import "smart-grid"
 @import "fonts/fonts.css"
+@import "fonts/css/fontawesome-all.min.css"
 @import "components/colors"
 
 +reset()
@@ -14,8 +15,15 @@ body
   width: 100vw
   height: 100vh
   display: flex
-  flex-direction: column
   background: #fff
+
+.main
+  position: relative
+  padding: 0
+  width: 100%
+  height: 100%
+  display: flex
+  transition: all 0.25s ease
 
 .wrapper
   +wrapper()
@@ -28,3 +36,4 @@ body
 @import "developments/timer"
 // @components
 @import "components/header"
+@import "components/_content.sass"

@@ -1,54 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#000000">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Devianllert - front-end developer">
-    <!-- for apple -->
-    <meta name="apple-mobile-web-app-capable" content="yes"> <!-- To run web application in full-screen -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!-- Status Bar Style (see Supported Meta Tags below for available values) -->
-    <!-- /for apple -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/main.css">
-    <title>devianllert</title>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#000000">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Devianllert - front-end developer">
+  <!-- for apple -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- To run web application in full-screen -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <!-- Status Bar Style (see Supported Meta Tags below for available values) -->
+  <!-- /for apple -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/main.min.css?v0.1">
+  <title>devianllert</title>
 </head>
 
 <body>
 
-<div class="preloader">
+  <div class="preloader">
     <div class="loader">
-        <span class="logo">D</span>
+      <span class="logo">D</span>
     </div>
-</div>
+  </div>
 
+  <!-- wrapper -->
+  <div class="app">
 
-<!-- time & social -->
-<div class="additionally">
+    <div class="main header-on">
 
-</div>
-<!-- /time & social -->
+      <div class="header">
 
-<!-- wrapper -->
-<div class="app">
+        <div class="profile">
+          <div class="profile-img">
+            <img src="./img/face.jpg" alt="Ruslan Povolockii">
+          </div>
 
-    <div class="header">
+          <div class="profile-descr">
+            <div class="profile-descr-name">Руслан Поволоцкий</div>
+            <div class="profile-descr-profession">Front-end developer</div>
+          </div>
+        </div>
+
+        <div class="main-mnu">
+          <ul class="main-mnu-list">
+            <li class="main-mnu-item active-link">
+              <a href="#">
+                <i class="fas fa-home fa-fw"></i>Главная</a>
+            </li>
+            <li class="main-mnu-item">
+              <a href="#">
+                <i class="fas fa-user fa-fw"></i>Обо мне</a>
+            </li>
+            <li class="main-mnu-item">
+              <a href="#">
+                <i class="fas fa-folder-open fa-fw"></i>Портфолио</a>
+            </li>
+            <li class="main-mnu-item">
+              <a href="#">
+                <i class="fas fa-address-card fa-fw"></i>Контакты</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="developments">
+          <ul class="dev-works">
+            <li class="dev-works-item">
+              <a href="./developments.html">
+                <i class="fas fa-terminal fa-fw"></i>developments</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="socials">
+          <ul class="socials-list">
+            <li class="socials-item">
+              <a target="_blank" href="https://vk.com/devianllert">
+                <i class="fab fa-vk fa-fw"></i>
+              </a>
+            </li>
+            <li class="socials-item">
+              <a target="_blank" href="">
+                <i class="fab fa-facebook fa-fw"></i>
+              </a>
+            </li>
+            <li class="socials-item">
+              <a target="_blank" href="">
+                <i class="fab fa-linkedin fa-fw"></i>
+              </a>
+            </li>
+            <li class="socials-item">
+              <a target="_blank" href="https://github.com/devianllert/devianllert.github.io">
+                <i class="fab fa-github fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="content">
+        <button class="header-toggle"><i class="fas fa-bars fa-fw"></i></button>
+        <h1 class="content-title">Добро пожаловать!</h1>
+      </div>
 
     </div>
+  </div>
+  <!-- /wrapper -->
 
-</div>
-<!-- /wrapper -->
 
-
-<!-- App made by Ruslan Povolockii (devianllert) -->
-<noscript>
+  <!-- App made by Ruslan Povolockii (devianllert) -->
+  <noscript>
     You need to enable JavaScript to run this app.
-</noscript>
-<script src="js/developments/preloader.js"></script>
-<script src="js/developments/timer.js"></script>
-<script src="js/main.js"></script>
+  </noscript>
+  <script src="js/developments/preloader.js"></script>
+  <script src="js/developments/timer.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

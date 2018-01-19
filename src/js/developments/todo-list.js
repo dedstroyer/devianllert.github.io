@@ -33,8 +33,6 @@ const todo = (document => {
         });
         // checkbox.id = todoItem.children + 1 + ''; // now label not work!!
 
-        
-
         const labelText = createElement('span', {
             className: 'todo-list_label-title'
         }, title)
@@ -80,11 +78,12 @@ const todo = (document => {
         const editButton = todoItem.querySelector('.todo-list_edit-btn');
         const deleteButton = todoItem.querySelector('.todo-list_delete-btn');
 
+        // проверка id для уже существующих элементов
         for (let i = 0; i < todoView.children.length; i++) {
             todoView.children[i].querySelector('.todo-list_checkbox').id = 'task' + (i + 1);
             todoView.children[i].querySelector('.todo-list_label').setAttribute('for','task' + (i + 1))
         }
-
+        
         checkbox.addEventListener('change', toggleTodo);
         editButton.addEventListener('click', editTodo);
         deleteButton.addEventListener('click', deleteTodo);
@@ -93,16 +92,22 @@ const todo = (document => {
     function addTodo(event) {
         event.preventDefault(); // for button.type = 'submit'
 
+        // const limit = 10;
+        const listItem = createTodoItem(todoInput.value);
+        const titles = document.querySelectorAll('.todo-list_label-title');
+        // const todoItems = document.querySelectorAll('.todo-list_item');
+
         if (todoInput.value === '') {
             return alert('Введите название задачи!');
         }
 
-        const listItem = createTodoItem(todoInput.value);
+        // if (todoItems.length >= limit) {
+        //     alert(`Вы не можете создать больше ${limit} задач`);
+        //     return false;
+        // }
 
-        const title = document.querySelectorAll('.todo-list_label');
-
-        for (let i = 0; i < title.length; i++) {
-            if (todoInput.value == title[i].textContent) {
+        for (let i = 0; i < titles.length; i++) {
+            if (todoInput.value == titles[i].textContent) {
                 alert ('Такая задача уже есть!');
                 return false;
             }
@@ -124,12 +129,21 @@ const todo = (document => {
         const title = todoItem.querySelector('.todo-list_label-title');
         const editInput = todoItem.querySelector('.todo-list_edit-input');
         const isEditing = todoItem.classList.contains('editing');
+        const titles = document.querySelectorAll('.todo-list_label-title');
 
         if (isEditing) {
             if (editInput.value == '') {
                 alert('Поле не может быть пустым!');
                 return false;
             }
+
+            for (let i = 0; i < titles.length; i++) {
+                if (editInput.value == titles[i].textContent) {
+                    alert ('Такая задача уже есть!');
+                    return false;
+                }
+            }
+
             title.textContent = editInput.value;
         } else {
             editInput.value = title.textContent;

@@ -11,9 +11,9 @@
     date.className = 'clock-date';
     time.className = 'clock-time';
 
-    clock.appendChild(date);
     clock.appendChild(time);
-
+    clock.appendChild(date);
+    
     document.body.appendChild(clock);
 
     function setClock() {

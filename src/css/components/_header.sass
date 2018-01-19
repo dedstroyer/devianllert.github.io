@@ -1,5 +1,118 @@
 .header
+  position: fixed
+  top: 0
+  left: 0
+  transform: translateX(-100%)
+  display: flex
+  flex-direction: column
+  width: 300px
+  height: 100%
+  background-color: #222729
+  padding: 30px 0 10px 0
+  box-sizing: border-box
+  transition: transform .25s ease,-webkit-transform .25s ease
+
+.header-toggle
+  position: absolute
+  top: 50%
+  left: 0
+  transform: translateY(-50%)
+  background: #222729
+  height: 50px
+  color: #fff
+  border-radius: 0 10px 10px 0
+  border: none
+  cursor: pointer
+  outline: none
+  user-select: none
+
+.profile
+  display: flex
   width: 100%
-  height: 60px
-  background-color: #eff5f5
-  border-bottom: 1px solid rgba(160, 160, 160, 0.3)
+  min-height: 60px
+  background-color: rgba(#fff, 0.1)
+
+.profile-img
+  width: 30%
+  img
+    width: 100%
+    height: 100%
+
+.profile-descr
+  display: flex
+  flex-direction: column
+  justify-content: center
+  width: calc(70% - 10px)
+  margin-left: auto
+  color: #ffffff
+
+.profile-descr-name
+  font-size: 18px
+
+.profile-descr-profession
+  font-size: 14px
+  color: gray
+
+.main-mnu
+  margin-top: 30px
+  width: 100%
+
+.main-mnu-list
+  display: flex
+  flex-direction: column
+
+.main-mnu-item
+  padding-left: 20px
+  margin: 5px 0
+  &.active-link a
+    color: #ffffff
+  a
+    display: block
+    color: rgba(#fff, 0.5)
+    font-size: 22px
+    text-decoration: none
+    padding: 10px 0
+    i
+      padding-right: 15px
+
+.developments
+  display: flex
+  margin-top: 60px
+  padding: 0 20px
+
+.dev-works
+  display: flex
+  flex-direction: column
+
+.dev-works-item
+  a
+    display: flex
+    color: rgba(#fff, 0.5)
+    font-size: 22px
+    text-decoration: none
+    padding: 10px 0
+    transition: all .2s ease
+    i
+      padding-right: 15px
+    &:hover
+      color: rgba(#fff, 1)
+  
+
+.socials
+  display: flex
+  margin-top: auto
+  justify-content: center
+
+.socials-list
+  display: flex
+
+.socials-item
+  margin: 0 10px
+  opacity: 0.7
+  a
+    display: flex
+    color: #fff
+    text-decoration: none
+    font-size: 30px
+  &:hover
+    opacity: 1
