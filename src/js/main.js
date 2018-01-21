@@ -1,7 +1,8 @@
 'use strict';
-
+// переходы между страницами
 const mainLink = document.querySelectorAll('.main-mnu-item a');
-const headerToggle = document.querySelector('.header-toggle')
+// боковая панель
+const headerToggle = document.querySelector('.header-toggle');
 
 for (let i = 0; i < mainLink.length; i++) {
     mainLink[i].addEventListener('click', switchMenu)
