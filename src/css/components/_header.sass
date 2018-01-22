@@ -23,36 +23,10 @@
   color: #fff
   border-radius: 0 10px 10px 0
   border: none
+  z-index: 1
   cursor: pointer
   outline: none
   user-select: none
-
-.profile
-  display: flex
-  width: 100%
-  min-height: 60px
-  background-color: rgba(#fff, 0.1)
-
-.profile-img
-  width: 30%
-  img
-    width: 100%
-    height: 100%
-
-.profile-descr
-  display: flex
-  flex-direction: column
-  justify-content: center
-  width: calc(70% - 10px)
-  margin-left: auto
-  color: #ffffff
-
-.profile-descr-name
-  font-size: 18px
-
-.profile-descr-profession
-  font-size: 14px
-  color: gray
 
 .main-mnu
   margin-top: 15px
@@ -68,6 +42,7 @@
   &.active-link a
     color: #ffffff
     pointer-events: none
+    user-select: none
   a
     display: block
     color: rgba(#fff, 0.5)
