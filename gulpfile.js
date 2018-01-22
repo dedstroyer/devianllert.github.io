@@ -78,7 +78,7 @@ gulp.task('browser-sync', function () { // Создаем таск browser-sync
         server: { // Определяем параметры сервера
             baseDir: 'src' // Директория для сервера - src
         },
-        notify: true // Отключаем уведомления
+        notify: false // Отключаем уведомления
     });
 });
 

@@ -4,9 +4,9 @@ const mainLink = document.querySelectorAll('.main-mnu-item a');
 // боковая панель
 const headerToggle = document.querySelector('.header-toggle');
 
-for (let i = 0; i < mainLink.length; i++) {
-    mainLink[i].addEventListener('click', switchMenu)
-}
+mainLink.forEach(function(el) { // forEach вместо обычного цикла for
+    el.addEventListener('click', switchMenu);
+})
 
 headerToggle.addEventListener('click', panelToggle);
 
