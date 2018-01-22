@@ -1,5 +1,5 @@
 ;(function () {
-  document.addEventListener('DOMContentLoaded', preloader);
+  window.addEventListener('load', preloader);
 
   function preloader() {
     const loader = document.querySelector('.preloader');
