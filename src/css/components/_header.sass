@@ -11,16 +11,22 @@
   background-color: #222729
   padding: 0 0 10px 0
   box-sizing: border-box
-  transition: transform .25s ease,-webkit-transform .25s ease
+  transition: transform .35s ease,-webkit-transform .35s ease
+
+.header-overflow
+  overflow: hidden
+  .content
+    filter: brightness(50%)
+.header-on
+  transform: translateX(0)
 
 .header-toggle
   position: absolute
-  top: 50%
-  left: 0
-  transform: translateY(-50%)
-  background: #222729
-  height: 50px
-  color: #fff
+  top: 15px
+  right: -45px
+  font-size: 20px
+  background: transparent
+  color: #000
   border-radius: 0 10px 10px 0
   border: none
   z-index: 1
