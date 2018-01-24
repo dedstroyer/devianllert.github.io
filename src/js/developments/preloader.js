@@ -9,6 +9,6 @@
             setTimeout(function () {
                 loader.remove();
             }, 500)
-        }, 2200)
+        }, 2500)
     }
 })();

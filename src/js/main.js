@@ -1,13 +1,11 @@
 'use strict';
 // переходы между страницами
-const mainLink = document.querySelectorAll('.main-mnu-item a');
-// боковая панель
-const headerToggle = document.querySelector('.header-toggle');
+const mainLink = document.querySelectorAll('.main-mnu-item a'),
+      headerToggle = document.querySelector('.header-toggle'),
+      header = document.querySelector('.header');
 
-const header = document.querySelector('.header');
-
-mainLink.forEach(function(el) { // forEach вместо обычного цикла for
-    el.addEventListener('click', switchMenu);
+mainLink.forEach(function(element) { // forEach вместо обычного цикла for
+    element.addEventListener('click', switchMenu);
 })
 
 headerToggle.addEventListener('click', panelToggle);
