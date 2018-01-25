@@ -2,24 +2,36 @@
 // переходы между страницами
 const mainLink = document.querySelectorAll('.main-mnu-item a'),
       headerToggle = document.querySelector('.header-toggle'),
-      header = document.querySelector('.header');
+      header = document.querySelector('.header'),
+      glitch = document.querySelector('.home-title'),
+      pages = document.querySelectorAll('.content-slide');
 
-mainLink.forEach(function(element) { // forEach вместо обычного цикла for
-    element.addEventListener('click', switchMenu);
-})
+setTimeout(function() { // remove glitch effect after 4 seconds
+    glitch.classList.remove('glitch-effect');
+}, 4000);
+
+mainLink.forEach(function(element, index) { // forEach вместо обычного цикла for
+    element.addEventListener('click', function() {
+        event.preventDefault();
+
+        let pagesOn = index;
+
+        if (!(this.parentNode.classList.contains('active-link'))) {
+            for (let i = 0; i < mainLink.length; i++) {
+                mainLink[i].parentNode.classList.remove('active-link');
+                pages[i].classList.remove('slide-on');
+            }
+        }
+
+        this.parentNode.classList.add('active-link');
+        pages[pagesOn].classList.add('slide-on');
+    })
+});
 
 headerToggle.addEventListener('click', panelToggle);
 
 function switchMenu(event) {
-    event.preventDefault();
-
-    if (!(this.classList.contains('active-link'))) {
-        for (let i = 0; i < mainLink.length; i++) {
-            mainLink[i].parentNode.classList.remove('active-link');
-        }
-    }
-
-    this.parentNode.classList.add('active-link');
+    
 }
 
 function panelToggle() {
