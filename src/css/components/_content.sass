@@ -2,7 +2,7 @@
   display: flex
   position: relative
   flex: 1
-  // transition: all .35s ease
+  transition: all .35s ease
 
 .content-slide
   padding: 48px
@@ -11,27 +11,30 @@
   width: 100%
   height: 100%
   box-sizing: border-box
-  visibility: hidden
+  transform: translateX(100%)
   background-color: #fff
   position: absolute
+  visibility: hidden
   top: 0
   left: 0
-  animation: animateFadeOut 5s
-  transition: all 0.5s ease
+  transition: all 1s ease
+  animation: translateOut 2.5s ease
   &.slide-on
     position: relative
+    transform: translateX(0)
     visibility: visible
     opacity: 1
-    animation: animateFade 1s
-    z-index: 1 
+    z-index: 5
+    animation: translateIn 1s ease
 
-@keyframes animateFade
+
+@keyframes translateIn
   0%
     transform: translateX(100%)
   100%
     transform: translateX(0)
 
-@keyframes animateFadeOut
+@keyframes translateOut
   0%
     transform: translateX(0)
   100%
