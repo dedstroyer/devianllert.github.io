@@ -12,30 +12,45 @@
   height: 100%
   box-sizing: border-box
   transform: translateX(100%)
-  background-color: #fff
-  position: absolute
-  visibility: hidden
+  background-color: #f4f4f4
+  display: none
   top: 0
   left: 0
-  transition: all 1s ease
-  animation: translateOut 2.5s ease
-  &.slide-on
-    position: relative
+  transition: visibility 1s ease
+  &.page-on
+    display: flex
     transform: translateX(0)
     visibility: visible
     opacity: 1
     z-index: 5
-    animation: translateIn 1s ease
+
+.head-title
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+.title
+  position: relative
+  font-size: 72px
+  font-weight: bold
+  text-align: center
+  color: #222
+  span
+    color: darkred
+
+.subtitle
+  color: #fff
+  background: #222
+  font-size: 19px
+  width: 100%
+  padding: 5px 20px
+  text-align: center
+  position: relative
+  bottom: 10px
 
 
-@keyframes translateIn
-  0%
-    transform: translateX(100%)
-  100%
-    transform: translateX(0)
 
-@keyframes translateOut
-  0%
-    transform: translateX(0)
-  100%
-    transform: translateX(100%)
+@media screen and (max-width: 768px)
+  .content-slide
+    padding: 24px

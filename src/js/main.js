@@ -3,36 +3,35 @@
 const mainLink = document.querySelectorAll('.main-mnu-item a'),
       headerToggle = document.querySelector('.header-toggle'),
       header = document.querySelector('.header'),
-      glitch = document.querySelector('.home-title'),
+      glitch = document.querySelector('.title'),
       pages = document.querySelectorAll('.content-slide');
 
 setTimeout(function() { // remove glitch effect after 4 seconds
     glitch.classList.remove('glitch-effect');
-}, 4000);
+}, 4500);
 
 mainLink.forEach(function(element, index) { // forEach вместо обычного цикла for
     element.addEventListener('click', function() {
         event.preventDefault();
 
-        let pagesOn = index;
-
         if (!(this.parentNode.classList.contains('active-link'))) {
             for (let i = 0; i < mainLink.length; i++) {
                 mainLink[i].parentNode.classList.remove('active-link');
-                pages[i].classList.remove('slide-on');
+                pages[i].classList.remove('page-on');
             }
         }
 
         this.parentNode.classList.add('active-link');
-        pages[pagesOn].classList.add('slide-on');
+        pages[index].classList.add('page-on'); // index - номер страницы
+        panelToggle();
     })
 });
 
 headerToggle.addEventListener('click', panelToggle);
 
-function switchMenu(event) {
+// function switchMenu(event) {
     
-}
+// }
 
 function panelToggle() {
     header.classList.toggle('header-on');
